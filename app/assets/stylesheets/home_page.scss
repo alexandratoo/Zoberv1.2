@@ -1,0 +1,182 @@
+// Place all the styles related to the home_page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%
+}
+.intro {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+
+}
+
+//masthead styling
+.masthead {
+  display: table;
+
+  width: 100%;
+  height: auto;
+  padding: 200px 0;
+
+  text-align: center;
+
+  color: white;
+  background: image_url('lifebuoy.jpg') no-repeat bottom center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  .intro-body {
+    display: table-cell;
+
+    vertical-align: middle;
+    .brand-heading {
+      font-size: 50px;
+    }
+    .intro-text {
+      font-size: 18px;
+    }
+  }
+  @media(min-width:768px) {
+    height: 100%;
+    padding: 0;
+    .intro-body {
+      .brand-heading {
+        font-size: 100px;
+      }
+      .intro-text {
+        font-size: 32px;
+        font-family: 'Raleway', sans-serif;
+      }
+    }
+  }
+}
+#lifebuoy {
+
+  text-align: center;
+}
+//mission content block styling
+#mission_statement {
+  background-color: #2392aa;
+  padding: 0;
+  width:100%
+
+}
+.mission {
+  color: white;
+  margin-top: 40px;
+  font-family: 'Raleway', sans-serif;
+}
+.savelives {
+  color: white;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+.description {
+  color: white;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+}
+#providers {
+  margin-bottom: 40px;
+}
+//download section styling
+#download {
+  height: 400px;
+}
+// button styling
+.btn-outline {
+    background-color: transparent;
+    color: #ffffff;
+    transition: all .5s;
+    border-color: 2px solid #ffffff ;
+    border-radius: 0;
+    font-family: 'Raleway', sans-serif;
+
+}
+.btn-light.btn-outline {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 0;
+}
+.btn-light.btn-outline:hover {
+  color: #fff;
+  border-radius: 0;
+}
+//how it works styling
+#howitworks {
+  background-color: #ef8b3e;
+  height: 400px;
+}
+.works{
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 24
+}
+.connect {
+  color: white;
+  text-align:center;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 20px;
+}
+.sober {
+  color:white;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 30px;
+
+}
+li {
+  display: block;
+}
+.fa-users {
+  color: white;
+  margin-bottom: 30px;
+}
+.fa-home { color: white; margin-bottom: 30px;}
+.people {
+  color: white;}
+  .col-xs-6 .col-sm-4 {
+    margin-left:20px;
+    margin-right:20px;
+    margin-top: 20px
+  }
+
+
+//about us
+.the_crew {
+  height: 600px;
+  display: table;
+
+  width: 100%;
+  height: auto;
+  padding: 200px 0;
+
+  text-align: center;
+  background: image_url('ring3crop.png') no-repeat bottom center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.about {
+  text-align:center;
+  font-family: 'Raleway', sans-serif;
+  color: grey;
+
+}
+.crew{
+  font-size: 24px;
+  text-align: center;
+
+  font-family: 'Raleway', sans-serif;
+  color: grey;
+}

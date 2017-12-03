@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<head>
+  <title>Full Screen Landing Page</title>
+
+  <link rel='stylesheet' type='text/css' href='homepage_footer.scss'>
+  <link rel='stylesheet' type='text/css' href='home_page.scss'>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/9a42685ed3.js"></script>
+</head>
+<body>
+
+  <header class="masthead">
+        <div class="intro-body">
+          <div class="row">
+          <div class="img-fluid mx-auto" id ="lifebuoy">
+            <!-- <%=image_tag("lifebuoy.jpg", alt:"lifebuoy", class: "img-fluid")%> -->
+
+
+  <%=image_tag("logolarge.png", alt: "logo", class: "img-fluid logo_large")%>
+
+              <div class="col-md-12 mx-auto">
+
+
+                <p class="intro-text">saving lives starting January 1st
+                </p>
+
+                <a href="#about" class="btn btn-outline-light" id="started">
+                  learn more
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- About Section -->
+      <section id="about" class="content-section text-center" >
+        <div class="container-fluid" id="mission_statement">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <h2 class="mission">Our Mission</h2>
+              <h4 class="savelives">#savelives</h4>
+              <p class="description">zober is building the next generation platform for people seeking sober living homes accross North America. We aim to provide transparent access to relevant recovery residence information to streamline the process for individuals transitioning from residential treatment to sober living. In doing so we hope to improve recovery outcomes by providing this information to the masses in our highly engaging supportive housing marketplace.
+
+              </p>
+              <button class= "btn btn-outline-light " id="providers">for providers</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Download Section -->
+      <section id="download" class="download-section content-section text-center">
+        <div class="container-fluid">
+          <div><%=image_tag("halfring.png", alt:"ring", class: "img-fluid")%></div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="content-section text-center">
+        <div class="container-fluid" id="howitworks">
+          <div class="row">
+            <div class="col-md-12 mx-auto">
+              <h2 class="works">How it Works</h2>
+              <p class="connect">we connect providers to people, simple.</p>
+              </div>
+              <div class="row">
+              <!-- <ul class="list-inline banner-icons"> -->
+                <div class="col-xs-6 col-sm-4">
+<i class="fa fa-home fa-5x" aria-hidden="true"></i>
+<p class="sober">sober living providers list homes for $1/day</p>
+<button class="btn btn-outline-light">Providers click to be a part of our Beta</button>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+<%=image_tag("FullLogoNoBackgroundsmall.png", alt: "logo", class: "img-fluid small_logo")%>
+<%=image_tag("icons/arrow2.png", alt: "arrow", class: "img-fluid arrow")%>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <i class="fa fa-users fa-5x" aria-hidden="true"></i>
+                  <p class ="people"> 2.5 million people + endless professionals in search of homes</p>
+                    <button class="btn btn-outline-light">Sign up for updates</button>
+
+                </div>
+              <!-- </ul> -->
+</div>
+          </div>
+        </div>
+      </section>
+      <section class="the_crew">
+        <div class="container-fluid">
+  <div class="col-md-12 mx-auto">
+          <h4 class="crew">The Crew</h4>
+        <h5 class="about">we are the life experienced, the affected, the well-versed, and the passionate</h5>
+</div>
+</div>
+</section>
+
+<%= render "layouts/footer" %>
+</body>
+
+</html>
