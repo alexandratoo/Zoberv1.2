@@ -1,5 +1,7 @@
 {
   "name": "zoberv1_1",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
 }
