@@ -2,6 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .signup {
-  margin-top: 40px;
+  margin-top: 80px;
   text-align: center;
+
+}
+.card {
+  
+background-color: #ef8b3e;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card-title {
+  color: white; font-size: 24px;
+  padding-top: 20px; padding-bottom: 20px;
+
+}
+.card-text{
+  color:white;  padding-bottom: 20px;
+}
+.provider_btn{
+  margin-bottom: 20px;
+
 }
