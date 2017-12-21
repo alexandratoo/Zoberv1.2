@@ -4,22 +4,36 @@
 .signup {
   margin-top: 80px;
   text-align: center;
+  font-family: 'Raleway', sans-serif; color:grey;
 
 }
 .card {
-  
+
 background-color: #ef8b3e;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+margin-bottom: 10px; margin-top:10px;
 }
 .card-title {
   color: white; font-size: 24px;
   padding-top: 20px; padding-bottom: 20px;
+  font-family: 'Raleway', sans-serif;
 
 }
 .card-text{
   color:white;  padding-bottom: 20px;
+  font-family: 'Raleway', sans-serif;
 }
 .provider_btn{
   margin-bottom: 20px;
+  font-family: 'Raleway', sans-serif;
 
+}
+.plans_list {font-family: 'Raleway', sans-serif; color:grey;}
+.pick {font-family: 'Raleway', sans-serif; color:grey;}
+nav {
+  background-color: #ef8b3e;
+
+}
+.nav-link.js-scroll-trigger {
+  color: white;
 }
