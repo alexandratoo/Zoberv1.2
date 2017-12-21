@@ -15,7 +15,21 @@ html, body {
   margin: 0;
 
 }
+//nav bar styling//
+.tinylogo {margin-right: 100px;}
+.providers { text-color:white}
+.social {color:white;}
+.signin {color:white;}
+.about {color: white;}
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+}
+.nav-item {color:white;}
 
+.nav-link { color: #ffffff; }
+.navbar-light .navbar-nav .nav-link {color: #e9ecef;}
 //masthead styling
 .masthead {
   display: table;
@@ -62,31 +76,7 @@ html, body {
 
   text-align: center;
 }
-//mission content block styling
-#mission_statement {
-  background-color: #2392aa;
-  padding: 0;
-  width:100%
 
-}
-.mission {
-  color: white;
-  margin-top: 40px;
-  font-family: 'Raleway', sans-serif;
-}
-.savelives {
-  color: white;
-  font-size: 16px;
-  font-family: 'Raleway', sans-serif;
-}
-.description {
-  color: white;
-  font-size: 18px;
-  font-family: 'Raleway', sans-serif;
-}
-#providers {
-  margin-bottom: 40px;
-}
 //download section styling
 #download {
   height: 400px;
@@ -110,76 +100,10 @@ html, body {
   color: #fff;
   border-radius: 0;
 }
-//how it works styling
-#howitworks {
-  background-color: #ef8b3e;
-  height: 400px;
-}
-.works{
-  color: white;
-  text-align: center;
-  margin-top: 40px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 24
-}
-.connect {
-  color: white;
-  text-align:center;
-  font-family: 'Raleway', sans-serif;
-  margin-top: 20px;
-}
-.sober {
-  color:white;
-  font-family: 'Raleway', sans-serif;
-  margin-bottom: 30px;
-
-}
-li {
-  display: block;
-}
-.fa-users {
-  color: white;
-  margin-bottom: 30px;
-}
-.fa-home { color: white; margin-bottom: 30px;}
-.people {
-  color: white;}
-  .col-xs-6 .col-sm-4 {
-    margin-left:20px;
-    margin-right:20px;
-    margin-top: 20px
-  }
 
 
-//about us
-.the_crew {
-  height: 600px;
-  display: table;
 
-  width: 100%;
-  height: auto;
-  padding: 200px 0;
 
-  text-align: center;
-  background: image_url('ring3crop.png') no-repeat bottom center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-.about {
-  text-align:center;
-  font-family: 'Raleway', sans-serif;
-  color: grey;
-
-}
-.crew{
-  font-size: 24px;
-  text-align: center;
-
-  font-family: 'Raleway', sans-serif;
-  color: grey;
-}
 //modal styling//
 .login_modal_footer{margin-top:5px;}
 .login_modal_header .modal-title {text-align: center;font-family:'Philosopher',sans-serif; }
