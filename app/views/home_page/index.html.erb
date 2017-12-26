@@ -14,7 +14,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container-fluid">
-          <a class="navbar-brand js-scroll-trigger navbar-left" href="#page-top">  <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%></a>
+          <a class="navbar-brand js-scroll-trigger navbar-left" href="houses">  <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%></a>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
 
@@ -22,13 +22,16 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class=" providers nav-link js-scroll-trigger" href="provders" style="color:white; font-family:raleway">providers</a>
+                <a class=" providers nav-link js-scroll-trigger" href="#login" style="color:white; font-family:raleway">providers</a>
               </li>
               <li class="nav-item">
-                <a class=" about nav-link js-scroll-trigger" href="#about" style="color:white; font-family:raleway">about</a>
+                <a class=" about nav-link js-scroll-trigger" href="about" style="color:white; font-family:raleway">about</a>
               </li>
               <li class="nav-item">
-                <a class=" social nav-link js-scroll-trigger" href="#about" style="color:white; font-family:raleway">social</a>
+                <a class=" about nav-link js-scroll-trigger" href="blog" style="color:white; font-family:raleway">blog</a>
+              </li>
+              <li class="nav-item">
+                <a class=" social nav-link js-scroll-trigger" href="social" style="color:white; font-family:raleway">social</a>
               </li>
               <li class="nav-item">
                 <a class="click nav-link js-scroll-trigger" data-toggle="modal" data-target="#login" style="color:white; font-family:raleway">signup</a>
@@ -44,15 +47,13 @@
         <div class="intro-body">
           <div class="row">
           <div class="img-fluid mx-auto" id ="lifebuoy">
-            <!-- <%=image_tag("lifebuoy.jpg", alt:"lifebuoy", class: "img-fluid")%> -->
-
 
   <%=image_tag("logolarge.png", alt: "logo", class: "img-fluid logo_large")%>
 
               <div class="col-md-12 mx-auto">
                 <p class="intro-text">saving lives
                 </p>
-                <button type="button" class="btn btn-outline-light" id="started" data-toggle="modal" data-target="#login">
+                <button type="button" class="btn btn-outline-light" id="started" data-toggle="modal" data-target="signup">
                 list a house
                 </button>
 
@@ -61,7 +62,7 @@
           </div>
         </div>
       </header>
-
+<!-- modal for signup or login -->
       <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       	<div class="modal-dialog">
           	<div class="modal-content">
@@ -90,8 +91,8 @@
 
       	        		<div class='modal-body-right'>
       	        			<div class="modal-social-icons">
-      	        				<a href='#' class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons" style="width:40px; height:40px;"></i> Facebook signin </a>
-      	        				<a href='#' class="btn btn-default google"> <i class="fa fa-google-plus modal-icons"></i> Google signin </a>
+      	        				<a href='#' class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons" style="width:40px; height:40px;"></i> Facebook sign in </a>
+      	        				<a href='#' class="btn btn-default google"> <i class="fa fa-google-plus modal-icons" style="width:40px; height:40px;"></i> Google sign in </a>
       	        			</div>
       	        		</div>
       	        		<!-- <div id='center-line'> OR </div> -->
@@ -103,9 +104,7 @@
             		</div>
           	</div>
         	</div>
-      </div>
-      <!-- About Section -->
-
+      </div> 
 </body>
 
 </html>

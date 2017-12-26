@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
 
 
+  get 'blog/index'
+
+  get 'blog/each'
+
   get 'post' => 'blog#post'
 
   get 'each_post' => 'blog/each_post'

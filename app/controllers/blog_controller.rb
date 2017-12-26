@@ -1,7 +1,7 @@
 class BlogController < ApplicationController
-  def post
+  def index
   end
 
-  def each_post
+  def each
   end
 end
