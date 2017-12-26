@@ -29,6 +29,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'bootstrap_form'
+
+gem "font-awesome-rails"
+gem 'simple_form', '~> 3.2'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'bootstrap-sass', '~> 3.2.0'
 source 'https://rails-assets.org' do

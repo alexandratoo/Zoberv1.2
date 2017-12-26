@@ -5,8 +5,10 @@
           Menu
 </button>
 <%= form_tag(houses_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "search homes" %>
-<%= submit_tag "Search", :name => nil %>
+<%= text_field_tag :search, params[:search], placeholder: "enter city, state or zipcode" %>
+<%= button_tag(type: "submit", class: "houses_submit") do %>
+  <span><i class="glyphicon glyphicon-pencil"></i>search</span>
+<% end %>
 <% end %>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
