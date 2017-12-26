@@ -2,6 +2,9 @@ nav {
   background-color: #ef8b3e;
 
 }
-.nav-link.js-scroll-trigger {
+.nav-link .js-scroll-trigger {
   color: white;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #ffffff;
 }

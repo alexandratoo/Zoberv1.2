@@ -17,10 +17,10 @@ html, body {
 }
 //nav bar styling//
 .tinylogo {margin-right: 100px;}
-.providers { text-color:white}
-.social {color:white;}
-.signin {color:white;}
-.about {color: white;}
+.navbar-light .navbar-toggler {
+    color: #ffffff;
+    border-color: #ffffff;
+}
 .navbar {
    background-color: transparent;
    background: transparent;
@@ -29,7 +29,7 @@ html, body {
 .nav-item {color:white;}
 
 .nav-link { color: #ffffff; }
-.navbar-light .navbar-nav .nav-link {color: #e9ecef;}
+.navbar-light .navbar-nav .nav-link {color: #ffffff;}
 //masthead styling
 .masthead {
   display: table;
