@@ -1,5 +1,5 @@
 <% content_for :head do %>
-     <link rel="stylesheet" href="/assets/footer_main.scss">
+     <!-- <link rel="stylesheet" href="/assets/footer_main.scss"> -->
      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
      <% end %>
 <footer class="footer_main">
@@ -9,6 +9,12 @@
           <a href="#" class="social-icons"><i class="fa fa-instagram fa-2x"></i></a>
           <a href="#" class="social-icons"><i class="fa fa-twitter fa-2x"></i></a>
       </div>
+<div class='row-fluid'>
+     <li class='links'><%= link_to "about",   about_path %></li>
+     <li class='links'><%= link_to "contact", contact_path %></li>
+   </div>
+
+
       <p class="copyright">Copyright &copy; Zober 2017</p>
 
   </div>
