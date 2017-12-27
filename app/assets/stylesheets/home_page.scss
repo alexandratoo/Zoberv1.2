@@ -16,7 +16,7 @@ html, body {
 
 }
 //nav bar styling//
-.tinylogo {margin-right: 100px;}
+// .tinylogo {margin-right: 100px;}
 .navbar-light .navbar-toggler {
     color: #ffffff;
     border-color: #ffffff;
@@ -148,3 +148,9 @@ width:100%;
     color: grey;}
 .search_field {width: 100%; }
 input {display:inline; border-radius: 15px 15px 15px 15px;}
+//nav link styling//
+a{color:white;
+text-align:center;}
+li.nav-item{
+  color:white;
+}
