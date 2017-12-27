@@ -50,18 +50,13 @@
 
   <%=image_tag("logolarge.png", alt: "logo", class: "img-fluid logo_large")%>
 
-              <div class="col-md-12 mx-auto">
-                <p class="intro-text">saving lives
-                </p>
-                <%= form_tag(houses_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "search homes" %>
-    <%= submit_tag "Search", :name => nil %>
+              <div class="col-md-8 mx-auto">
+                <p class="intro-text">saving lives</p>
+<%= form_tag(houses_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "search homes", class: "search_field" %>
+    <%= submit_tag "Search", :name => nil, class: 'house_submit' %>
 <% end %>
-                <!-- <button type="button" class="btn btn-outline-light" id="started" data-toggle="modal" data-target="signup">
-                list a house
-                </button> -->
-
-              </div>
+  </div>
             </div>
           </div>
         </div>
