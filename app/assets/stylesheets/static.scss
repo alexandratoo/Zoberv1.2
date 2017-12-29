@@ -1,3 +1,14 @@
 // Place all the styles related to the Static controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper_fluid {
+  margin-top:200px;
+}
+.contact{text-align:center; font-family:Raleway; color:#ef8b3e; font-size:6rem; font-weight:1000;}
+.company{text-align:center; font-family:Raleway}
+.text-list-contact{margin-top: 60px;background-color:white;text-align:center; font-family:Raleway; color:grey; font-weight:500; font-size: 3rem;}
+.contact-address {text-align:center; font-family:Raleway; color:grey; font-weight:300; border-bottom: 2px solid #ef8b3e; font-size: 1.5rem;}
+body{color: #ffffff;}
+.text-list{color:white;}
+.col-sm-12 {text-align:center;}
+.col-sm-6{display:inline; text-align:center; font-size: 1.5rem; font-weight:400; font-family:Raleway;}
