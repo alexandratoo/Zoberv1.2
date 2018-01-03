@@ -2,9 +2,6 @@ Rails.application.routes.draw do
 
 
 
-  get 'static/about'
-
-  get 'static/contact'
 
   get 'blog/index'
 
@@ -21,6 +18,7 @@ Rails.application.routes.draw do
   get 'houses/home'
 get 'new' => 'users#new'
   root 'home_page#index'
+  get 'index'=> 'providers#index'
   get 'signup' => 'providers#signup'
   get 'about' => 'static#about'
   get 'contact' => 'static#contact'
