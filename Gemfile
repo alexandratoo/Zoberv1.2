@@ -11,6 +11,9 @@ gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 
+# For hashing passwords
+gem 'bcrypt-ruby', '~> 3.0.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
