@@ -2,6 +2,40 @@
 <% provide(:title, 'Sign up') %>
 <!-- <h1>Sign up</h1>
 <p>This will be a signup page for new users.</p> -->
-<%= render partial: "layouts/signup_form" %>
+<%# render partial: "layouts/signup_form" //testing the form below for basic signup %>
+<h1>Signup</h1>
+<%= form_for(@user) do |f| %>
+<% if @user.errors.any? %>
+<div id="error_alert">
+  <h3><%= pluralize(@user.errors.count, "error")%></h3>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+    <li>
+      <%= error %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %>
+    <%= f.text_field :password_confirmation %>
+  </p>
+
+  <p>
+    <%= f.submit :"Submit" %>
+  </p>
+
+<% end %>
+
 <%= render 'layouts/modal' %>
 <%= render 'layouts/footer_main'%>
