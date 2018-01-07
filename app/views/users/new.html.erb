@@ -5,42 +5,43 @@
 <%# render partial: "layouts/signup_form" //testing the form below for basic signup %>
 <h1>Signup</h1>
 <%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_alert">
-      <h3><%= pluralize(@user.errors.count, "error")%></h3>
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-        <li>
-          <%= error %>
-        </li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% if @user.errors.any? %>
+<div id="error_alert">
+  <h3><%= pluralize(@user.errors.count, "error")%></h3>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+    <li>
+      <%= error %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-<p>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-</p>
+  <p>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %>
+    <%= f.text_field :password_confirmation %>
+  </p>
 
-<p>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-</p>
-
-<p>
-  <%= f.label :encrypted_password %>
-  <%= f.text_field :password %>
-</p>
-
-<!-- <p>
-  <%= f.label :password_confirmation %>
-  <%= f.text_field :password_confirmation %>
-</p> -->
-
-<p>
-  <%= f.submit :"Submit" %>
-</p>
+  <p>
+    <%= f.submit :"Submit" %>
+  </p>
 
 <% end %>
 
