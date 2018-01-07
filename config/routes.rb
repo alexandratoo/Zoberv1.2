@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-
-
-
   get 'blog/index'
 
   get 'blog/each'
@@ -16,12 +13,19 @@ Rails.application.routes.draw do
   get 'individual' => 'houses#individual'
 
   get 'houses/home'
-get 'new' => 'users#new'
-  root 'home_page#index'
-  get 'index'=> 'providers#index'
-  get 'signup' => 'providers#signup'
-  get 'about' => 'static#about'
-  get 'contact' => 'static#contact'
-  resources :houses
+  get 'new' => 'users#new'
+
+  root'home_page#index'
+  resources :houses, :users, :only => [:new, :create, :index]
+  
+  get '/index'=> 'providers#index'
+  get '/signup' => 'providers#signup'
+  get '/login' => 'sessions#login'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
+
+  get '/about' => 'static#about'
+  get '/contact' => 'static#contact'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
