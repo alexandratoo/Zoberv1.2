@@ -4,7 +4,7 @@
 <p>This will be a signup page for new users.</p> -->
 <%# render partial: "layouts/signup_form" //testing the form below for basic signup %>
 <div class="mainContent">
-  <div class="container-fluid user_signup">
+<div class="signup container-fluid">
 <h1 class="largeHeader">signup</h1>
 <%= form_for(@user) do |f| %>
 <% if @user.errors.any? %>
@@ -20,22 +20,22 @@
 </div>
 <% end %>
 
-<div class="signup container-fluid">
+
   <p>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.label :email %> <br>
+    <%= f.text_field :email %> <br>
   </p>
   <p>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.label :username %> <br>
+    <%= f.text_field :username %> <br>
   </p>
   <p>
-    <%= f.label :password %>
-    <%= f.text_field :password %>
+    <%= f.label :password %> <br>
+    <%= f.text_field :password %> <br>
   </p>
   <p>
-    <%= f.label :password_confirmation %>
-    <%= f.text_field :password_confirmation %>
+    <%= f.label :password_confirmation %> <br>
+    <%= f.text_field :password_confirmation %> <br>
   </p>
 <p>
   <div class="col_2">
