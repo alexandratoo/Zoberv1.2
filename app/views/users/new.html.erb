@@ -3,7 +3,9 @@
 <!-- <h1>Sign up</h1>
 <p>This will be a signup page for new users.</p> -->
 <%# render partial: "layouts/signup_form" //testing the form below for basic signup %>
-<h1>Signup</h1>
+<div class="mainContent">
+  <div class="container-fluid user_signup">
+<h1 class="largeHeader">signup</h1>
 <%= form_for(@user) do |f| %>
 <% if @user.errors.any? %>
 <div id="error_alert">
@@ -18,7 +20,7 @@
 </div>
 <% end %>
 
-<div class="signup">
+<div class="signup container-fluid">
   <p>
     <%= f.label :email %>
     <%= f.text_field :email %>
@@ -35,11 +37,21 @@
     <%= f.label :password_confirmation %>
     <%= f.text_field :password_confirmation %>
   </p>
-
+<p>
+  <div class="col_2">
+    <div class='row-fluid'>
+    <h4 class='profile'>upload profile picture</h4>
+    <div class="placeholderPic"></div>
+    <button href="" class="url btn btn-sm btn-light">choose photo from url</button>
+    <button href="" class="computer btn btn-sm btn-light">upload a photo</button>
+  </div><!-- end 2 column upload profile pic -->
+</div>
+</p>
   <p>
-    <%= f.submit :"Submit" %>
+    <%= f.submit :"Submit", :class => 'createAccount'%>
   </p>
-
+</div>
+</div>
 </div>
 
 <% end %>
