@@ -11,16 +11,21 @@
   <ul>
     <% @user.errors.full_messages.each do |msg| %>
     <li>
-      <%= error %>
+      <%= msg %>
     </li>
     <% end %>
   </ul>
 </div>
 <% end %>
 
+<div class="signup">
   <p>
     <%= f.label :email %>
     <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
   </p>
   <p>
     <%= f.label :password %>
@@ -34,6 +39,8 @@
   <p>
     <%= f.submit :"Submit" %>
   </p>
+
+</div>
 
 <% end %>
 

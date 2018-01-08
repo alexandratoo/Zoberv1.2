@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :houses, :users, :only => [:new, :create, :index]
 
   get 'blog/index'
 
@@ -16,13 +17,13 @@ Rails.application.routes.draw do
   get 'new' => 'users#new'
 
   root'home_page#index'
-  resources :houses, :users, :only => [:new, :create, :index]
-  
+
   get '/index'=> 'providers#index'
-  get '/signup' => 'providers#signup'
-  get '/login' => 'sessions#login'
-  post '/login' => 'sessions#create'
-  delete '/logout' => 'sessions#destroy'
+  get '/signup' => 'users#new'
+
+  get '/login' => "sessions#login"
+  post '/login' => "sessions#create"
+  delete '/logout' => "sessions#destroy"
 
   get '/about' => 'static#about'
   get '/contact' => 'static#contact'
