@@ -19,23 +19,29 @@
   </ul>
 </div>
 <% end %>
-
-
+<p>
+  <%= f.label :first_name %> <br>
+  <%= f.text_field :first_name, :class=>'signup_field' %> <br>
+</p>
+<p>
+  <%= f.label :last_name %> <br>
+  <%= f.text_field :last_name, :class=>'signup_field' %> <br>
+</p>
   <p>
     <%= f.label :email %> <br>
-    <%= f.text_field :email %> <br>
+    <%= f.text_field :email, :class=>'signup_field' %> <br>
   </p>
   <p>
     <%= f.label :username %> <br>
-    <%= f.text_field :username %> <br>
+    <%= f.text_field :username, :class=>'signup_field' %> <br>
   </p>
   <p>
     <%= f.label :password %> <br>
-    <%= f.text_field :password %> <br>
+    <%= f.text_field :password, :class=>'signup_field' %> <br>
   </p>
   <p>
     <%= f.label :password_confirmation %> <br>
-    <%= f.text_field :password_confirmation %> <br>
+    <%= f.text_field :password_confirmation,  :class=>'signup_field'%> <br>
   </p>
 <p>
   <div class="col_2">
