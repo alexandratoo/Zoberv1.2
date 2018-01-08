@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       # They gave us a good password
       session[:id] = user.id
       redirect_to root_path,
-        notice: "Welcome back #{user.first_name.titleize}."
+        notice: "Welcome back #{user.username.titleize}."
     else
       flash[:error] = 'Invalid email or password'
       render :login
