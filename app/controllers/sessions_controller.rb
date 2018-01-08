@@ -1,21 +1,25 @@
 class SessionsController < ApplicationController
-
   def login
   end
 
   def create
-    @user = User.find_by_email(params[:login][:email])
-    if @user && @user.authenticate(params[:login][:password])
-      session[:user_id] = @user.id
-      redirect_to root_path, notice: 'Logged in sucessfully'
-
+    user = User.where(email: params[:email]).first
+    if user && user.authenticate(params[:password])
+      # They gave us a good password
+      session[:id] = user.id
+      redirect_to root_path,
+        notice: "Welcome back #{user.first_name.titleize}."
     else
-      redirect_to :login, notice: 'Invalid email or password.'
+      flash[:error] = 'Invalid email or password'
+      render :login
     end
   end
 
   def destroy
-    session.delete(:user_id)
-    redirect_to root_path, success: 'Logged out.'
+    if user = current_user
+      session.delete(:id)
+      redirect_to root_path,
+        notice: "#{user.email} has been logged out"
+    end
   end
 end
