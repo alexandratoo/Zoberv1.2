@@ -1,5 +1,6 @@
 class HousesController < ApplicationController
-  def list
+  def index
+    @houses = House.all
   end
 
   def individual
