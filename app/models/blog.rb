@@ -1,4 +1,5 @@
 class Blog < ApplicationRecord
-  belongs_to :users
+  
+  validate :title, :post
   has_many :comments
 end

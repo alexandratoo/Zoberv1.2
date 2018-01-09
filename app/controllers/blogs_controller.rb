@@ -9,28 +9,31 @@ class BlogsController < ApplicationController
     @blog = Blog.new
   end
   def create
-    @blog = Blog.new(blog_params)
-    if @blog.save
-      redirect_to @blog, notice: "The blog entry is created!"
+    @blog = Blog.new
+    if @blog.save(blog_params)
+      flash[:notice] = "Successfully created post!"
+       render :index
     else
-      render 'new'
+      flash[:alert] = "Error creating new post!"
+     render :new
     end
   end
   def edit
   end
   def update
-    if @blog.update(blog_params)
+    if @blog.update_attributes(blog_params)
       redirect_to @blog, notice: "Update successful"
     else
+      flash[:alert] ="Error updating blog"
       render 'edit'
     end
   end
   def destroy
     @blog.destroy redirect_to root_path, notice: "Blog entry destroyed"
   end
-  private
+private
   def blog_params
-    params.require(:blog).permit(:title, :post, :name, :website, :image)
+    params.require(:blog).permit(:title, :post, :image)
   end
   def find_blog
     @blog = Blog.find(params[:id])
