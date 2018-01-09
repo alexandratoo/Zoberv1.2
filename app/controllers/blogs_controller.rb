@@ -1,9 +1,10 @@
 class BlogsController < ApplicationController
   before_action :find_blog, only: [:show, :edit, :update, :destroy]
   def index
-    @blogs = Blog.all.order("created_at DESC")
+    @blogs = Blog.all
   end
   def show
+    @blog = Blog.find(params[:id])
   end
   def new
     @blog = Blog.new
@@ -32,10 +33,11 @@ class BlogsController < ApplicationController
     @blog.destroy redirect_to root_path, notice: "Blog entry destroyed"
   end
 private
-  def blog_params
-    params.require(:blog).permit(:title, :post, :image)
-  end
-  def find_blog
-    @blog = Blog.find(params[:id])
-  end
+def blog_params
+  params.require(:blog).permit(:title, :body)
+end
+
+def find_blog
+  @blog = Blog.find(params[:id])
+end
 end
