@@ -1,2 +1,10 @@
-<%= render 'layouts/header' %>
+
+<div class="container-fluid">
+<% @blogs.each do |blog| %>
+<div class="post-wrapper">
+  <h2 class="title"><%= link_to blog.title, blog, class: "btn btn-primary" %> </h2>
+  <p class="date"><%= blog.created_at.strftime("%B, %d, %Y" ) %> </p>
+<% end %>
+</div>
+
 <%= render 'layouts/footer_main' %>
