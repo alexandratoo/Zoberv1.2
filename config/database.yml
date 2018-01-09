@@ -14,8 +14,8 @@ development:
   encoding: unicode
   database: myapp_development
   pool: 5
-  # username: alexandratoo
-  # password: mali1978
+  username: alexandratoo
+  password: mali1978
 
 test:
   adapter: postgresql

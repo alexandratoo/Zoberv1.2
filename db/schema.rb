@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180108192400) do
+ActiveRecord::Schema.define(version: 20180107193534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,23 +18,10 @@ ActiveRecord::Schema.define(version: 20180108192400) do
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.string "post"
-    t.string "image"
     t.string "name"
     t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "ckeditor_assets", id: :serial, force: :cascade do |t|
-    t.string "data_file_name", null: false
-    t.string "data_content_type"
-    t.integer "data_file_size"
-    t.string "type", limit: 30
-    t.integer "width"
-    t.integer "height"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -98,6 +85,11 @@ ActiveRecord::Schema.define(version: 20180108192400) do
     t.string "email"
     t.string "username"
     t.string "password_digest"
+    t.string "provider"
+    t.string "uid"
+    t.string "name"
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,4 +1,23 @@
-<%= render 'layouts/header' %>
-<h1>New Blog</h1>
-<%= render "form" %>
-<%= link_to "Back", root_path %>
+<div class="container-fluid">
+<h1>new blog</h1>
+<%= form_for :blog, url: blogs_path do |f| %>
+<p>
+<%= f.label :title %><br>
+<%= f.text_field :title %>
+</p>
+<p>
+<%=f.label :post %><br>
+<%= f.text_area :post %>
+</p>
+<p>
+<%= f.label :name %><br>
+<%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :website %><br>
+  <%= f.text_field :website %>
+</p>
+<p>
+  <%= f.submit %>
+<% end %>
+<%= render 'layouts/footer_main' %>
