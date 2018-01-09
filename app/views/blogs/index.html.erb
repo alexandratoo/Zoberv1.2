@@ -1,0 +1,6 @@
+<%= render 'layouts/header' %>
+<% @blogs.each do |blog| %>
+     <h1><%= link_to "blog.title", blog %></h1>
+     <p><%= blog.post %></p>
+     <%= image_tag @blog.image_url.to_s, alt: “Image”, class: "img-responsive" %>
+<% end %>

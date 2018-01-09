@@ -1,17 +1,13 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   get 'g_sessions/create'
 
   get 'g_sessions/destroy'
 
   resources :houses, :users, :only => [:new, :create, :index]
 
-  get 'blog/index'
+resources :blogs
 
-  get 'blog/each'
-
-  get 'post' => 'blog#post'
-
-  get 'each_post' => 'blog/each_post'
 
   get 'list' => 'houses#list'
 

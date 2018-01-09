@@ -16,6 +16,9 @@ gem 'bcrypt-ruby', '3.1.2'
 
 gem "omniauth-google-oauth2", "~> 0.2.1"
 
+
+
+gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -24,7 +27,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem 'ckeditor'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -46,7 +49,7 @@ source 'https://rails-assets.org' do
 end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem "omniauth-google-oauth2", "~> 0.2.1"
+
 gem "pundit"
 group :development, :test do
   gem 'pg'
