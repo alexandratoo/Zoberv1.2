@@ -2,6 +2,17 @@ class SessionsController < ApplicationController
   def login
   end
 
+  def oauth_create
+    user = User.from_omniauth(request.env["omniauth.auth"])
+    session[:id] = user.id
+    redirect_to root_path
+  end
+
+  def oauth_destroy
+    session[:id] = nil
+    redirect_to root_path
+  end
+
   def create
     user = User.where(email: params[:email]).first
     if user && user.authenticate(params[:password])
