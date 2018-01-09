@@ -14,6 +14,8 @@ gem 'rails', '~> 5.1.4'
 # For hashing passwords
 gem 'bcrypt-ruby', '3.1.2'
 
+gem "omniauth-google-oauth2", "~> 0.2.1"
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -50,7 +52,7 @@ group :development, :test do
   gem 'pg'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # env gem for api keys and such 
+  # env gem for api keys and such
   gem 'dotenv-rails'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
