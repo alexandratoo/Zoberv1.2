@@ -3,6 +3,7 @@
 </div>
 <div class="container-fluid">
   <div class="page-wrapper">
+    <%= image_tag @blog.image.url, alt:"Image", class: "image-responsive"  %>
 <h1 class='title'>
   <%= @blog.title %>
 </h1>

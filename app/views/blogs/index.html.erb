@@ -12,7 +12,7 @@
 
 <% @blogs.each do |blog| %>
 <div class="panel">
-
+ <%= image_tag @blog.image.url, alt:"Image", class: "image-responsive"  %>
   <h2 class="title"><%= link_to blog.title, blog, class: "blog_link" %> </h2>
   <p class="date"><%= blog.created_at.strftime("%B, %d, %Y" ) %> </p>
 <% end %>
