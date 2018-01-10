@@ -1,4 +1,8 @@
-<div class="page-wrapper">
+<div class="container-fluid">
+  <%= render 'layouts/header' %>
+</div>
+<div class="container-fluid">
+  <div class="page-wrapper">
 <h1 class='title'>
   <%= @blog.title %>
 </h1>
@@ -12,8 +16,14 @@
   <%= @blog.website %>
 <p class="date">
   Submitted <%= time_ago_in_words(@blog.created_at) %> ago
+  <%= link_to 'edit', edit_blog_path(@blog), class: "edit-link" %>
+  <%= link_to 'delete', blog_path(@blog), method: :delete, data:{ confirm: 'are you sure?'}, class: "delete-link" %>
 </p>
 <p class="body">
   <%= @blog.post %>
 </p>
+</div>
+</div>
+<div class="container-fluid">
+  <%= render 'layouts/footer_main' %>
 </div>

@@ -1,32 +1,31 @@
-<%= simple_form_for(@blog) do |f| %>
 <% if @blog.errors.any? %>
-   <div id="error_explanation">
-     <h2>
-       <%= "#{pluralize(@blog.errors.count, "error")} prohibited this blog from being saved:" %>
-     </h2>
-     <ul>
-       <% @blog.errors.full_messages.each do |msg| %>
-         <li>
-           <%= msg %>
-         </li>
-         <% end %>
-     </ul>
-   </div>
- <% end %>
- <div class="form-group">
-     <%= f.label :title %><br>
-   </div>
-     <%= f.text_field :title, placeholder: "Type the blog title here" %><br>
-     <%= f.label :content %><br>
-     <%= f.text_area :post, size: "60x12", placeholder: "Type the blog text here" %><br>
-     <%= f.text_area :name, size: "60x12", placeholder: "Type the blog text here" %><br>
-     <%= f.text_area :website, size: "60x12", placeholder: "Type the blog text here" %><br>
+     <div>
+          <p><%= pluralize(@blog.errors.count, "error") %> prevented this blog from saving.</p>
+          <ul>
+               <% @blog.errors.full_messages.each do |msg| %>
+               <li><%= msg %></li>
+               <% end %>
+          </ul>
+     </div>
+<% end %>
+<%= form_for @blog do |f| %>
 
-
-       <%= f.label :image %><br>
-       <%= f.file_field :image %><br>
-
-<div class="form-group">
-     <%= f.button :submit  %>
-   </div>
+<p>
+<%= f.label :title %><br>
+<%= f.text_field :title %>
+</p>
+<p>
+<%=f.label :post %><br>
+<%= f.text_area :post %>
+</p>
+<p>
+<%= f.label :name %><br>
+<%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :website %><br>
+  <%= f.text_field :website %>
+</p>
+<p>
+  <%= f.submit %>
 <% end %>

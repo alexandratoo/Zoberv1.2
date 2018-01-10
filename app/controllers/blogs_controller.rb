@@ -4,15 +4,36 @@ class BlogsController < ApplicationController
     @blogs = Blog.all.order('created_at DESC')
   end
   def new
+    @blog = Blog.new
   end
   def create
     @blog = Blog.new(blog_params)
 
     @blog.save(validate: false)
     redirect_to @blog
+
   end
+
   def show
     @blog = Blog.find(params[:id])
+  end
+  def edit
+    @blog = Blog.find(params[:id])
+  end
+  def update
+    @blog = Blog.find(params[:id])
+
+if @blog.update(params[:blog].permit(:title, :post, :name, :website))
+
+  redirect_to @blog
+else
+  render 'edit'
+end
+  end
+  def destroy
+    @blog = Blog.find(params[:id])
+    @blog.destroy
+    redirect_to blogs_path
   end
   private
   def blog_params
