@@ -25,21 +25,21 @@
 </div>
 </div>
 </article>
-<p class="name">
+<p class="name"> name:
   <%= @blog.name %>
 </p>
-<p class="website">
-  <%= @blog.website %>
+<p class="website"> website:
+  <%= link_to @blog.website, class: "website-link" %></p>
 <p class="date">
   Submitted <%= time_ago_in_words(@blog.created_at) %> ago
   <%= link_to 'edit', edit_blog_path(@blog), class: "edit-link" %>
   <%= link_to 'delete', blog_path(@blog), method: :delete, data:{ confirm: 'are you sure?'}, class: "delete-link" %>
 </p>
-
+<%= social_share_button_tag(@blog.title) %>
 <div id="comments">
-  <h2><%= @blog.comments.count %> Comments</h2>
+  <h2 class="comments-count"><%= @blog.comments.count %> comments</h2>
 <%= render @blog.comments %>
-<h3>add a comment:</h3>
+<h3 class="comments-count">add a comment:</h3>
 <%= render 'comments/form' %>
 
 

@@ -1,6 +1,10 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+label {font-family: 'Khula', sans-serif;}
+input{font-family: 'Khula', sans-serif;}
+text_area{font-family: 'Khula', sans-serif;}
+.new_comment{ margin-left:60px;}
 .delete-link {color: #f47f49;}
 .post-comments{
 	border: 1px solid #eee;
@@ -16,14 +20,19 @@
 	background: #fcfcfc;
 	color: #6b6e80;
 	position: relative;
+  font-family: 'Khula', sans-serif;
 }
-h3{  margin-bottom: 20px;
+h3{  font-family: 'Khula', sans-serif;
+  margin-bottom: 20px;
   margin-left: 60px;
 margin-right: 0px;
   padding: 10px 20px;
   position: relative;}
-  h2   {margin-bottom: 20px;
+  h2   {font-family: 'Khula', sans-serif;
+    margin-bottom: 20px;
     margin-left: 60px;
 	margin-right: 0px;
     padding: 10px 20px;
     position: relative;}
+    .meta{font-family: 'Khula', sans-serif; font-size:14px;}
+    .comment-body{font-family: 'Khula', sans-serif;font-size:20px;}

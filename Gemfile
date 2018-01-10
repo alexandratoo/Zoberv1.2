@@ -18,7 +18,7 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 
 
 
-gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -50,7 +50,9 @@ source 'https://rails-assets.org' do
 end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'social-share-button'
+gem 'carrierwave'
+gem 'mini_magick'
 gem "pundit"
 group :development, :test do
   gem 'pg'
