@@ -7,20 +7,41 @@
 
 <script>
   function myMap() {
-    var mapProp= {
-        center:new google.maps.LatLng(37.7576171,-122.5776844),
-        zoom:9, 
+    const mapProp= {
+        center: new google.maps.LatLng(37.7576171,-122.5776844),
+        zoom: 10,
     };
-    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    }
+    const map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(37.7576171,-122.4976844),
+      map: map
+    });
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(37.7576171,-122.4875824),
+      map: map
+    });
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(37.7876172,-122.4776854),
+      map: map
+    });
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(37.7876171,-122.4776874),
+      map: map
+    });
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(37.7876172,-122.4776844),
+      map: map
+    });
+  }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key= + <%=ENV['GOOGLE_MAP_API_KEY']%> + &callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key= + <%#ENV['GOOGLE_MAP_API_KEY'], don't have env file so using a temp key%> <%="AIzaSyAvIU6QYS7hKm6JNGrNkyBFZ9vuzUsnzaU"%> + &callback=myMap"></script>
 
 <!-- bootstrap cards for houses -->
 <div class="row">
   <% @houses.each do |house| %>
-    <div class="col-6 col-md-4"> 
+    <div class="col-6 col-md-4">
       <div class="card" style="width: 20rem;">
         <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Hipping_Hall_2.jpg/320px-Hipping_Hall_2.jpg" alt="Card image cap">
         <div class="card-block">
