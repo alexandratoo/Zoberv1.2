@@ -1,3 +1,4 @@
+<div class="page-wrapper">
 <h1 class='title'>
   <%= @blog.title %>
 </h1>
@@ -10,8 +11,9 @@
 <p>
   <%= @blog.website %>
 <p class="date">
-  Submitted <%= time_ago_in_words(@blog.created_at) %> Ago
+  Submitted <%= time_ago_in_words(@blog.created_at) %> ago
 </p>
 <p class="body">
   <%= @blog.post %>
 </p>
+</div>

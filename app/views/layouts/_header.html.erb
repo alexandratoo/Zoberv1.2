@@ -25,7 +25,7 @@
           <a class="nav-link js-scroll-trigger" href="#about">social</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="blog/index">blog</a>
+          <a class="nav-link js-scroll-trigger" href="blogs">blog</a>
         </li>
         <li class="nav-item">
           <h3>Welcome back <%= current_user.first_name %></h3>
@@ -66,7 +66,7 @@
           <a class=" click nav-link js-scroll-trigger" href="new">signup</a>
         </li>
         <li class="nav-item">
-          <a class="click nav-link js-scroll-trigger" href="login" >login</a>
+          <a class="click nav-link js-scroll-trigger" href="/login" >login</a>
         </li>
       </ul>
     </div>
@@ -76,45 +76,3 @@
 <% end %>
 <!-- modal link for now, need to refactor into a partial -->
 <%=render 'layouts/modal' %>
-<!-- <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header login_modal_header">
-
-            <h2 class="modal-title" id="myModalLabel">Login to Your Account</h2>
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></div>
-          <div class="modal-body login-modal">
-
-            <div class="clearfix"></div>
-            <div id='social-icons-conatainer'>
-              <div class='modal-body-left'>
-                <div class="form-group">
-                      <input type="text" id="username" placeholder="Enter your name" value="" class="form-control login-field">
-
-                  </div>
-
-                  <div class="form-group">
-                      <input type="password" id="login-pass" placeholder="Password" value="" class="form-control login-field">
-
-                  </div>
-
-                  <a href="#" class="btn modal-login-btn">Login</a>
-                  <a href="#" class="login-link text-center">Lost your password?</a>
-              </div>
-
-              <div class='modal-body-right'>
-                <div class="modal-social-icons">
-                  <a href='#' class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons" style="width:40px; height:40px;"></i> Facebook sign in </a>
-                  <a href='#' class="btn btn-default google"> <i class="fa fa-google-plus modal-icons" style="width:40px; height:40px;"></i> Google sign in </a>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-          <div class="clearfix"></div>
-          <div class="modal-footer login_modal_footer">
-          </div>
-      </div>
-    </div>
-  </div> -->
