@@ -22,6 +22,14 @@
 <p class="body">
   <%= @blog.post %>
 </p>
+<div id="comments">
+  <h2><%= @blog.comments.count %> Comments</h2>
+<%= render @blog.comments %>
+<h3>add a comment:</h3>
+<%= render 'comments/form' %>
+
+
+</div>
 </div>
 </div>
 <div class="container-fluid">

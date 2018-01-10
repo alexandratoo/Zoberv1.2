@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(version: 20180107193534) do
 
   create_table "comments", force: :cascade do |t|
     t.string "name"
-    t.string "comment"
+    t.string "body"
+    t.bigint "blog_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["blog_id"], name: "index_comments_on_blog_id"
   end
 
   create_table "houses", force: :cascade do |t|
