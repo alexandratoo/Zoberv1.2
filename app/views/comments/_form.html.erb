@@ -1,6 +1,8 @@
+<div class="comment clearfix">
+  <div class="posts-comments">
 <%= form_for([@blog, @blog.comments.build]) do |f| %>
 <p>
-  <%= f.label :name %><br>
+  <%= f.label :name%><br>
   <%= f.text_field :name %>
 </p>
 <p>
@@ -11,3 +13,5 @@
 
 <p><%= f.submit %></p>
 <% end %>
+</div>
+</div>

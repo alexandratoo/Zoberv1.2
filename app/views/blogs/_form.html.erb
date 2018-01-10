@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <% if @blog.errors.any? %>
      <div>
           <p><%= pluralize(@blog.errors.count, "error") %> prevented this blog from saving.</p>
@@ -9,12 +10,9 @@
      </div>
 <% end %>
 <%= form_for @blog do |f| %>
+
 <p>
-  <%= f.label :image %><br>
-  <%= f.file_field :image %><br>
-</p>
-<p>
-<%= f.label :title %><br>
+<%= f.label :title, class: "form-label" %><br>
 <%= f.text_field :title %>
 </p>
 <p>
@@ -24,11 +22,16 @@
 <p>
 <%= f.label :name %><br>
 <%= f.text_field :name %>
-</p>
-<p>
+
   <%= f.label :website %><br>
   <%= f.text_field :website %>
 </p>
 <p>
+  <%= f.label :image %><br>
+  <%= f.file_field :image %><br>
+</p>
+<p>
   <%= f.submit %>
 <% end %>
+</p>
+</div>

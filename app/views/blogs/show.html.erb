@@ -2,27 +2,40 @@
   <%= render 'layouts/header' %>
 </div>
 <div class="container-fluid">
-  <div class="page-wrapper">
-    <%= image_tag @blog.image.url, alt:"Image", class: "image-responsive"  %>
+  <div class="hero-unit">
+
+    <%= image_tag @blog.image.url, alt:"Image", class: "img-responsive"  %>
+    <div class="row">
+              <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-heading">
 <h1 class='title'>
   <%= @blog.title %>
 </h1>
+</div>
+</div>
+</div>
+<article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
 <p class="body">
   <%= @blog.post %>
 </p>
-<p>
+</div>
+</div>
+</div>
+</article>
+<p class="name">
   <%= @blog.name %>
 </p>
-<p>
+<p class="website">
   <%= @blog.website %>
 <p class="date">
   Submitted <%= time_ago_in_words(@blog.created_at) %> ago
   <%= link_to 'edit', edit_blog_path(@blog), class: "edit-link" %>
   <%= link_to 'delete', blog_path(@blog), method: :delete, data:{ confirm: 'are you sure?'}, class: "delete-link" %>
 </p>
-<p class="body">
-  <%= @blog.post %>
-</p>
+
 <div id="comments">
   <h2><%= @blog.comments.count %> Comments</h2>
 <%= render @blog.comments %>

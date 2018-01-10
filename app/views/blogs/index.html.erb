@@ -1,19 +1,35 @@
 
 <%= render "layouts/header" %>
-<div id="main_content">
+<header class="masthead" style="background-image: url('halring.png')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>zober blog</h1>
+              <span class="subheading">zober stuff</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+<!-- <div id="main_content">
   <div id="header_blog">
     <p>all blogs</p>
     <div class="buttons">
       <button class="button"><%= link_to "new blog", new_blog_path %></button>
     </div>
   </div>
-</div>
+</div> -->
 <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-preview">
 
 <% @blogs.each do |blog| %>
 <div class="panel">
- <%= image_tag @blog.image.url, alt:"Image", class: "image-responsive"  %>
-  <h2 class="title"><%= link_to blog.title, blog, class: "blog_link" %> </h2>
+
+  <h3 class="title"><%= link_to blog.title, blog, class: "blog_link" %> </h3>
   <p class="date"><%= blog.created_at.strftime("%B, %d, %Y" ) %> </p>
 <% end %>
 </div>
@@ -28,6 +44,9 @@
   <% flash.each do |name, msg| %>
   <%= content_tag(:div, msg, class: "alert") %>
   <% end %>
+</div>
+</div>
+</div>
 </div>
 </div>
 <!-- <p class="signin">admin sign in</p> -->
