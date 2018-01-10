@@ -3,7 +3,7 @@
 </section>
 
 <!-- Google Map -->
-<div id="googleMap" style="width:100%;height:600px;"></div>
+<div id="googleMap" style="width:100%;height:900px;"></div>
 <div id="legend" style="width:100px;height:30px;"><h3>Legend</h3></div>
 
 <script>
@@ -141,6 +141,37 @@
     var div = document.createElement('div');
     div.innerHTML = '<img src="' + icon + '"> ' + `<span class="legend-items">${name}</span>`;
     legend.appendChild(div);
+
+    var contentString = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h1 id="firstHeading" class="firstHeading">Sober on the Coast</h1>'+
+        '<div id="bodyContent">'+
+        '<br><a style="color: orange; font-size: 4rem;" href="zober.co">zober.co</a>'+
+        '<p><b>Company:</b> Zober LLC' +
+        '(303)445-2114'+
+        '<p>Bacon ipsum dolor amet spare ribs fatback short loin cow picanha.'+
+        ' Prosciutto tri-tip flank, rump shankle burgdoggen filet mignon t-bone strip steak tongue shank. '+
+        'Heritage Site.</p>'+
+
+        '<p>Attribution: Uluru, <a style="color: orange;" href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+        'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+        '(last visited Jan 10, 2018).</p>'+
+        '</div>'+
+        '</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(37.7476171,-122.5076844),
+      map: map,
+      title: 'Uluru (Ayers Rock)'
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
 
     features.forEach((feature) => {
       var marker = new google.maps.Marker({
