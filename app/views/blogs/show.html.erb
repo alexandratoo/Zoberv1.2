@@ -4,7 +4,7 @@
 <div class="container-fluid">
   <div class="hero-unit">
 
-    <%= image_tag @blog.image.url , alt:"Image" , class: "img-responsive"  %>
+    <%= image_tag @blog.image.url   %>
     <div class="row-fluid">
               <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-heading">
@@ -17,17 +17,17 @@
 <article class=blog-content>
 
           <div class="col-lg-8 col-md-10 mx-auto">
-<p class="body-post">
-  <%= @blog.post %>
-</p>
+
+  <%= raw(@blog.post) %>
+
 </div>
 
 </article>
-<p class="name"> name:
+<p class="name">
   <%= @blog.name %>
 </p>
 <p class="website"> website:
-  <%= link_to @blog.website, class: "website-link" %></p>
+  <%= link_to @blog.website, class: "website-form-link" %></p>
 <p class="date">
   Submitted <%= time_ago_in_words(@blog.created_at) %> ago
   <%= link_to 'edit', edit_blog_path(@blog), class: "edit-link" %>

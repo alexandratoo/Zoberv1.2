@@ -107,7 +107,7 @@ img::-moz-selection {
 .image-responsive {max-width:360px;}
 .body-post { font-family: 'Khula', sans-serif; font-size:24px;}
 .comments-count {font-family: 'Khula', sans-serif; font-size:1.5rem; font-weight:200;}
-.website-link {color:#f47f49; font-weight: 400px; font-family: 'Khula', sans-serif; border-bottom: #626262;}
+
 //show page for blogs
 article
 {border: 1px solid #eee;
@@ -144,3 +144,14 @@ position: relative; }
 .read-more {color:#f47f49;margin-left:20px; font-family: 'Khula', sans-serif;}
 .name {font-family: 'Khula', sans-serif; font-size:20px;}
 .blog-content{border-top:1px solid black; border-bottom:1px solid black; margin:auto; background-color:#FFFFFF;;}
+.form-label-title{font-family: 'Khula', sans-serif; font-size:20px;}
+.form-label-post{font-family: 'Khula', sans-serif; font-size:20px;}
+.form-label-name{font-family: 'Khula', sans-serif; font-size:20px;}
+.form-label-website{font-family: 'Khula', sans-serif; font-size:20px;}
+.form-label-image{font-family: 'Khula', sans-serif; font-size:20px;}
+.field-website{width:250px;}
+.field-name{width:250px;}
+.field-title{width:250px;}
+.website{color: #f47f49;}
+.name {font-family: 'Khula', sans-serif; font-size:18px; color:#626262; float: right;}
+a .website-form-link {color:#f47f49; font-weight: 400px; font-family: 'Khula', sans-serif; border-bottom: #626262; float:right;}
