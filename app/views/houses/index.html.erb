@@ -2,7 +2,7 @@
   <%= render "layouts/header" %>
 </section>
 
-<div class="houses_list"> 
+<body>
   <div class='app-wrapper'>
     <div class='map-area'>
       <div id="googleMap"> </div>
@@ -15,12 +15,12 @@
         <div class="card-block">
           <p class="description"> <%= house.room_description %> </p>
           <p class= "name"> <%= house.name %> </p>
-          <p class="price"> <%=number_to_currency(house.price)%> </p> 
+          <p class="price"> <%=number_to_currency(house.price)%> </p>
         </div>
       <%end%>
     </div>
   </div>
-</div>
+</body>
 
 <section>
   <%= render "layouts/footer_main" %>

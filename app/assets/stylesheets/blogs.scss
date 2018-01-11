@@ -99,13 +99,13 @@ img::-moz-selection {
       form .form-group:first-child .floating-label-form-group {
         border-top: 1px solid #dee2e6; }
         .website{font-family: 'Khula', sans-serif; font-size:20px;}
-.blog_link {color: #f47f49; font-weight: 400; font-size: 4rem; font-family: 'Khula', sans-serif;}
+.blog_link {color: #f47f49; font-weight: 400; font-size: 3rem; font-family: 'Khula', sans-serif;}
 .edit-link {color: #f47f49; font-family: 'Khula', sans-serif;}
 .delete-link {color: #f47f49; font-family: 'Khula', sans-serif;}
 .page-wrapper {margin-top:160px;}
 .title {text-align:left; margin-top:40px;margin-bottom:40px; font-family: 'Khula', sans-serif;}
 .image-responsive {max-width:360px;}
-.body {border-radius:1px solid #626262; font-family: 'Khula', sans-serif; font-size:24px;}
+.body-post { font-family: 'Khula', sans-serif; font-size:24px;}
 .comments-count {font-family: 'Khula', sans-serif; font-size:1.5rem; font-weight:200;}
 .website-link {color:#f47f49; font-weight: 400px; font-family: 'Khula', sans-serif; border-bottom: #626262;}
 //show page for blogs
@@ -120,18 +120,20 @@ margin-right: 0px;
      -moz-border-radius: 4px;
        -o-border-radius: 4px;
       border-radius: 4px;
-background: #fcfcfc;
+// background: #fcfcfc;
 color: #6b6e80;
 position: relative;}
 .date {font-family: 'Khula', sans-serif; font-size:16px;}
 .panel
 //index page for blogs
-{border: 1px solid #eee;
+{border: 1px solid #626262;
+  margin-top:40px;
   margin-bottom: 20px;
   margin-left: 60px;
 margin-right: 0px;
   padding: 10px 20px;
-  position: relative;
+  // position: relative;
+  box-shadow: 10px 5px 5px #c0c0c0;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
        -o-border-radius: 4px;
@@ -141,3 +143,4 @@ color: #6b6e80;
 position: relative; }
 .read-more {color:#f47f49;margin-left:20px; font-family: 'Khula', sans-serif;}
 .name {font-family: 'Khula', sans-serif; font-size:20px;}
+.blog-content{border-top:1px solid black; border-bottom:1px solid black; margin:auto; background-color:#FFFFFF;;}

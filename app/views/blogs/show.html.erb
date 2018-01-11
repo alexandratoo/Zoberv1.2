@@ -4,8 +4,8 @@
 <div class="container-fluid">
   <div class="hero-unit">
 
-    <%= image_tag @blog.image.url, alt:"Image", class: "img-responsive"  %>
-    <div class="row">
+    <%= image_tag @blog.image.url , alt:"Image" , class: "img-responsive"  %>
+    <div class="row-fluid">
               <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-heading">
 <h1 class='title'>
@@ -13,17 +13,15 @@
 </h1>
 </div>
 </div>
-</div>
-<article>
-      <div class="container">
-        <div class="row">
+
+<article class=blog-content>
+
           <div class="col-lg-8 col-md-10 mx-auto">
-<p class="body">
+<p class="body-post">
   <%= @blog.post %>
 </p>
 </div>
-</div>
-</div>
+
 </article>
 <p class="name"> name:
   <%= @blog.name %>
@@ -36,14 +34,15 @@
   <%= link_to 'delete', blog_path(@blog), method: :delete, data:{ confirm: 'are you sure?'}, class: "delete-link" %>
 </p>
 <%= social_share_button_tag(@blog.title) %>
+</div>
 <div id="comments">
   <h2 class="comments-count"><%= @blog.comments.count %> comments</h2>
 <%= render @blog.comments %>
-<h3 class="comments-count">add a comment:</h3>
+
 <%= render 'comments/form' %>
 
 
-</div>
+
 </div>
 </div>
 <div class="container-fluid">
