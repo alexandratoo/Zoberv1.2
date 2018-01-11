@@ -2,7 +2,12 @@ class CommentsController < ApplicationController
   def create
     @blog = Blog.find(params[:blog_id])
     @comment = @blog.comments.create(params[:comment].permit(:name, :body))
-    redirect_to blog_path(@blog)
+  #   if @comment.save
+  #     ;flash[:notice] = 'Comment was successfully created.'
+  #   redirect_to blog_path(@blog)
+  # else
+  #   flash[:notice] = "Error creating comment: #{@comment.errors}"
+  #
   end
   def destroy
     @blog = Blog.find(params[:blog_id])
