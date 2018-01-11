@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     @blog = Blog.find(params[:blog_id])
-    @comment = @blog.comments.create(params[:comment].permit(:name, :body))
+    @comment = @blog.comments.create(params[:comment].permit( :body))
 @comment.user_id = current_user.id
     if @comment.save
       flash[:notice] = 'Comment was successfully created.'
