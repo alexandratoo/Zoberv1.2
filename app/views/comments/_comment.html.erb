@@ -2,7 +2,7 @@
 
 
 				  <div class="post-comments">
-				      <p class="meta"><%= time_ago_in_words(comment.created_at) %>  by <strong><%= comment.name %></strong></p>
+				      <p class="meta"><%= time_ago_in_words(comment.created_at) %>  by <strong><%= current_user.username %></strong></p>
 				      <p class="comment-body">
 				         <%= comment.body %></p>
 				      </p>
@@ -12,7 +12,7 @@
 
 
 
-
+<!-- <p> <%= link_to 'edit' %></p> -->
 <p><%= link_to 'delete', [comment.blog, comment],
 method: :delete,
 class: "delete-link",

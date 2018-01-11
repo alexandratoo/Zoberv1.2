@@ -6,29 +6,29 @@
 }
 
 .legend-items {
-  color: #FFF; 
+  color: #FFF;
 }
 
 #house-rows {
-  padding: 5px; 
+  padding: 5px;
 }
 
 .card.houses {
-  background-color: white; 
+  background-color: white;
   border: none;
   box-shadow: none;
 }
 
 .card-block p {
-  color: black; 
+  color: black;
   line-height: 60%;
-  text-align: left; 
+  text-align: left;
 }
 
 .card-block .description {
   padding-top: 5px;
-  color: #F47F49; 
-  font-size: 80%; 
+  color: #F47F49;
+  font-size: 80%;
 }
 
 .card-block .price {
@@ -37,8 +37,8 @@
 }
 
 body {
-  overflow: hidden;
-  margin-top: 10px; 
+  overflow: scroll;
+  margin-top: 10px;
 }
 
 .app-wrapper {
@@ -63,6 +63,6 @@ body {
   width: 400px;
   height: 100vh;
   padding: 15px;
-  padding-bottom: 90px; 
+  padding-bottom: 90px;
   overflow: scroll;
 }
