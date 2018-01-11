@@ -189,20 +189,26 @@
 <script src="https://maps.googleapis.com/maps/api/js?key= + <%#ENV['GOOGLE_MAP_API_KEY'], don't have env file so using a temp key%> <%="AIzaSyAvIU6QYS7hKm6JNGrNkyBFZ9vuzUsnzaU"%> + &callback=myMap"></script>
 
 <!-- bootstrap cards for houses -->
-<div class="row">
-  <% @houses.each do |house| %>
-    <div class="col-6 col-md-4">
-      <div class="card" style="width: 20rem;">
-        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Hipping_Hall_2.jpg/320px-Hipping_Hall_2.jpg" alt="Card image cap">
-        <div class="card-block">
-          <h4 class="card-title"> <%= house.name %> </h4>
-          <h5 class="card-text"> <%= house.property_description %> </h5>
-          <a href="#" class="btn btn-primary">See more</a>
+<div class="pre-scrollable">
+  <section id="house-rows">
+    <div class="row">
+      <% @houses.each do |house| %>   
+        <div class="col-xs-6 col-sm-6">
+          <div class="card houses"  >
+              <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Hipping_Hall_2.jpg/320px-Hipping_Hall_2.jpg" alt="Card image cap">
+            <div class="card-block">
+              <p class="description"> <%= house.room_description %> </p>
+              <p class= "name"> <%= house.name %> </p>
+              <p class="price"> <%=number_to_currency(house.price)%> </p>  
+            </div>
+          </div>
         </div>
-      </div>
+      <%end%>
     </div>
-  <%end%>
-</div>
+  </section>
+
+  
+
 
 
 <section>

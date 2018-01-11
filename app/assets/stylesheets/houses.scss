@@ -8,3 +8,34 @@
 .legend-items {
   color: #FFF; 
 }
+
+#house-rows {
+  padding: 5px; 
+}
+
+.card.houses {
+  background-color: white; 
+  border: none;
+  box-shadow: none;
+}
+
+.card-block p {
+  color: black; 
+  line-height: 60%;
+  text-align: left; 
+}
+
+.card-block .description {
+  padding-top: 5px;
+  color: #F47F49; 
+  font-size: 80%; 
+}
+
+.card-block .price {
+  color: #494949;
+  font-size: 80%;
+}
+
+.pre-scrollable {
+  overflow-x: auto;
+}
