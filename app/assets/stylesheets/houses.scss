@@ -9,10 +9,6 @@
   color: #FFF; 
 }
 
-#house-rows {
-  padding: 5px; 
-}
-
 .card.houses {
   background-color: white; 
   border: none;
@@ -28,7 +24,6 @@
 .card-block .description {
   padding-top: 5px;
   color: #F47F49; 
-  font-size: 80%; 
 }
 
 .card-block .price {
@@ -62,7 +57,11 @@
   border-left: 1px solid #ddd;
   width: 400px;
   height: 100vh;
-  padding: 15px;
   padding-bottom: 90px; 
   overflow: scroll;
+}
+
+.filter-bar .nav{
+  background-color: #898989; 
+  padding-top: 5px; 
 }
