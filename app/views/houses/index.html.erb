@@ -10,6 +10,53 @@
     </div>
 
     <div class='sidebar'>
+      <!-- filter bar -->
+      <div class="filter-bar">
+        <nav class="nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Price</a>
+            <div class="dropdown-menu">
+              <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> No Cost/Income Based </label>
+              <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Below $500/month</label>
+              <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Between $500 - $800/month</label>
+              <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Above $800/month</label>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Distance</a>
+            <div class="dropdown-menu">
+              <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> 15 miles </label>
+              <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> 25 miles</label>
+              <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> 50 miles</label>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Filters</a>
+            <div class="dropdown-menu">
+              <label class="dropdown-item radio-inline">     <input type="checkbox"> Women Only </label>
+              <label class="dropdown-item radio-inline"><input type="checkbox"> Men Only </label>
+              <label class="dropdown-item radio-inline"><input type="checkbox"> Parking </label>
+              <label class="dropdown-item radio-inline"><input type="checkbox"> Non-Smoking </label>
+              <label class="dropdown-item radio-inline"><input type="checkbox"> Pets allowed </label>
+              <label class="dropdown-item radio-inline"><input type="checkbox"> Transportation </label>
+              <label class="dropdown-item radio-inline"><input type="checkbox"> Parking </label>
+              <label class="dropdown-item radio-inline"><input type="checkbox"> Heat </label>
+              <label class="dropdown-item radio-inline"><input type="checkbox"> Air Conditioning </label>
+              <label class="dropdown-item radio-inline"><input type="checkbox"> Internet </label>
+              <label class="dropdown-item radio-inline"><input type="checkbox"> TV </label>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sort</a>
+            <div class="dropdown-menu">
+              <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Price/Month </label>
+              <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Deposit Amount </label>
+              <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Distance </label>
+            </div>
+          </li>
+        </nav>
+      </div>
+      <!-- end of filter bar-->
       <% @houses.each do |house| %>
         <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Hipping_Hall_2.jpg/320px-Hipping_Hall_2.jpg" alt="Card image cap">
         <div class="card-block">
