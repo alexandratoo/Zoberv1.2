@@ -5,7 +5,7 @@ label {font-family: 'Khula', sans-serif;}
 input{font-family: 'Khula', sans-serif;}
 text_area{font-family: 'Khula', sans-serif;}
 .new_comment{ margin-left:60px;}
-.delete-link {color: #f47f49;}
+.delete-link {color: #f47f49; margin-left:60px}
 .post-comments{
 	border: 1px solid #eee;
     margin-bottom: 20px;
@@ -22,7 +22,7 @@ text_area{font-family: 'Khula', sans-serif;}
 	position: relative;
   font-family: 'Khula', sans-serif;
 }
-h3{  font-family: 'Khula', sans-serif;
+.comment-count{  font-family: 'Khula', sans-serif;
   margin-bottom: 20px;
   margin-left: 60px;
 margin-right: 0px;
@@ -35,4 +35,6 @@ margin-right: 0px;
     padding: 10px 20px;
     position: relative;}
     .meta{font-family: 'Khula', sans-serif; font-size:14px;}
-    .comment-body{font-family: 'Khula', sans-serif;font-size:20px;}
+    .comment-body{font-family: 'Khula', sans-serif;font-size:18px;}
+    .comment-body-form{font-family: 'Khula', sans-serif;font-size:18px;}
+    .container-fluid .comments {border-top: 1px solid black; border-bottom: 1px solid black;}

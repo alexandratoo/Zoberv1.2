@@ -4,8 +4,8 @@
 <div class="container-fluid">
   <div class="hero-unit">
 
-    <%= image_tag @blog.image.url, alt:"Image", class: "img-responsive"  %>
-    <div class="row">
+    <%= image_tag @blog.image.url   %>
+    <div class="row-fluid">
               <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-heading">
 <h1 class='title'>
@@ -13,37 +13,36 @@
 </h1>
 </div>
 </div>
-</div>
-<article>
-      <div class="container">
-        <div class="row">
+
+<article class=blog-content>
+
           <div class="col-lg-8 col-md-10 mx-auto">
-<p class="body">
-  <%= @blog.post %>
-</p>
+
+  <%= raw(@blog.post) %>
+
 </div>
-</div>
-</div>
+
 </article>
-<p class="name"> name:
+<p class="name">
   <%= @blog.name %>
 </p>
 <p class="website"> website:
-  <%= link_to @blog.website, class: "website-link" %></p>
+  <%= link_to @blog.website, class: "website-form-link" %></p>
 <p class="date">
   Submitted <%= time_ago_in_words(@blog.created_at) %> ago
   <%= link_to 'edit', edit_blog_path(@blog), class: "edit-link" %>
   <%= link_to 'delete', blog_path(@blog), method: :delete, data:{ confirm: 'are you sure?'}, class: "delete-link" %>
 </p>
 <%= social_share_button_tag(@blog.title) %>
+</div>
 <div id="comments">
   <h2 class="comments-count"><%= @blog.comments.count %> comments</h2>
 <%= render @blog.comments %>
-<h3 class="comments-count">add a comment:</h3>
+
 <%= render 'comments/form' %>
 
 
-</div>
+
 </div>
 </div>
 <div class="container-fluid">

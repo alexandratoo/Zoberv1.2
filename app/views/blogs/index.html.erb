@@ -1,6 +1,6 @@
 
 <%= render "layouts/header" %>
-<header class="masthead" style="background-image: url('halring.png')">
+<header class="masthead1" style="background-image: url('halfring.png')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -28,11 +28,13 @@
 
 <% @blogs.each do |blog| %>
 <div class="panel">
-
+<p class="date"><%= blog.created_at.strftime("%B, %d, %Y" ) %> </p>
   <h3 class="title"><%= link_to blog.title, blog, class: "blog_link" %> </h3>
-  <p><%= truncate(blog.post, length: 550) %>   <%= link_to "read more", blog, class: "read-more" %></p>
-  <p class="date"><%= blog.created_at.strftime("%B, %d, %Y" ) %> </p>
+  <p><%= truncate(blog.post, length: 550, class: "date") %>   <%= link_to "read more", blog, class: "read-more" %></p>
+
+</div>
 <% end %>
+
 </div>
 <div id="main_content">
   <div id="header_blog">

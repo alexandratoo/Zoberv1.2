@@ -26,7 +26,7 @@ h6 {
 img::-moz-selection {
   color: #fff;
   background: transparent; }
-  header.masthead {
+  header.masthead1 {
   margin-bottom: 50px;
   background: no-repeat center center;
   background-color: #868e96;
@@ -36,7 +36,7 @@ img::-moz-selection {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
-  header.masthead .overlay {
+  header.masthead1 .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -44,25 +44,25 @@ img::-moz-selection {
     width: 100%;
     background-color: #212529;
     opacity: 0.5; }
-  header.masthead .page-heading,
-  header.masthead .post-heading,
-  header.masthead .site-heading {
+  header.masthead1 .page-heading,
+  header.masthead1 .post-heading,
+  header.masthead1 .site-heading {
     padding: 200px 0 150px;
     color: white; }
     @media only screen and (min-width: 768px) {
-      header.masthead .page-heading,
-      header.masthead .post-heading,
-      header.masthead .site-heading {
+      header.masthead1 .page-heading,
+      header.masthead1 .post-heading,
+      header.masthead1 .site-heading {
         padding: 200px 0; } }
-  header.masthead .page-heading,
-  header.masthead .site-heading {
+  header.masthead1 .page-heading,
+  header.masthead1 .site-heading {
     text-align: center; }
-    header.masthead .page-heading h1,
-    header.masthead .site-heading h1 {
+    header.masthead1 .page-heading h1,
+    header.masthead1 .site-heading h1 {
       font-size: 50px;
       margin-top: 0; }
-    header.masthead .page-heading .subheading,
-    header.masthead .site-heading .subheading {
+    header.masthead1 .page-heading .subheading,
+    header.masthead1 .site-heading .subheading {
       font-size: 24px;
       font-weight: 300;
       line-height: 1.1;
@@ -70,44 +70,44 @@ img::-moz-selection {
       margin: 10px 0 0;
       font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
     @media only screen and (min-width: 768px) {
-      header.masthead .page-heading h1,
-      header.masthead .site-heading h1 {
+      header.masthead1 .page-heading h1,
+      header.masthead1 .site-heading h1 {
         font-size: 80px; } }
-  header.masthead .post-heading h1 {
+  header.masthead1 .post-heading h1 {
     font-size: 35px; }
-  header.masthead .post-heading .meta,
-  header.masthead .post-heading .subheading {
+  header.masthead1 .post-heading .meta,
+  header.masthead1 .post-heading .subheading {
     line-height: 1.1;
     display: block; }
-  header.masthead .post-heading .subheading {
+  header.masthead1 .post-heading .subheading {
     font-size: 24px;
     font-weight: 600;
     margin: 10px 0 30px;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-  header.masthead .post-heading .meta {
+  header.masthead1 .post-heading .meta {
     font-size: 20px;
     font-weight: 300;
     font-style: italic;
     font-family: 'Lora', 'Times New Roman', serif; }
-    header.masthead .post-heading .meta a {
+    header.masthead1 .post-heading .meta a {
       color: #fff; }
   @media only screen and (min-width: 768px) {
-    header.masthead .post-heading h1 {
+    header.masthead1 .post-heading h1 {
       font-size: 55px; }
-    header.masthead .post-heading .subheading {
+    header.masthead1 .post-heading .subheading {
       font-size: 30px; } }
       form .form-group:first-child .floating-label-form-group {
         border-top: 1px solid #dee2e6; }
         .website{font-family: 'Khula', sans-serif; font-size:20px;}
-.blog_link {color: #f47f49; font-weight: 400; font-size: 4rem; font-family: 'Khula', sans-serif;}
+.blog_link {color: #f47f49; font-weight: 400; font-size: 3rem; font-family: 'Khula', sans-serif;}
 .edit-link {color: #f47f49; font-family: 'Khula', sans-serif;}
 .delete-link {color: #f47f49; font-family: 'Khula', sans-serif;}
 .page-wrapper {margin-top:160px;}
 .title {text-align:left; margin-top:40px;margin-bottom:40px; font-family: 'Khula', sans-serif;}
 .image-responsive {max-width:360px;}
-.body {border-radius:1px solid #626262; font-family: 'Khula', sans-serif; font-size:24px;}
+.body-post { font-family: 'Khula', sans-serif; font-size:24px;}
 .comments-count {font-family: 'Khula', sans-serif; font-size:1.5rem; font-weight:200;}
-.website-link {color:#f47f49; font-weight: 400px; font-family: 'Khula', sans-serif; border-bottom: #626262;}
+
 //show page for blogs
 article
 {border: 1px solid #eee;
@@ -120,18 +120,20 @@ margin-right: 0px;
      -moz-border-radius: 4px;
        -o-border-radius: 4px;
       border-radius: 4px;
-background: #fcfcfc;
+// background: #fcfcfc;
 color: #6b6e80;
 position: relative;}
 .date {font-family: 'Khula', sans-serif; font-size:16px;}
 .panel
 //index page for blogs
-{border: 1px solid #eee;
+{border: 1px solid #626262;
+  margin-top:40px;
   margin-bottom: 20px;
   margin-left: 60px;
 margin-right: 0px;
   padding: 10px 20px;
-  position: relative;
+  // position: relative;
+  box-shadow: 10px 5px 5px #c0c0c0;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
        -o-border-radius: 4px;
@@ -141,3 +143,15 @@ color: #6b6e80;
 position: relative; }
 .read-more {color:#f47f49;margin-left:20px; font-family: 'Khula', sans-serif;}
 .name {font-family: 'Khula', sans-serif; font-size:20px;}
+.blog-content{border-top:1px solid black; border-bottom:1px solid black; margin:auto; background-color:#FFFFFF;;}
+.form-label-title{font-family: 'Khula', sans-serif; font-size:20px;}
+.form-label-post{font-family: 'Khula', sans-serif; font-size:20px;}
+.form-label-name{font-family: 'Khula', sans-serif; font-size:20px;}
+.form-label-website{font-family: 'Khula', sans-serif; font-size:20px;}
+.form-label-image{font-family: 'Khula', sans-serif; font-size:20px;}
+.field-website{width:250px;}
+.field-name{width:250px;}
+.field-title{width:250px;}
+.website{color: #f47f49;}
+.name {font-family: 'Khula', sans-serif; font-size:18px; color:#626262; float: right;}
+a .website-form-link {color:#f47f49; font-weight: 400px; font-family: 'Khula', sans-serif; border-bottom: #626262; float:right;}
