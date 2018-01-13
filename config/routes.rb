@@ -4,15 +4,18 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy, :oauth_create, :oauth_destroy]
   resource :home_page, only: [:show]
   resources :houses, :users, :only => [:new, :create, :index]
+  resources :places, except: [:update, :edit, :destroy]
   resources :blogs do
     resources :comments
   end
+
 
   get 'g_sessions/create'
   get 'g_sessions/destroy'
 
   get 'list' => 'houses#list'
-  get 'places' => 'places#index'
+
+  get 'place' => 'places#index'
 
   get 'individual' => 'houses#individual'
 
