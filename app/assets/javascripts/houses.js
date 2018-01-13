@@ -5,7 +5,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     data: {
       houses: [],
       sortAttribute: 'name',
-      sortAscending: true
+      sortAscending: true,
+      priceFilter: '',
+      distanceFilter: '',
+      genderFilter: '',
+      petsFilter: '',
+      transitFilter: '',
+
     },
 
     mounted: function() {
@@ -16,6 +22,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
 
     methods: {
+
+      // filter: function(house) {
+      //   return validPrice && validGender && validPets && validTransit
+      // },
 
       setSortAttribute: function(inputAttribute) {
         if(inputAttribute !== this.sortAttribute) {

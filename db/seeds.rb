@@ -10,7 +10,7 @@ index = 1
 50.times do 
   House.create!({
     name: "Sober Living #{index}",
-    address: "123 Main Street",
+    street: "123 Main Street",
     state: "CA",
     city: "San Francisco",
     zip_code: "94115",
