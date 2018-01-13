@@ -1,4 +1,4 @@
 Geocoder.configure(
-  api_key: "AIzaSyAvIU6QYS7hKm6JNGrNkyBFZ9vuzUsnzaU",
+  api_key: ENV['GOOGLE_MAP_API_KEY'],
   units: :mi
 )
