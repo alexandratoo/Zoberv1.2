@@ -89,8 +89,8 @@ function myMap() {
   // var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
   var local = 'http://localhost:3000/icon/';
   var icons = {
-    parking: {
-      name: 'parking',
+    zScroll: {
+      name: 'zScroll',
       icon: local + 'z_scroll.png'
     },
     zCoffee: {
@@ -141,6 +141,10 @@ function myMap() {
     position: new google.maps.LatLng(37.7476172,-122.4776844),
     type: 'zHouse',
     content: contentString
+  }, {
+   position: new google.maps.LatLng(37.7426171,-122.4776874),
+   type: 'zScroll',
+   content: contentString
   }];
 
 
