@@ -48,7 +48,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sort</a>
               <div class="dropdown-menu">
-                <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Price/Month </label>
+                <label class="dropdown-item radio-inline"><input type="radio" name="optradio" v-on:click="setSortAttribute('price')" > Price/Month </label>
                 <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Deposit Amount </label>
                 <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Distance </label>
               </div>
@@ -57,7 +57,7 @@
         </div>
       <!-- end of filter bar-->
       
-        <div v-for="house in houses">
+        <div v-for="house in modifiedHouses">
           <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Hipping_Hall_2.jpg/320px-Hipping_Hall_2.jpg" alt="Card image cap">
           <div class="card-block">
             <p class="description"> {{house.room_description}} </p>
