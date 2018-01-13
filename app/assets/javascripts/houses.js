@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var app = new Vue({
     el: '#app',
     data: {
-      houses: []
+      houses: [],
+      sortAttribute: 'name',
+      sortAscending: true
     },
 
     mounted: function() {
@@ -14,6 +16,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
 
     methods: {
+
+      setSortAttribute: function(inputAttribute) {
+        if(inputAttribute !== this.sortAttribute) {
+          this.sortAscending = true;
+        } else {
+          this.sortAscending = !this.sortAscending;
+        }
+         this.sortAttribute = inputAttribute;
+      },
+
       formatPrice(value) {
         let val = (value/1).toFixed(2).replace('.', ',')
         return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
@@ -21,6 +33,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
 
     computed: {
+      modifiedHouses: function() {
+        return this.houses.sort(function(house1, house2) {
+          if (this.sortAscending) {
+            return house1[this.sortAttribute].localeCompare(house2[this.sortAttribute]);
+          } else {
+            return house2[this.sortAttribute].localeCompare(house1[this.sortAttribute]);
+          }
+         }.bind(this));
+      }
 
     }
  });
