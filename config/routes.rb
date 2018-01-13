@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
-  get 'g_sessions/create'
 
+  resources :sessions, only: [:create, :destroy, :oauth_create, :oauth_destroy]
+  resource :home_page, only: [:show]
+  resources :houses, :users, :only => [:new, :create, :index]
+  resources :blogs do
+    resources :comments
+  end
+
+  get 'g_sessions/create'
   get 'g_sessions/destroy'
 
-  resources :houses, :users, :only => [:new, :create, :index]
-
-resources :blogs do
-resources :comments
-end
-
   get 'list' => 'houses#list'
+  get 'places' => 'places#index'
 
   get 'individual' => 'houses#individual'
 
@@ -33,8 +35,6 @@ end
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#oauth_destroy', as: 'signout'
 
-  resources :sessions, only: [:create, :destroy, :oauth_create, :oauth_destroy]
-  resource :home_page, only: [:show]
 
   root to: 'home_page#index'
 
