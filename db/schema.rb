@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180127193534) do
     t.bigint "blog_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["blog_id"], name: "index_comments_on_blog_id"
   end
 

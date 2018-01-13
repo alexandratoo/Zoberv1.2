@@ -4,7 +4,7 @@
 <div class="container-fluid">
   <div class="hero-unit">
 
-    <%= image_tag @blog.image.url   %>
+    <%= image_tag @blog.image_url(:thumb)   %>
     <div class="row-fluid">
               <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-heading">
@@ -17,7 +17,7 @@
 <article class=blog-content>
 
           <div class="col-lg-8 col-md-10 mx-auto">
-
+  <%= image_tag @blog.image.url(:thumb)   %>
   <%= raw(@blog.post) %>
 
 </div>
