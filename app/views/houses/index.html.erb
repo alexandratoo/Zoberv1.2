@@ -49,8 +49,8 @@
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sort</a>
               <div class="dropdown-menu">
                 <label class="dropdown-item radio-inline"><input type="radio" name="optradio" v-on:click="setSortAttribute('price')" > Price/Month </label>
-                <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Deposit Amount </label>
-                <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Distance </label>
+                <label class="dropdown-item radio-inline"><input type="radio" name="optradio" v-on:click="setSortAttribute('deposit')" > Deposit Amount </label>
+                <!-- <label class="dropdown-item radio-inline"><input type="radio" name="optradio" v-on:click="setSortAttribute('price')" > Distance </label> -->
               </div>
             </li>
           </nav>

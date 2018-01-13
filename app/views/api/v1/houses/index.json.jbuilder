@@ -1,7 +1,7 @@
 json.array! @houses.each do |house|
   json.id house.id
   json.name house.name
-  json.address house.address 
+  json.street house.street 
   json.state house.state
   json.city house.city 
   json.zip_code house.zip_code
