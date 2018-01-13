@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :places, except: [:update, :edit, :destroy]
   resources :blogs do
     resources :comments
+    resources :providers
   end
 
 

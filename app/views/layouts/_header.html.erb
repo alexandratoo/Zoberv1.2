@@ -53,9 +53,17 @@
   </div>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="index">providers</a>
-        </li>
+        <li class="dropdown providers">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">providers <span class="caret"></span></a>
+                 <ul class="dropdown-menu providers">
+
+                   <li role="separator" class="divider"></li>
+                   <li><a href="/providers/index" class='register'>register</a></li>
+                   <li role="separator" class="divider"></li>
+                   <li><a href="/login" class='login-dropdown'>login</a></li>
+                 </ul>
+               </li>
+
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="about">about</a>
         </li>

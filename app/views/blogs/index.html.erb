@@ -30,7 +30,7 @@
 <div class="panel">
 <p class="date"><%= blog.created_at.strftime("%B, %d, %Y" ) %> </p>
   <h3 class="title"><%= link_to blog.title, blog, class: "blog_link" %> </h3>
-  <p><%= truncate(blog.post, length: 550, class: "date") %>   <%= link_to "read more", blog, class: "read-more" %></p>
+  <p><%= raw(truncate(blog.post, length: 550, class: "date")) %>   <%= link_to "read more", blog, class: "read-more" %></p>
 
 </div>
 <% end %>
