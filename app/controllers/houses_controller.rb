@@ -7,11 +7,13 @@ class HousesController < ApplicationController
     @house = House.new
   end
   def create
-    @house = House.new(house_params)
+    @house = House.create(house_params)
 
     @house.save(validate: false)
-    redirect_to @house
-  end
+      flash[:notice] = "House added successfully"
+    render 'index'
+
+
 end
 
   # @house = House.new
@@ -28,5 +30,6 @@ end
 end
 private
 def house_params
-  params.require(:house)
+  params.require(:house).permit(:name, :address, :city, :state, :zip_code, :email, :website, :facebook, :twitter, :linkedin, :capacity, :price, :deposit, :gender, :insurance, :payment_forms, :property_description, :neighborhood,
+   :smoking_policy, :insurance, :activities, :hotttub, :ac, :heating, :internet, :parking, )
 end
