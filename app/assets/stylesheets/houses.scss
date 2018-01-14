@@ -16,13 +16,13 @@
 }
 
 .card-block p {
-  line-height: 50%; 
-  padding-left: 5px; 
+  line-height: 50%;
+  padding-left: 5px;
 }
-
+.col-sm-12.mx-auto {margin-top:200px;}
 .card-block .description {
   padding-top: 7px;
-  color: #F47F49; 
+  color: #F47F49;
 }
 
 .card-block .house_name {
@@ -61,12 +61,11 @@
   border-left: 1px solid #ddd;
   width: 400px;
   height: 100vh;
-  padding-bottom: 30px; 
+  padding-bottom: 30px;
   overflow: scroll;
 }
 
 .filter-bar .nav{
-  background-color: #898989; 
-  padding-top: 5px; 
+  background-color: #898989;
+  padding-top: 5px;
 }
-

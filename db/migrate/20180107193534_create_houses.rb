@@ -31,7 +31,7 @@ class CreateHouses < ActiveRecord::Migration[5.1]
             t.boolean :heating
             t.string :tv
             t.string :internet
-            t.string :room_description
+          
       t.timestamps
     end
   end

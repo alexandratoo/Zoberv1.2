@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :comments
     resources :providers
   end
-
+get 'register' => 'providers#register'
 
   get 'g_sessions/create'
   get 'g_sessions/destroy'
