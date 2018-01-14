@@ -6,13 +6,14 @@ class HousesController < ApplicationController
   def new
     @house = House.new
   end
+
   def create
     @house = House.new(house_params)
 
     @house.save(validate: false)
     redirect_to @house
   end
-end
+
 
   # @house = House.new
   #   @house.name = params[:house]
@@ -25,8 +26,9 @@ end
   #     render :new
   #   end
   # end
-end
+
 private
-def house_params
-  params.require(:house)
+  def house_params
+    params.require(:house)
+  end
 end
