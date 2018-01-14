@@ -14,9 +14,7 @@ class HousesController < ApplicationController
 
       flash[:notice] = "House added successfully"
     render 'index'
-
-
-end
+  end
 
 
   # @house = House.new
@@ -35,5 +33,6 @@ private
 
 def house_params
   params.require(:house).permit(:name, :address, :city, :state, :zip_code, :email, :website, :facebook, :twitter, :linkedin, :capacity, :price, :deposit, :gender, :insurance, :payment_forms, :property_description, :neighborhood,
-   :smoking_policy, :insurance, :activities, :hotttub, :ac, :heating, :internet, :parking, )
+   :smoking_policy, :insurance, :activities, :hotttub, :ac, :heating, :internet, :parking)
+ end
 end
