@@ -2,7 +2,7 @@
   <%= render "layouts/header" %>
 </section>
 
-<body>
+<body class='houses_list'>
   <div class='app-wrapper'>
     <div class='map-area'>
       <div id="googleMap"> </div>
@@ -16,7 +16,7 @@
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Price</a>
               <div class="dropdown-menu">
                 <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> No Cost/Income Based </label>
-                <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Below $500/month</label>
+                <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Below $500/month</label> 
                 <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Between $500 - $800/month</label>
                 <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Above $800/month</label>
               </div>
@@ -36,7 +36,9 @@
                 <label class="dropdown-item radio-inline"><input type="checkbox"> Men Only </label>
                 <label class="dropdown-item radio-inline"><input type="checkbox"> Parking </label>
                 <label class="dropdown-item radio-inline"><input type="checkbox"> Non-Smoking </label>
-                <label class="dropdown-item radio-inline"><input type="checkbox"> Pets allowed </label>
+                
+                <label class="dropdown-item radio-inline"><input type="checkbox" v-model="petsFilter" v-bind:value="true"> Pets allowed </label>
+
                 <label class="dropdown-item radio-inline"><input type="checkbox"> Transportation </label>
                 <label class="dropdown-item radio-inline"><input type="checkbox"> Parking </label>
                 <label class="dropdown-item radio-inline"><input type="checkbox"> Heat </label>
@@ -57,8 +59,8 @@
         </div>
       <!-- end of filter bar-->
       
-        <div v-for="house in modifiedHouses">
-          <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Hipping_Hall_2.jpg/320px-Hipping_Hall_2.jpg" alt="Card image cap">
+        <div v-for="house in modifiedHouses" >
+          <img class="card-img-top" src="http://paradeofhomesdenver.com/uploads/homes/da77c29dec3c1340fd7c4d3a59957444_preview.jpg" alt="Card image cap">
           <div class="card-block">
             <p class="description"> {{house.room_description}} </p>
             <p class= "house_name"> {{house.name}} </p>

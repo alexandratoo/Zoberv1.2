@@ -23,9 +23,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     methods: {
 
-      // filter: function(house) {
-      //   return validPrice && validGender && validPets && validTransit
-      // },
+      filter: function(house) {
+        if(this.petsFilter === "true"){
+          var validPet = house.pets === true; 
+        }
+        return validPet;
+      },
 
       setSortAttribute: function(inputAttribute) {
         if(inputAttribute !== this.sortAttribute) {
