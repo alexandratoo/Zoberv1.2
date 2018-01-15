@@ -15,6 +15,7 @@ get 'register' => 'providers#register'
   get 'g_sessions/destroy'
 
   get 'list' => 'houses#list'
+  get 'houses/:id' => 'houses#show'
 
   get 'place' => 'places#index'
 

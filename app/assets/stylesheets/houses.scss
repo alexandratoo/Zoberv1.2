@@ -5,6 +5,7 @@
   background-color:#ef8b3e;
 }
 
+// houses index/list
 .legend-items {
   color: #FFF;
 }
@@ -19,7 +20,9 @@
   line-height: 50%;
   padding-left: 5px;
 }
+
 .col-sm-12.mx-auto {margin-top:200px;}
+
 .card-block .description {
   padding-top: 7px;
   color: #F47F49;
@@ -73,6 +76,19 @@
 .card-img-top {
   margin-top: 10px;
 }
+
+
+.house-display {
+  margin-top: 90px; 
+}
+
+.jumbotron {
+  background-image: url(http://buysellnaplesrealestate.com/wp-content/uploads/2014/07/Red-Roof-2-1000x300-1000x300.jpg);
+  height: 400px;
+  background-size: cover; 
+}
+
+
 //form area styling//
 .form-area
 {background-color: #FAFAFA;padding: 10px 40px 60px;margin: 10px 0px 60px;border: 1px solid GREY;}
@@ -83,9 +99,9 @@
   .row-fluid-image {display:inline-block; }
   .col-sm-6.image{display:inline-block; font-family:roboto; font-size: 16px;}
   .container-fluid-image {margin-bottom: 40px; margin-top:40px; border-top: 1px solid GREY; border-bottom:1px solid GREY;padding:30px}
-<<<<<<< HEAD
+
 
 .field-house{border-radius: 0 0 0 0;}
-=======
+
 .field-house {border-radius: 0 0 0 0; font-size:16px;font-family:roboto;}
->>>>>>> 050
+
