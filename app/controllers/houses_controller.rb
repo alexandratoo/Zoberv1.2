@@ -16,6 +16,10 @@ class HousesController < ApplicationController
     render 'index'
   end
 
+  def show
+    @house = House.find(params[:id])
+  end
+
 
   # @house = House.new
   #   @house.name = params[:house]
