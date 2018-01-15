@@ -8,10 +8,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
       sortAscending: true,
       priceFilter: '',
       distanceFilter: '',
-      genderFilter: '',
-      petsFilter: '',
-      transitFilter: '',
-
+      womenFilter: false,
+      petsFilter: false,
+      transitFilter: false,
+      menFilter: false,
+      parkingFilter: false,
+      acFilter: false,
+      internetFilter: false,
+      tvFilter: false,
+      smokingFilter: false
     },
 
     mounted: function() {
@@ -23,11 +28,63 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     methods: {
 
-      filter: function(house) {
-        if(this.petsFilter === "true"){
-          var validPet = house.pets === true; 
+      filterHouses: function(house) {
+        var isValid = true
+        if(this.petsFilter === true && isValid){
+          if(!house.pets) {
+            isValid = false;
+          }
         }
-        return validPet;
+
+        if(this.transitFilter === true && isValid){
+          if(!house.transportation) {
+            isValid = false;
+          }
+        }
+
+        if(this.womenFilter === true && isValid){
+          if(house.gender !== "Women") {
+            isValid = false;
+          }
+        }
+
+        if(this.menFilter === true && isValid){
+          if(house.gender !== "Men") {
+            isValid = false;
+          }
+        }
+
+        if(this.parkingFilter === true && isValid){
+          if(house.parking !== "Yes") {
+            isValid = false;
+          }
+        }
+
+        if(this.acFilter === true && isValid){
+          if(!house.ac) {
+            isValid = false;
+          }
+        }
+
+        if(this.internetFilter === true && isValid){
+          if(house.internet !== "Wifi") {
+            isValid = false;
+          }
+        }
+
+        if(this.tvFilter === true && isValid){
+          if(house.tv !== "Flatscreen") {
+            isValid = false;
+          }
+        }
+
+        if(this.smokingFilter === true && isValid){
+          if(house.smoking_policy !== "Non-Smoking") {
+            isValid = false;
+          }
+        }
+
+        return isValid;
       },
 
       setSortAttribute: function(inputAttribute) {
@@ -40,8 +97,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       },
 
       formatPrice(value) {
-        let val = (value/1).toFixed(2).replace('.', ',')
-        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+        let val = (value/1).toFixed(2)
+        return val;
       }
     },
 

@@ -32,26 +32,22 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Filters</a>
               <div class="dropdown-menu">
-                <label class="dropdown-item radio-inline">     <input type="checkbox"> Women Only </label>
-                <label class="dropdown-item radio-inline"><input type="checkbox"> Men Only </label>
-                <label class="dropdown-item radio-inline"><input type="checkbox"> Parking </label>
-                <label class="dropdown-item radio-inline"><input type="checkbox"> Non-Smoking </label>
-                
-                <label class="dropdown-item radio-inline"><input type="checkbox" v-model="petsFilter" v-bind:value="true"> Pets allowed </label>
-
-                <label class="dropdown-item radio-inline"><input type="checkbox"> Transportation </label>
-                <label class="dropdown-item radio-inline"><input type="checkbox"> Parking </label>
-                <label class="dropdown-item radio-inline"><input type="checkbox"> Heat </label>
-                <label class="dropdown-item radio-inline"><input type="checkbox"> Air Conditioning </label>
-                <label class="dropdown-item radio-inline"><input type="checkbox"> Internet </label>
-                <label class="dropdown-item radio-inline"><input type="checkbox"> TV </label>
+                <label class="dropdown-item radio-inline"><input type="checkbox" v-model="womenFilter"> Women Only </label>
+                <label class="dropdown-item radio-inline"><input type="checkbox" v-model="menFilter"> Men Only </label>
+                <label class="dropdown-item radio-inline"><input type="checkbox" v-model="smokingFilter"> Non-Smoking </label>
+                <label class="dropdown-item radio-inline"><input type="checkbox" v-model="petsFilter" > Pets allowed </label>
+                <label class="dropdown-item radio-inline"><input type="checkbox" v-model="transitFilter" > Transportation </label>
+                <label class="dropdown-item radio-inline"><input type="checkbox" v-model="parkingFilter"> Parking </label>
+                <label class="dropdown-item radio-inline"><input type="checkbox" v-model="acFilter"> Air Conditioning </label>
+                <label class="dropdown-item radio-inline"><input type="checkbox" v-model="internetFilter"> Internet </label>
+                <label class="dropdown-item radio-inline"><input type="checkbox" v-model="tvFilter"> TV </label>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sort</a>
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> Sort </a>
               <div class="dropdown-menu">
-                <label class="dropdown-item radio-inline"><input type="radio" name="optradio" v-on:click="setSortAttribute('price')" > Price/Month </label>
-                <label class="dropdown-item radio-inline"><input type="radio" name="optradio" v-on:click="setSortAttribute('deposit')" > Deposit Amount </label>
+                <label class="dropdown-item radio-inline"><input type="radio" name="optradio" v-on:click="setSortAttribute('price')"> Price/Month </label>
+                <label class="dropdown-item radio-inline"><input type="radio" name="optradio" v-on:click="setSortAttribute('deposit')"> Deposit Amount </label>
                 <!-- <label class="dropdown-item radio-inline"><input type="radio" name="optradio" v-on:click="setSortAttribute('price')" > Distance </label> -->
               </div>
             </li>
@@ -59,7 +55,7 @@
         </div>
       <!-- end of filter bar-->
       
-        <div v-for="house in modifiedHouses" >
+        <div v-for="house in modifiedHouses" v-if="filterHouses(house)" >
           <img class="card-img-top" src="http://paradeofhomesdenver.com/uploads/homes/da77c29dec3c1340fd7c4d3a59957444_preview.jpg" alt="Card image cap">
           <div class="card-block">
             <p class="description"> {{house.room_description}} </p>
