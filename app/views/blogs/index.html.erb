@@ -30,20 +30,19 @@
 <div class="panel">
 <p class="date"><%= blog.created_at.strftime("%B, %d, %Y" ) %> </p>
   <h3 class="title"><%= link_to blog.title, blog, class: "blog_link" %> </h3>
-  <p><%= raw(truncate(blog.post, length: 550, class: "date")) %>   <%= link_to "read more", blog, class: "read-more" %></p>
+  <p><%= truncate(sanitize(blog.post, length: 550, class: "date")) %>   <%= link_to "read more", blog, class: "read-more" %></p>
 
 </div>
 <% end %>
 
 </div>
 <div id="main_content">
-  <div id="header_blog">
-    <p>all blogs</p>
+
     <div class="buttons">
-      <button class="button"><%= link_to "new blog", new_blog_path %></button>
-      <button class="button"><%= link_to 'Logout', logout_path, method: :delete %></button>
+      <button class="button"><%= link_to "new blog", new_blog_path, class: "new-blog-link" %></button>
+      <button class="button"><%= link_to 'Logout', logout_path, method: :delete, class:"logout-link" %></button>
     </div>
-  </div>
+
   <% flash.each do |name, msg| %>
   <%= content_tag(:div, msg, class: "alert") %>
   <% end %>

@@ -5,8 +5,8 @@ p {
   line-height: 1.5;
   margin: 30px 0;
 font-family:raleway;}
-  p a {
-    text-decoration: underline; }
+  // p a {
+  //   text-decoration: underline; }
     h1,
 h2,
 h3,
@@ -106,7 +106,7 @@ img::-moz-selection {
 .title {text-align:left; margin-top:40px;margin-bottom:40px; font-family: 'Khula', sans-serif;}
 .image-responsive {max-width:360px;}
 .body-post { font-family: 'Khula', sans-serif; font-size:24px;}
-.comments-count {font-family: 'Khula', sans-serif; font-size:1.5rem; font-weight:200;}
+.comments-count {font-family: 'Khula', sans-serif; font-size:24px; font-weight:200; }
 
 //show page for blogs
 article
@@ -123,7 +123,7 @@ margin-right: 0px;
 // background: #fcfcfc;
 color: #6b6e80;
 position: relative;}
-.date {font-family: 'Khula', sans-serif; font-size:16px;}
+.date {font-family: 'Khula', sans-serif; font-size:16px; color:#626262; float:left;}
 .panel
 //index page for blogs
 {border: 1px solid #626262;
@@ -149,9 +149,20 @@ position: relative; }
 .form-label-name{font-family: 'Khula', sans-serif; font-size:20px;}
 .form-label-website{font-family: 'Khula', sans-serif; font-size:20px;}
 .form-label-image{font-family: 'Khula', sans-serif; font-size:20px;}
-.field-website{width:250px;}
-.field-name{width:250px;}
-.field-title{width:250px;}
+.field-website{width:250px; border-radius:0 0 0 0;}
+.field-name{width:250px; border-radius:0 0 0 0;}
+.field-title{width:250px; border-radius:0 0 0 0;}
 .website{color: #f47f49;}
-.name {font-family: 'Khula', sans-serif; font-size:18px; color:#626262; float: right;}
-a .website-form-link {color:#f47f49; font-weight: 400px; font-family: 'Khula', sans-serif; border-bottom: #626262; float:right;}
+.name {font-family: 'Khula', sans-serif; font-size:18px; color:#626262; float: left;}
+.website-form-link {color:#f47f49; font-size:18px; font-family: 'Khula', sans-serif; }
+.img-fluid {margin-right:200px;}
+//link button from show page to all blogs//
+.btn.btn-md.btn-light.blogs {margin-left: 900px; color:#ffffff; background-color:#f47f49;}
+.btn.btn-md.btn-light.blogs:hover {color: #f47f49; background-color: #fff; border-radius: 1px solid #f47f49}
+//index page css for edit and new blog buttons//
+.button{border-radius: 15px; color:#f47f49;}
+.button:hover{background-color:#f47f49;}
+.new-blog-link{color:#f47f49;}
+.new-blog-link:hover{color:#fff; background-color:#f47f49;border-bottom:none;}
+.logout-link{color:#f47f49;}
+.logout-link:hover{color:#fff; background-color:#f47f49; border-bottom: none;}
