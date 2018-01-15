@@ -131,7 +131,7 @@
 
 <div class="row-fluid internet">
   <h6> What does the standard room provide? For example: cupboards, dresser etc. </h6>
-<%= f.text_area :room_amenities %>
+<%= f.text_area :room_amenities, class: "field-house" %>
 </div>
 <div class="row-fluid internet">
 
@@ -162,25 +162,20 @@
   <h6>Please add 5 images of your property</h6>
 <div class="row-fluid-image">
 
-  <div class=col-sm-4>
-    <%= f.label :image, class:"form-label-image" %><br>
+  <div class="col-sm-6 image">
     <%= f.file_field :image %><br>
   </div>
-    <div class=col-sm-4>
-    <%= f.label :image, class:"form-label-image" %><br>
+    <div class="col-sm-6 image">
     <%= f.file_field :image %><br>
   </div>
-  <div class=col-sm-4>
-    <%= f.label :image, class:"form-label-image" %><br>
+  <div class="col-sm-6 image">
     <%= f.file_field :image %><br>
   </div>
   <div class="row-fluid-image">
-  <div class=col-sm-4>
-    <%= f.label :image, class:"form-label-image" %><br>
+  <div class="col-sm-6 image">
     <%= f.file_field :image %><br>
   </div>
-    <div class=col-sm-4>
-    <%= f.label :image, class:"form-label-image" %><br>
+    <div class="col-sm-6 image">
     <%= f.file_field :image %><br>
   </div>
 
