@@ -144,10 +144,11 @@ html, body {
 border-radius: 15px 15px 15px 15px;
 width:100%;
 }
+
 .house_submit{border-radius: 15px 15px 15px 15px; color:white;   background-color: #f47f49;  -webkit-transition-duration: 0.4s;}
 .house_submit:hover{ background-color: #fcfcfc;
     color: #626262;}
-.search_field {width: 100%; }
+.search_field {width: 100%; padding-left:20px; font-style: italic;}
 input {display:inline; border-radius: 15px 15px 15px 15px;}
 //nav link styling//
 a{color:white;
