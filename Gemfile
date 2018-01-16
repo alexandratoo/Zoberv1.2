@@ -48,6 +48,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'jquery-rails'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
+
 end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor'
+  get 'charges/new'
 
+  get 'charges/create'
+
+  mount Ckeditor::Engine => '/ckeditor'
+  resources :providers
   resources :sessions, only: [:create, :destroy, :oauth_create, :oauth_destroy]
   resource :home_page, only: [:show]
   resources :houses, :users, :only => [:new, :create, :index]
   resources :places, except: [:update, :edit, :destroy]
   resources :blogs do
     resources :comments
-    resources :providers
+
   end
 get 'register' => 'providers#register'
 
