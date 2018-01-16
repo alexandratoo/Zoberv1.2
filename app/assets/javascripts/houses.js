@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
          this.sortAttribute = inputAttribute;
       },
 
-      formatPrice(value) {
+      formatPrice: function(value) {
         let val = (value/1).toFixed(2)
         return val;
       }
