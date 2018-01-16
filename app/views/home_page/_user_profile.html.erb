@@ -1,0 +1,55 @@
+  <div class="container-fluid">
+    <%= render 'layouts/header' %>
+  </div>
+
+  <header class="profile-container">
+
+    <div class="container"><br>
+      <div class="p-3 text-center">
+        <h1 class="display-4">Wall</h1><hr>
+        <p></p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <div class="card">
+            <h4 class="card-header bg-dark text-white"><%="#{current_user.username}"%>
+              <div class="float-right small">
+                <a class="btn btn-raised btn-dark" href="#" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                  <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn-raised btn-dark" href="#">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn-raised btn-dark" href="#">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                </a>
+              </div>
+            </h4>
+            <div class="card-body">
+              <div class="image float-left user-l">
+                <img src="https://dummyimage.com/200x300/000/fff" class="img-thumbnail" alt="avatar"/>
+              </div>
+              <h4 class="card-title">provider</h4>
+              <p><%= current_user.provider %></p>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam facilis qui maiores quaerat perspiciatis? Non alias a iste similique ab nesciunt cum ad tempore. Architecto dolore est explicabo deleniti porro.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <hr>
+
+  </div>
+
+  </header>
+
+
+        <!-- jQuery first, then Bootstrap JS. -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    	<script src="https://unpkg.com/popper.js@1.12.5/dist/umd/popper.js"></script>
+    	<script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.3/dist/js/bootstrap-material-design.js"></script>

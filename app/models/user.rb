@@ -15,5 +15,5 @@ class User < ApplicationRecord
   # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z]+\z/
 
   # validates :username, :email, presence: true // disabled for google oauth
-  # validates :email, uniqueness: true
+  validates :email, uniqueness: true
 end
