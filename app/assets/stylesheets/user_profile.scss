@@ -1,3 +1,6 @@
+body {
+  float: right;
+}
 .user-l {
   padding-right: 6px;
 }
@@ -12,7 +15,6 @@
   width: 42px;
   margin-left: 5px;
   margin-right: 5px;
-  text-align: center;
   border-radius: 10em;
   border: #EEE 1px solid;
 }
@@ -22,5 +24,10 @@
 }
 
 .profile-container {
-  margin-top: 100px;
+  padding: 20px;
+}
+
+.profile-selection-list {
+  display: -webkit-inline-box;
+  overflow: scroll;
 }

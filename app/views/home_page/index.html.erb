@@ -2,25 +2,27 @@
 <head>
   <title>Full Screen Landing Page</title>
 
+    <% if current_user %>
+      <link rel='stylesheet' type='text/css' href='user_profile.scss'>
+      <link rel='stylesheet' type='text/css' href='homepage_footer_main.scss'>
+      <link rel='stylesheet' type='text/css' href='home_page.scss'>
+      <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-a1fJ5ppVJ3J5OscI8CmYpZH6XRnafYX7sXnA9uVadDWXox/IU9IIk9zz5zNE5HPL" crossorigin="anonymous">
+    <% else %>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
+      <link rel='stylesheet' type='text/css' href='homepage_footer.scss'>
+      <link rel='stylesheet' type='text/css' href='home_page.scss'>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+      <script src="jquery-3.2.1.min.js"></script>
+      <script src="https://use.fontawesome.com/9a42685ed3.js"></script>
+    <% end %>
 
-  <% if current_user %>
-    <link rel='stylesheet' type='text/css' href='user_profile.scss'>
-    <link rel='stylesheet' type='text/css' href='homepage_footer_main.scss'>
-    <link rel='stylesheet' type='text/css' href='home_page.scss'>
-  <% else %>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
-    <link rel='stylesheet' type='text/css' href='homepage_footer.scss'>
-    <link rel='stylesheet' type='text/css' href='home_page.scss'>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <% end %>
   <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
-  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <script src="jquery-3.2.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-<script src="https://use.fontawesome.com/9a42685ed3.js"></script>
+  <%= tag :meta, :name => "stripe-key", :content => ENV['STRIPE_PUBLIC_KEY'] %>
+
 </head>
 <body>
 <% if current_user %>
@@ -56,9 +58,6 @@
                   <li class="nav-item">
                     <a class="click nav-link js-scroll-trigger" href="login" style="color:white; font-family:raleway">login</a>
                   </li>
-                  <!-- <li class="nav-item">
-                    <%= link_to "login", "login", "data-toggle" => "modal",  style: "color:white; font-family:raleway"%>
-                  </li> -->
                 </ul>
               </div>
             </div>
