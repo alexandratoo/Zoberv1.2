@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <head>
   <title>Full Screen Landing Page</title>
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
-  <link rel='stylesheet' type='text/css' href='homepage_footer.scss'>
-  <link rel='stylesheet' type='text/css' href='home_page.scss'>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <script src="jquery-3.2.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-<script src="https://use.fontawesome.com/9a42685ed3.js"></script>
+
+    <% if current_user %>
+      <link rel='stylesheet' type='text/css' href='user_profile.scss'>
+      <link rel='stylesheet' type='text/css' href='homepage_footer_main.scss'>
+      <link rel='stylesheet' type='text/css' href='home_page.scss'>
+      <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-a1fJ5ppVJ3J5OscI8CmYpZH6XRnafYX7sXnA9uVadDWXox/IU9IIk9zz5zNE5HPL" crossorigin="anonymous">
+    <% else %>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
+      <link rel='stylesheet' type='text/css' href='homepage_footer.scss'>
+      <link rel='stylesheet' type='text/css' href='home_page.scss'>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+      <script src="jquery-3.2.1.min.js"></script>
+      <script src="https://use.fontawesome.com/9a42685ed3.js"></script>
+    <% end %>
+
+  <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
   <%= tag :meta, :name=> 'stripe-key', :content => Rails.configuration.stripe[:publishable_key] %>
   <script>
     Stripe.setPublishableKey('pk_test_io5y38gPyYKpkkkLUjRVCJw6');
@@ -19,105 +29,63 @@
 <body>
 <% if current_user %>
 
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container-fluid">
-          <a class="navbar-brand js-scroll-trigger navbar-left" href="houses">  <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%></a>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class=" providers nav-link js-scroll-trigger" href="index" style="color:white; font-family:raleway">providers</a>
-              </li>
-              <li class="nav-item">
-                <a class=" about nav-link js-scroll-trigger" href="about" style="color:white; font-family:raleway">about</a>
-              </li>
-              <li class="nav-item">
-                <a class=" about nav-link js-scroll-trigger" href="blogs" style="color:white; font-family:raleway">blog</a>
-              </li>
-              <li class="nav-item">
-                <a class=" social nav-link js-scroll-trigger" href="social" style="color:white; font-family:raleway">social</a>
-              </li>
-              <li class="nav-item">
-                <li><%= link_to 'Logout', logout_path, method: :delete %></li>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-      <header class="masthead">
-            <div class="intro-body">
-              <div class="row">
-              <div class="img-fluid mx-auto" id ="lifebuoy">
-              <h1>Zober Wall</h1>
-
-              <p>We can add any info via requests for: <%= current_user %></p>
-              <p>name: <%="#{current_user.first_name} #{current_user.last_name}"%></p>
-              <p>username: <%="#{current_user.username}"%></p>
-
-            </div>
-          </div>
-      </header>
+<%= render 'user_profile' %>
 
 <% else %>
 
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-            <div class="container-fluid">
-              <a class="navbar-brand js-scroll-trigger navbar-left" href="houses">  <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%></a>
-              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container-fluid">
+    <a class="navbar-brand js-scroll-trigger navbar-left" href="houses">
+      <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
 
-              </button>
-              <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                    <a class=" providers nav-link js-scroll-trigger" href="index" style="color:white; font-family:raleway">providers</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class=" about nav-link js-scroll-trigger" href="about" style="color:white; font-family:raleway">about</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class=" about nav-link js-scroll-trigger" href="blogs" style="color:white; font-family:raleway">blog</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class=" social nav-link js-scroll-trigger" href="social" style="color:white; font-family:raleway">social</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="click nav-link js-scroll-trigger" href="new" style="color:white; font-family:raleway">signup</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="click nav-link js-scroll-trigger" href="login" style="color:white; font-family:raleway">login</a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <%= link_to "login", "login", "data-toggle" => "modal",  style: "color:white; font-family:raleway"%>
-                  </li> -->
-                </ul>
-              </div>
-            </div>
-          </nav>
-      <header class="masthead">
-            <div class="intro-body">
-              <div class="row">
-              <div class="img-fluid mx-auto" id ="lifebuoy">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class=" providers nav-link js-scroll-trigger" href="index" style="color:white; font-family:raleway">providers</a>
+        </li>
+        <li class="nav-item">
+          <a class=" about nav-link js-scroll-trigger" href="about" style="color:white; font-family:raleway">about</a>
+        </li>
+        <li class="nav-item">
+          <a class=" about nav-link js-scroll-trigger" href="blogs" style="color:white; font-family:raleway">blog</a>
+        </li>
+        <li class="nav-item">
+          <a class=" social nav-link js-scroll-trigger" href="social" style="color:white; font-family:raleway">social</a>
+        </li>
+        <li class="nav-item">
+          <a class="click nav-link js-scroll-trigger" href="new" style="color:white; font-family:raleway">signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="click nav-link js-scroll-trigger" href="login" style="color:white; font-family:raleway">login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-      <%=image_tag("logolarge.png", alt: "logo", class: "img-fluid logo_large")%>
+<header class="masthead">
+  <div class="intro-body">
+    <div class="row">
+      <div class="img-fluid mx-auto" id="lifebuoy">
 
-                  <div class="col-md-10 mx-auto">
+        <%=image_tag("logolarge.png", alt: "logo", class: "img-fluid logo_large")%>
 
-                    <div class="rown-fluid">
-    <%= form_tag(houses_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "find sober living by city, state, or zip", class: "search_field" %>
-        <%= submit_tag "Search", :name => nil, class: 'house_submit' %>
+        <div class="col-md-10 mx-auto">
+
+          <div class="rown-fluid">
+            <%= form_tag(houses_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "find sober living by city, state, or zip", class: "search_field" %>
+            <%= submit_tag "Search", :name => nil, class: 'house_submit' %>
+          </div>
+          <% end %>
+        </div>
       </div>
-    <% end %>
-      </div>
-                </div>
-              </div>
-            </div>
-          </header>
+    </div>
+  </div>
+</header>
 
 <% end %>
 <!-- modal for signup or login -->

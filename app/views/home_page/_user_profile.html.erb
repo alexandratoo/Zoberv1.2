@@ -1,8 +1,41 @@
-  <div class="container-fluid">
-    <%= render 'layouts/header' %>
-  </div>
+<div class="profile-container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <button class=" menu navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <a class="navbar-brand js-scroll-trigger" href="houses"><%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo")%></a>
+    </button>
 
-  <header class="profile-container">
+    <div class="col-md-5 mx-auto">
+      <%= form_tag(houses_path, :method => "get", id: "search-form") do %>
+      <%= search_field_tag :search, params[:search], placeholder: "enter city, state or zipcode", class: "search_field" %>
+      <%= submit_tag "search", class: "btn btn-sm btn-default" do %>
+      <% end %>
+      <% end %>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="index">providers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="about">about</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">social</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="blogs">blog</a>
+        </li>
+        <li class="nav-item">
+          <h3 class="welcome">welcome back
+            <%= current_user.first_name %></h3>
+        </li>
+        <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+      </ul>
+    </div>
+  </nav>
+
 
     <div class="container"><br>
       <div class="p-3 text-center">
@@ -11,7 +44,6 @@
       </div>
 
       <div class="row">
-
         <div class="col-sm-6">
           <div class="card">
             <h4 class="card-header bg-dark text-white"><%="#{current_user.username}"%>
@@ -37,19 +69,76 @@
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
+
+    <h1>Articles</h1>
 
     <hr>
 
+    <div class="profile-selection-list">
+
+      <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h4 class="card-title">Primary card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h4 class="card-title">Secondary card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h4 class="card-title">Success card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h4 class="card-title">Danger card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h4 class="card-title">Warning card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h4 class="card-title">Info card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card bg-light mb-3" style="max-width: 20rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h4 class="card-title">Light card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h4 class="card-title">Dark card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  </header>
-
-
-        <!-- jQuery first, then Bootstrap JS. -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    	<script src="https://unpkg.com/popper.js@1.12.5/dist/umd/popper.js"></script>
-    	<script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.3/dist/js/bootstrap-material-design.js"></script>
+<!-- jQuery first, then Bootstrap JS. -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://unpkg.com/popper.js@1.12.5/dist/umd/popper.js"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.3/dist/js/bootstrap-material-design.js"></script>
