@@ -31,7 +31,7 @@
           <h3 class="welcome">welcome back
             <%= current_user.first_name %></h3>
         </li>
-        <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+        <li><%= link_to 'Logout', logout_path, method: :delete, :class => "nav-link" %></li>
       </ul>
     </div>
   </nav>
@@ -61,79 +61,39 @@
             </h4>
             <div class="card-body">
               <div class="image float-left user-l">
-                <img src="https://dummyimage.com/200x300/000/fff" class="img-thumbnail" alt="avatar"/>
+                <img src="<%= current_user.image %>" class="img-thumbnail" alt="avatar"/>
               </div>
-              <h4 class="card-title">provider</h4>
-              <p><%= current_user.provider %></p>
+              <h4 class="card-title">About <%= current_user.username %></h4>
+              <small>joined: <%= current_user.created_at %></small>
+
+              <p>email: <%= current_user.email %></p>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam facilis qui maiores quaerat perspiciatis? Non alias a iste similique ab nesciunt cum ad tempore. Architecto dolore est explicabo deleniti porro.</p>
             </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+            <header><h1 class="display-4">Provider</h1></header>
           </div>
         </div>
       </div>
     </div>
 
-    <h1>Articles</h1>
+    <h1>Posts</h1>
 
     <hr>
 
     <div class="profile-selection-list">
 
-      <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Primary card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Secondary card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Success card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Danger card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Warning card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Info card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      <div class="card bg-light mb-3" style="max-width: 20rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Light card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
+      <% for i in 1..10 do %>
       <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
-        <div class="card-header">Header</div>
+        <div class="card-header">Post Title</div>
         <div class="card-body">
-          <h4 class="card-title">Dark card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h4 class="card-title">My Journey</h4>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam facilis qui maiores quaerat perspiciatis? Non alias a iste similique ab nesciunt cum ad tempore. Architecto dolore est explicabo deleniti porro.</p>
         </div>
       </div>
+      <% end %>
 
     </div>
   </div>
