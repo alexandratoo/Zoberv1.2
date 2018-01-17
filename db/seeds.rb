@@ -5,9 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+monthly = Product.create(title: "monthly zober plan",
+subtitle: "monthly advertising subscription to zober", image_name: "tinylogo.png",
+sku: "monthly", download_url: "", description: %{<p>you now have the ability to advertise your home through zober</p>
+  })
+yearly = Product.create(title: "yearly zober plan",
+  subtitle: "yearly advertising subscription to zober", image_name: "tinylogo.png",
+  sku: "yearly", download_url: "", description: %{<p>you now have the ability to advertise your home through zober. this is valid for one year. </p>
+    })
 
 index = 1
-50.times do 
+50.times do
   House.create!({
     name: "Sober Living #{index}",
     street: "123 Main Street",
@@ -42,4 +50,4 @@ index = 1
     room_description: "Hip interior, comfortable bed"
   })
   index += 1
-end 
+end
