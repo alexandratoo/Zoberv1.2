@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
   mount Ckeditor::Engine => '/ckeditor'
+  resources :purchases, only: [:show]
   resources :providers
   resources :charges
   resources :sessions, only: [:create, :destroy, :oauth_create, :oauth_destroy]
