@@ -6,9 +6,7 @@
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span>Amount: $5</span>
-    </label>
+
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js"> </script>
@@ -35,8 +33,5 @@
   });
   e.preventDefault();
 });
-          // data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          // data-description="A month's subscription"
-          // data-amount="500"
-          // data-locale="auto"></script>
+          </script>
 <% end %>
