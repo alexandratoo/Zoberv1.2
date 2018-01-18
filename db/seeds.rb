@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-monthly = Product.create(title: "monthly zober plan",
-subtitle: "monthly advertising subscription to zober", image_name: "tinylogo.png",
+monthly = Product.create(title: "monthly plan",
+subtitle: "monthly advertising subscription to zober", image_name: "tinylogo.png", price: "$29.99"
 sku: "monthly", download_url: "", description: %{<p>you now have the ability to advertise your home through zober</p>
   });
-yearly = Product.create(title: "yearly zober plan",
-  subtitle: "yearly advertising subscription to zober", image_name: "tinylogo.png",
+yearly = Product.create(title: "yearly plan",
+  subtitle: "yearly advertising subscription to zober", image_name: "tinylogo.png", price: "$365.00",
   sku: "yearly", download_url: "", description: %{<p>you now have the ability to advertise your home through zober. this is valid for one year. </p>
     });
 
