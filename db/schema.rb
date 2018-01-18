@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20180127193540) do
 
   # These are extensions that must be enabled in order to support this database
@@ -81,6 +82,18 @@ ActiveRecord::Schema.define(version: 20180127193540) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string "title"
+    t.string "subtitle"
+    t.string "image_name"
+    t.string "sku"
+    t.string "download_url"
+    t.text "description"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "providers", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
@@ -93,7 +106,21 @@ ActiveRecord::Schema.define(version: 20180127193540) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "purchases", force: :cascade do |t|
+    t.string "email"
+    t.integer "amount"
+    t.string "description"
+    t.string "currency"
+    t.string "customer_id"
+    t.string "card"
+    t.string "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "uuid"
+  end
+
   create_table "users", force: :cascade do |t|
+    t.string "image"
     t.string "first_name"
     t.string "last_name"
     t.string "email"

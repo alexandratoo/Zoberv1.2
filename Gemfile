@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
-
+gem 'figaro'
 # For hashing passwords
 gem 'bcrypt-ruby', '3.1.2'
 
@@ -50,6 +50,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 
 end
+gem 'stripe'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'social-share-button'

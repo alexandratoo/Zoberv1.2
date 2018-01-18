@@ -4,22 +4,22 @@
 .signup {
   margin-top: 80px;
   text-align: center;
-  font-family: 'Raleway', sans-serif; color:grey;
+  font-family: 'Raleway', sans-serif; color:#f47f49; font-weight:400;
 
 }
-.card {
+.card-block.plans {
 
-background-color: #ef8b3e;
+background-color: #f47f49;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 margin-bottom: 10px; margin-top:10px;
 }
-.card-title {
-  color: white; font-size: 24px;
+.card-title.plans {
+  color: #ffffff; font-size: 24px;
   padding-top: 20px; padding-bottom: 20px;
   font-family: 'Raleway', sans-serif;
 
 }
-.card-text{
+.card-text.plans{
   color:white;  padding-bottom: 20px;
   font-family: 'Raleway', sans-serif;
 }
@@ -28,12 +28,12 @@ margin-bottom: 10px; margin-top:10px;
   font-family: 'Raleway', sans-serif;
 
 }
-.plans_list {font-family: 'Raleway', sans-serif; color:grey; text-align:center;}
+.plans_list {font-family: 'Raleway', sans-serif; color:#f47f49; font-weight:400;text-align:center;}
 .pick {font-family: 'Raleway', sans-serif; color:grey; text-align:center}
-nav {
-  background-color: #ef8b3e;
-
-}
+// nav {
+//   background-color: #ef8b3e;
+//
+// }
 .nav-link.js-scroll-trigger {
   color: white;
 }
