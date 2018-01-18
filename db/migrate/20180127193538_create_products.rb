@@ -5,6 +5,7 @@ t.string :title
 t.string :subtitle
 t.string :image_name
 t.string :sku
+t.strig :info
 t.string :download_url
 t.text :description
 t.decimal :price

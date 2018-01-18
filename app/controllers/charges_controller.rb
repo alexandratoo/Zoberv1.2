@@ -1,20 +1,21 @@
 class ChargesController < ApplicationController
+
   def new
   end
 
   def create
-product= Product.find_by_sku("monthly")
+ product = Product.find(params[:product_id])
 
     customer = Stripe::Customer.create(
-      email: params[:stripeEmail],
-      source: params[:stripeToken],
-
+      :email => params[:stripeEmail],
+      :source => params[:stripeToken],
+      :plan => product.sku
     )
-    #
+
     # charge = Stripe::Charge.create(
-    #   customer: customer.id,
-    #   amount: product.price_in_cents,
-    #   description: 'Rails Stripe customer',
+    #   :customer => customer.id,
+    #   :amount => product.price_in_cents,
+    #   description: 'zober customer',
     #   currency: 'usd'
     # )
 

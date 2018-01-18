@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
   resources :purchases, only: [:show]
-  resources :products, only: [:index]
+  resources :products, only: [:index, :show]
   resources :providers do
 
   end
