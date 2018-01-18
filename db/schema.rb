@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180127193538) do
+ActiveRecord::Schema.define(version: 20180127193544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 20180127193538) do
     t.string "linkedin"
     t.string "twitter"
     t.integer "capacity"
-    t.decimal "price", precision: 4, scale: 2
-    t.decimal "deposit", precision: 4, scale: 2
+    t.decimal "price", precision: 7, scale: 2
+    t.decimal "deposit", precision: 7, scale: 2
     t.string "gender"
     t.string "payment_forms"
     t.boolean "insurance"
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 20180127193538) do
     t.string "neighborhood"
     t.string "smoking_policy"
     t.boolean "transportation"
-    t.string "parking"
     t.string "activities"
     t.string "room_amenities"
     t.boolean "pets"
@@ -69,6 +68,7 @@ ActiveRecord::Schema.define(version: 20180127193538) do
     t.string "internet"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "parking"
   end
 
   create_table "places", force: :cascade do |t|
