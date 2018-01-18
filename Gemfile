@@ -20,6 +20,8 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'geocoder', '~> 1.4'
 # A simple asset-pipeline wrapper for Vue.js
 gem 'vuejs-rails'
+# A simple asset-pipeline wrapper for React
+gem 'react-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
