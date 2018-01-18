@@ -2,6 +2,16 @@
   "name": "zoberv1_1",
   "private": true,
   "dependencies": {
-    "jquery": "^3.2.1"
+    "@rails/webpacker": "^3.2.0",
+    "babel-preset-react": "^6.24.1",
+    "coffeescript": "1.12.7",
+    "jquery": "^3.2.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react_ujs": "^2.4.3"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.11.0"
   }
 }
