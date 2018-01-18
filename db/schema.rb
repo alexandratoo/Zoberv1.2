@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180127193535) do
+ActiveRecord::Schema.define(version: 20180127193540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,20 +18,22 @@ ActiveRecord::Schema.define(version: 20180127193535) do
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.string "post"
+    t.string "image"
     t.string "name"
     t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
   end
 
   create_table "comments", force: :cascade do |t|
     t.string "name"
     t.string "body"
     t.bigint "blog_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["blog_id"], name: "index_comments_on_blog_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "houses", force: :cascade do |t|
@@ -47,8 +49,8 @@ ActiveRecord::Schema.define(version: 20180127193535) do
     t.string "linkedin"
     t.string "twitter"
     t.integer "capacity"
-    t.decimal "price", precision: 4, scale: 2
-    t.decimal "deposit", precision: 4, scale: 2
+    t.decimal "price", precision: 7, scale: 2
+    t.decimal "deposit", precision: 7, scale: 2
     t.string "gender"
     t.string "payment_forms"
     t.boolean "insurance"
@@ -56,7 +58,6 @@ ActiveRecord::Schema.define(version: 20180127193535) do
     t.string "neighborhood"
     t.string "smoking_policy"
     t.boolean "transportation"
-    t.string "parking"
     t.string "activities"
     t.string "room_amenities"
     t.boolean "pets"
@@ -65,9 +66,9 @@ ActiveRecord::Schema.define(version: 20180127193535) do
     t.boolean "heating"
     t.string "tv"
     t.string "internet"
-    t.string "room_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "parking"
   end
 
   create_table "places", force: :cascade do |t|

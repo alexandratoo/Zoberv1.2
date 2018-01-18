@@ -30,5 +30,4 @@ json.array! @houses.each do |house|
   json.heating house.heating
   json.tv house.tv
   json.internet house.internet
-  json.room_description house.room_description
 end 
