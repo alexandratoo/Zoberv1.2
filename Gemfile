@@ -22,6 +22,7 @@ gem 'geocoder', '~> 1.4'
 gem 'vuejs-rails'
 # A simple asset-pipeline wrapper for React
 gem 'react-rails'
+gem 'webpacker'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
