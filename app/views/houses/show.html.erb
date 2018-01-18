@@ -5,7 +5,7 @@
 <section class="house-display">
   <!-- determine cover image by the properties zipcode -->
   <% if @house.zip_code.to_s.start_with?("80") %>
-    <%= image_tag("denver_pic_mtn.jpg", :alt => "denver image", :class => 'img-fluid') %>
+    <%= image_tag("denver_pic.jpg", :alt => "denver image", :class => 'img-fluid') %>
   <% end %>
   <% if @house.zip_code.to_s.start_with?("94") %>
     <%= image_tag("sf_pic_bridge.jpeg", :alt => "denver image", :class => 'img-fluid') %>
@@ -27,6 +27,7 @@
       <br>
       <p> Price: <%= number_to_currency(@house.price)%> /  Deposit: <%=number_to_currency(@house.deposit)%> </p>
       <p> Neighborhood: <%=@house.neighborhood%> </p>
+      <p> Room Description: <%=@house.room_description%> </p>
       <p> Gender: <%=@house.gender%> Only </p>
       <p> Smoking Policy: <%=@house.smoking_policy%> </p>
       <p> Transportation Available: <%=@house.transportation%> </p>

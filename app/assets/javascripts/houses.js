@@ -43,19 +43,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
 
         if(this.womenFilter === true && isValid){
-          if(house.gender !== "female") {
+          if(house.gender !== "Women") {
             isValid = false;
           }
         }
 
         if(this.menFilter === true && isValid){
-          if(house.gender !== "male") {
+          if(house.gender !== "Men") {
             isValid = false;
           }
         }
 
         if(this.parkingFilter === true && isValid){
-          if(!house.parking) {
+          if(house.parking !== "Yes") {
             isValid = false;
           }
         }
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
 
         if(this.internetFilter === true && isValid){
-          if(house.internet === "None") {
+          if(house.internet !== "Wifi") {
             isValid = false;
           }
         }
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
 
         if(this.smokingFilter === true && isValid){
-          if(house.smoking_policy === "No Smoking") {
+          if(house.smoking_policy !== "Non-Smoking") {
             isValid = false;
           }
         }

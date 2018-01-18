@@ -5,7 +5,72 @@
 <section>
   <div class="container-fluid">
     <h2>register your sober living home</h2>
-<%= render "layouts/providers" %>
+    <section>
+    <div class="container-fluid signup">
+    <h1 class="provider-title">register your sober living home</h1>
+
+    </div>
+    </section>
+    <section>
+      <div class="container-fluid">
+        <div class="col-sm-12 mx-auto why">
+          <p>Ethical four dollar toast hammock offal health goth vape humblebrag. Hashtag cardigan before they sold out authentic kinfolk hot chicken, cornhole kale chips biodiesel plaid twee. Kombucha mlkshk tilde photo booth banh mi, microdosing sartorial heirloom. Small batch flexitarian thundercats, cray sriracha live-edge blue bottle banh mi tousled bushwick YOLO meh meggings lumbersexual.
+
+      Wayfarers helvetica before they sold out, mumblecore vexillologist shabby chic tattooed af. Plaid flannel vaporware, affogato pickled meh blog whatever pabst street art shabby chic meggings banh mi retro. Four loko vaporware squid, authentic keffiyeh freegan small batch four dollar toast narwhal unicorn. Readymade flannel vice gentrify paleo.</p>
+        </div>
+      </div>
+    </section>
+    <section id="plans" class="content-plans text-center">
+      <div class="container-fluid" id="single_provider">
+        <div class="row-fluid">
+          <div class="col-sm-12 mx-auto">
+            <h2 class="plans_list">check out our plans!</h2>
+            <p class="pick">pick the plan that works best for you</p>
+            </div>
+            <div class="row plans">
+            <!-- <ul class="list-inline banner-icons"> -->
+              <div class="col-xs-6 col-sm-4">
+                <div class="card h-100">
+              <div class="card-block plans">
+              <h3 class="card-title plans"><%= @product.title %></h3>
+
+              <p class="card-text">$29.99/monthly</p>
+              <%= render 'charges/new' %>
+              </div>
+              </div>
+            </div>
+              <div class="col-xs-6 col-sm-4">
+                <div class="card h-100">
+          <div class="card-block plans">
+            <h3 class="card-title plans"><%= @product.title %></h3>
+            
+            <p class="card-text plans">$365/yearly</p>
+            <%= render 'charges/new' %>
+        </div>
+      </div>
+
+
+              </div>
+              <div class="col-xs-6 col-sm-4 ">
+                <div class="card h-100">
+              <div class="card-block plans">
+              <h3 class="card-title plans">specialized plans for your needs</h3>
+              <p class="card-text plans">contact us </p>
+              <a href="mailto:tyler@zober.co" class="provider_btn btn btn-outline-light">email us!</a>
+              </div>
+
+              </div>
+    </div>
+        </div>
+      </div>
+    </section>
+    <section>
+    <div class="container-fluid">
+      <div class="row provider_summary">
+        <%= @paragraph %>
+      </div>
+    </div>
+    </section>
 </div>
 </section>
 <section>

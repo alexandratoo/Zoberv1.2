@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'charges/new'
 
-  get 'charges/create'
 
   mount Ckeditor::Engine => '/ckeditor'
+  resources :purchases, only: [:show]
   resources :providers
+  resources :charges
   resources :sessions, only: [:create, :destroy, :oauth_create, :oauth_destroy]
   resource :home_page, only: [:show]
   resources :houses, :users, :only => [:new, :create, :index]
@@ -19,14 +19,13 @@ get 'register' => 'providers#register'
   get 'g_sessions/destroy'
 
   get 'list' => 'houses#list'
+  get 'houses/:id' => 'houses#show'
 
   get 'place' => 'places#index'
 
   get 'individual' => 'houses#individual'
 
   get 'houses/home'
-  get 'houses/:id' => 'houses#show'
-
   get 'new' => 'users#new'
 
 

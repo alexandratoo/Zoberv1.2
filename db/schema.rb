@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180127193535) do
+ActiveRecord::Schema.define(version: 20180127193538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 20180127193535) do
     t.string "linkedin"
     t.string "twitter"
     t.integer "capacity"
-    t.decimal "price", precision: 7, scale: 2
-    t.decimal "deposit", precision: 7, scale: 2
+    t.decimal "price", precision: 4, scale: 2
+    t.decimal "deposit", precision: 4, scale: 2
     t.string "gender"
     t.string "payment_forms"
     t.boolean "insurance"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20180127193535) do
     t.string "neighborhood"
     t.string "smoking_policy"
     t.boolean "transportation"
+    t.string "parking"
     t.string "activities"
     t.string "room_amenities"
     t.boolean "pets"
@@ -68,7 +69,6 @@ ActiveRecord::Schema.define(version: 20180127193535) do
     t.string "internet"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "parking"
   end
 
   create_table "places", force: :cascade do |t|
@@ -77,6 +77,18 @@ ActiveRecord::Schema.define(version: 20180127193535) do
     t.float "latitude"
     t.float "longitude"
     t.string "visited_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "title"
+    t.string "subtitle"
+    t.string "image_name"
+    t.string "sku"
+    t.string "download_url"
+    t.text "description"
+    t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -93,7 +105,21 @@ ActiveRecord::Schema.define(version: 20180127193535) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "purchases", force: :cascade do |t|
+    t.string "email"
+    t.integer "amount"
+    t.string "description"
+    t.string "currency"
+    t.string "customer_id"
+    t.string "card"
+    t.string "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "uuid"
+  end
+
   create_table "users", force: :cascade do |t|
+    t.string "image"
     t.string "first_name"
     t.string "last_name"
     t.string "email"
