@@ -5,7 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+# A set of Rails responders to dry up your application
+gem 'responders', '~> 2.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
@@ -19,6 +20,9 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'geocoder', '~> 1.4'
 # A simple asset-pipeline wrapper for Vue.js
 gem 'vuejs-rails'
+# A simple asset-pipeline wrapper for React
+gem 'react-rails'
+gem 'webpacker'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

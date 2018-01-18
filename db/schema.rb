@@ -18,21 +18,22 @@ ActiveRecord::Schema.define(version: 20180127193544) do
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.string "post"
+    t.string "image"
     t.string "name"
     t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
   end
 
   create_table "comments", force: :cascade do |t|
     t.string "name"
     t.string "body"
     t.bigint "blog_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.index ["blog_id"], name: "index_comments_on_blog_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "houses", force: :cascade do |t|
@@ -65,7 +66,6 @@ ActiveRecord::Schema.define(version: 20180127193544) do
     t.boolean "heating"
     t.string "tv"
     t.string "internet"
-    t.string "room_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "parking"
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 20180127193544) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "image"
     t.string "first_name"
     t.string "last_name"
     t.string "email"
