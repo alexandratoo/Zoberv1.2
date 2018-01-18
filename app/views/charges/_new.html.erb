@@ -1,18 +1,26 @@
-
+<section id='content-details' class="row-clearfix">
+  <% @products.each do |product| %>
+  <article id="details-article" class="col-sm-4">
+    <h2 id ="product-title"><%= @product.title %><br><span class="font-weight-light"><%= @product.subtitle %></span></h2>
+    <%= raw @product.description %>
+    <p>
+    <%= @product.price %>
+</p>
+  </article>
 <%= form_tag charges_path, id:"chargeForm" do %>
-  <article>
+
     <% if flash[:error].present? %>
       <div id="error_explanation">
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
 
-  </article>
+
 
   <script src="https://checkout.stripe.com/checkout.js"> </script>
 <%= hidden_field_tag 'stripeToken' %>
 <%= hidden_field_tag 'stripeEmail' %>
-<%= hidden_field_tag 'amount', 2999 %>
+<%= hidden_field_tag 'amount', @product.price_in_cents %>
 <button id="btn-buy" class="btn btn-md btn-light">buy now</button>
 
     <script>
@@ -27,11 +35,18 @@
   document.getElementById('btn-buy').addEventListener('click', function(e)
 {
   handler.open({
-    name: 'One month',
-    description: 'one month listing at zober',
+    name: '<%= @product.title %>',
+    description: '<%= @product.title %> ($<%= @product.price %>)',
     amount: document.getElementById('amount').value
   });
   e.preventDefault();
 });
           </script>
 <% end %>
+<% end %>
+<!-- <ul id="details-infobox" class="list-group">
+  <li class="list-group-item clearfix">Info</li>
+    <li class="list-group-item clearfix"><%= @product.description %></li>
+  </ul> -->
+</aside>
+</section>

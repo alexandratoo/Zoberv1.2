@@ -7,12 +7,13 @@
   font-family: 'Raleway', sans-serif; color:#f47f49; font-weight:400;
 
 }
-.card-block.plans {
+.card.h-100{
 
 background-color: #f47f49;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 margin-bottom: 10px; margin-top:10px;
 }
+.card-block.plans{ background-color: #f47f49;}
 .card-title.plans {
   color: #ffffff; font-size: 24px;
   padding-top: 20px; padding-bottom: 20px;
@@ -28,7 +29,7 @@ margin-bottom: 10px; margin-top:10px;
   font-family: 'Raleway', sans-serif;
 
 }
-.plans_list {font-family: 'Raleway', sans-serif; color:#f47f49; font-weight:400;text-align:center;}
+h2.plans_list {font-family: 'Raleway', sans-serif; color:#f47f49; font-weight:400; font-size:32px;}
 .pick {font-family: 'Raleway', sans-serif; color:grey; text-align:center}
 // nav {
 //   background-color: #ef8b3e;

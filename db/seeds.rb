@@ -8,14 +8,14 @@
 monthly = Product.create(title: "monthly zober plan",
 subtitle: "monthly advertising subscription to zober", image_name: "tinylogo.png",
 sku: "monthly", download_url: "", description: %{<p>you now have the ability to advertise your home through zober</p>
-  })
+  });
 yearly = Product.create(title: "yearly zober plan",
   subtitle: "yearly advertising subscription to zober", image_name: "tinylogo.png",
   sku: "yearly", download_url: "", description: %{<p>you now have the ability to advertise your home through zober. this is valid for one year. </p>
-    })
+    });
 
 index = 1
-5.times do 
+5.times do
   House.create!({
     name: "Sober Living #{index}",
     street: "123 Main Street",
@@ -49,10 +49,10 @@ index = 1
     internet: "None"
      })
       index += 1
-    end 
-     
+    end
+
     index = 6
-    5.times do 
+    5.times do
       House.create!({
         name: "Treatment Center #{index}",
         street: "789 Grove Street",
@@ -86,10 +86,10 @@ index = 1
             internet: "Wifi"
           })
        index += 1
-      end 
-       
+      end
+
       index = 11
-      5.times do 
+      5.times do
         House.create!({
           name: "Sober Living House #{index}",
           street: "456 Market Street",
@@ -123,5 +123,4 @@ index = 1
           internet: "Ethernet"
         })
         index += 1
-        end 
-
+        end

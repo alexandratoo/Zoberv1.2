@@ -20,59 +20,9 @@
         </div>
       </div>
     </section>
-    <section id="plans" class="content-plans text-center">
-      <div class="container-fluid" id="single_provider">
-        <div class="row-fluid">
-          <div class="col-sm-12 mx-auto">
-            <h2 class="plans_list">check out our plans!</h2>
-            <p class="pick">pick the plan that works best for you</p>
-            </div>
-            <div class="row plans">
-            <!-- <ul class="list-inline banner-icons"> -->
-              <div class="col-xs-6 col-sm-4">
-                <div class="card h-100">
-              <div class="card-block plans">
-              <h3 class="card-title plans"><%= @product.title %></h3>
 
-              <p class="card-text">$29.99/monthly</p>
-              <%= render 'charges/new' %>
-              </div>
-              </div>
-            </div>
-              <div class="col-xs-6 col-sm-4">
-                <div class="card h-100">
-          <div class="card-block plans">
-            <h3 class="card-title plans"><%= @product.title %></h3>
-            
-            <p class="card-text plans">$365/yearly</p>
-            <%= render 'charges/new' %>
-        </div>
-      </div>
+    <%= render 'charges/new' %>
 
-
-              </div>
-              <div class="col-xs-6 col-sm-4 ">
-                <div class="card h-100">
-              <div class="card-block plans">
-              <h3 class="card-title plans">specialized plans for your needs</h3>
-              <p class="card-text plans">contact us </p>
-              <a href="mailto:tyler@zober.co" class="provider_btn btn btn-outline-light">email us!</a>
-              </div>
-
-              </div>
-    </div>
-        </div>
-      </div>
-    </section>
-    <section>
-    <div class="container-fluid">
-      <div class="row provider_summary">
-        <%= @paragraph %>
-      </div>
-    </div>
-    </section>
-</div>
-</section>
 <section>
   <div class="container-fluid">
 <%= render "layouts/footer_main" %>
