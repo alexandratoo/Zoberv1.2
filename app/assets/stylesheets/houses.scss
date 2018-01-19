@@ -10,33 +10,7 @@
   color: #FFF;
 }
 
-.card .card-block {
-  background-color: white;
-  border: none;
-  box-shadow: none;
-}
-
-.card-block p {
-  line-height: 50%;
-  padding-left: 5px;
-}
-
 .col-sm-12.mx-auto {margin-top:200px;}
-
-.card-block .description {
-  padding-top: 7px;
-  color: #F47F49;
-}
-
-.card-block .house_name {
-  color: black;
-  font-size: 110%;
-}
-
-.card-block .price {
-  color: #494949;
-  font-size: 80%;
-}
 
 .app-wrapper {
   display: -webkit-box;
@@ -61,7 +35,7 @@
 }
 
 .sidebar {
-  border-left: 1px solid #ddd;
+  border-left: 5px solid #ddd;
   width: 800px;
   height: 100vh;
   overflow-y: scroll;
@@ -74,12 +48,38 @@
 }
 
 .filter-bar {
-  width: 784px;
+  width: 782px;
   position: fixed;
 }
 
-.card-img-top {
-  margin-top: 10px;
+.top-buffer {
+  margin-top: 13px; 
+  background:inherit;
+}
+
+.imagebox {
+  width: 100%;
+  margin-top: 5px; 
+  margin-left: 5px; 
+}
+
+.imagebox img {
+  opacity: 1;
+  transition: 0.5s opacity;
+}
+
+.imagebox .imagebox-desc {
+  bottom: 0px;
+  color: white;
+  font-size: 1em;
+  left: 15px;
+  right: 0px; 
+  position: absolute;
+  transition: 0.5s padding;
+}
+
+.imagebox:hover img {
+  opacity: 0.7;
 }
 
 .house-display .img-fluid {
