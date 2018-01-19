@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 monthly = Product.create(title: "monthly plan",
-subtitle: "monthly advertising subscription to zober", image_name: "tinylogo.png", price: "$29.99"
+subtitle: "monthly advertising subscription to zober", image_name: "tinylogo.png", price: "$29.99",
 sku: "monthly", download_url: "", description: %{<p>you now have the ability to advertise your home through zober</p>
   });
 yearly = Product.create(title: "yearly plan",

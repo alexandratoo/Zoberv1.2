@@ -1,3 +1,4 @@
+import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 const contentString = `
@@ -21,122 +22,92 @@ const contentString = `
 
 `;
 
-export class MapContainer extends Component {
+export default class HouseMap extends Component {
   constructor(){
+    super();
     this.state = {
-      markers = [{
+      markers: [{
         name: 'zober-home',
-        position: {37.7576171,-122.4976844},
-        content: contentString
-        icon: {{
+        position: { lat: 37.7576171, lng: -122.4976844 },
+        content: contentString,
+        icon: {
           url: 'http://localhost:3000/icon/z_house.png',
           anchor: new google.maps.Point(32,32),
           scaledSize: new google.maps.Size(64,64)
-        }}
+        }
        }, {
         name: 'zober-home',
-        position: {37.7576171,-122.4875824},
+        position: { lat: 37.7576171, lng: -122.4875824 },
         content: contentString,
-        icon: {{
+        icon: {
           url: 'http://localhost:3000/icon/z_house.png',
           anchor: new google.maps.Point(32,32),
           scaledSize: new google.maps.Size(64,64)
-        }}
+        }
        }, {
         name: 'zober-home',
-        position: {37.7876172,-122.4776854},
+        position: { lat: 37.7876172, lng: -122.4776854 },
         content: contentString,
-        icon: {{
+        icon: {
           url: 'http://localhost:3000/icon/z_house.png',
           anchor: new google.maps.Point(32,32),
           scaledSize: new google.maps.Size(64,64)
-        }}
+        }
        }, {
         name: 'zober-home',
-        position: {37.7376171,-122.4776874},
+        position: { lat: 37.7376171, lng: -122.4776874 },
         content: contentString,
-        icon: {{
+        icon: {
           url: 'http://localhost:3000/icon/z_house.png',
           anchor: new google.maps.Point(32,32),
           scaledSize: new google.maps.Size(64,64)
-        }}
+        }
        }, {
         name: 'zober-home',
-        position: {37.7476172,-122.4776844},
+        position: { lat: 37.7476172, lng: -122.4776844 },
         content: contentString,
-        icon: {{
+        icon: {
           url: 'http://localhost:3000/icon/z_coffee.png',
           anchor: new google.maps.Point(32,32),
           scaledSize: new google.maps.Size(64,64)
-        }}
+        }
       }, {
        name: 'zober-home',
-       position: {37.7426171,-122.4776874},
+       position: { lat: 37.7426171, lng: -122.4776874 },
        content: contentString,
-       icon: {{
+       icon: {
          url: 'http://localhost:3000/icon/z_scroll.png',
          anchor: new google.maps.Point(32,32),
          scaledSize: new google.maps.Size(64,64)
-       }}
+       }
      }],
      zoom: 14,
-     center: {37.7576171,-122.4875824},
+     center: [37.7576171,-122.4875824],
     }
   }
   render() {
     return (
-      <Map google={ this.props.google } zoom={ 14 }>
-        {this.state.markers.map((m, i) => <Marker key={ i } name={ m.name } position={ m.position }></Marker>)}
-      </Map>
+      <div>
+        <Map google={window.google}
+          zoom={this.state.zoom}>
+
+          {
+            this.state.markers.map((m) => {
+              return (
+                <Marker
+                  name={'Your position'}
+                  position={ m.position }
+                  icon={{
+                    url: "http://localhost:3000/icon/z_scroll.png",
+                    anchor: new google.maps.Point(32,32),
+                    scaledSize: new google.maps.Size(64,64)
+                  }} />)
+
+                })
+            }
+
+        </Map>
+      </div>
     );
   }
 }
-
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyAvIU6QYS7hKm6JNGrNkyBFZ9vuzUsnzaU'
-})(MapContainer)
-//
-// function myMap() {
-//   const mapProp = {
-//
-//
-//
-//   var local = ;
-//   var icons = {
-//     zScroll: {
-//       name: 'zScroll',
-//       icon: local + 'z_scroll.png'
-//     },
-//     zCoffee: {
-//       name: 'zCoffee',
-//       icon: local + 'z_coffee.png'
-//     },
-//     zHouse: {
-//       name: 'zHouse',
-//       icon: local + 'z_house.png'
-//     }
-//   };
-//
-//   var contentString =
-//
-//
-//
-//
-//
-//   features.forEach((feature) => {
-//     var marker = new google.maps.Marker({
-//       position: feature.position,
-//       icon: icons[feature.type].icon,
-//       map: map,
-//     });
-//
-//     var infowindow = new google.maps.InfoWindow({
-//       content: feature.content
-//     });
-//
-//     marker.addListener('click', function() {
-//       infowindow.open(map, marker);
-//     });
-//   });
-//
-// }
