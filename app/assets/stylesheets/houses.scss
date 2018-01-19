@@ -46,8 +46,13 @@
 }
 
 .map-area {
-  width: calc(100% - 400px);
+  width: calc(100% - 800px);
   height: 100vh;
+}
+
+.houses_list {
+  overflow:hidden;
+  margin:0;
 }
 
 #googleMap {
@@ -57,7 +62,7 @@
 
 .sidebar {
   border-left: 1px solid #ddd;
-  width: 400px;
+  width: 800px;
   height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -69,7 +74,7 @@
 }
 
 .filter-bar {
-  width: 384px;
+  width: 784px;
   position: fixed;
 }
 
