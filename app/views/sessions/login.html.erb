@@ -11,14 +11,12 @@
     Back
   <% end %> -->
   <h1 class="login_title">login</h1>
-  <div class="google_auth">
     <% if current_user %>
     Signed in as <strong><%= current_user.name %></strong>!
     <%= link_to "Sign out", signout_path, id: "sign_out" %>
     <% else %>
-    <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
+      <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", :class => "btn btn-outline-primary" %>
     <% end %>
-  </div>
 </div>
 
 <%= form_tag login_path, class: 'form-horizontal', role: 'form' do %>

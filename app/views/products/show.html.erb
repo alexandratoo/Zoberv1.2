@@ -1,17 +1,18 @@
 <section>
-  <% render 'layouts/header' %>
+  <%= render 'layouts/header' %>
 </section>
-<section id="content-details" class="row clearfix">
-       <article id="details-article" class="col-sm-8">
-           <h1 id="article-title"><%= @product.title %><br><span class="font-weight-light"><%= @product.subtitle %></span></h1>
+<section id="content-details" class="row clearfix products">
+       <article id="details-article" class="col-sm-12">
+           <h1 id="article-title products"><%= @product.title %><br><span class="font-weight-light products"><%= @product.subtitle %></span></h1>
 
-
+           <div class="col-sm-12 products">
        <%= raw @product.description %>
+     </div>
        </article>
-       <aside id="details-aside" class="col-sm-4">
+       <aside id="details-aside" class="col-sm-12 products">
 
 
-                           <%= form_tag charges_path, id:'chargeForm' do %>
+                    <%= form_tag charges_path, id:'chargeForm' do %>
 
                    <% if flash[:error].present? %>
                      <div id="error_explanation">
@@ -24,7 +25,9 @@
                  <%= hidden_field_tag 'amount', @product.price_in_cents %>
                  <%= hidden_field_tag 'stripeEmail' %>
                  <%= hidden_field_tag 'product_id', @product.id %>
+                 <div class="col-sm-12 button">
                  <button id="btn-buy" type="button" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span>Buy this!</button>
+               </div>
 <script>
    var handler = StripeCheckout.configure({
      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
@@ -36,8 +39,8 @@
 });
 document.getElementById('btn-buy').addEventListener('click', function(e) {
      handler.open({
-       name: 'Learn Rails',
-       description: '<%= @product.title %> ($<%= @product.price %>)',
+       name: 'zober',
+        description: '<%= @product.title %> ($<%= @product.price_in_cents %>)',
        amount: document.getElementById("amount").value
    });
    e.preventDefault();
@@ -46,6 +49,12 @@ document.getElementById('btn-buy').addEventListener('click', function(e) {
 <% end %>
 
        </aside>
+   </section>
+   <section>
+     <div class="row-fluid">
+       <div class="col-sm-12">
+       </div>
+     </div>
    </section>
    <section>
      <% render 'layouts/footer_main' %>
