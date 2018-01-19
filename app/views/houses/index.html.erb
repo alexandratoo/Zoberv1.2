@@ -53,30 +53,35 @@
             </li>
           </nav>
         </div>
+        <br>
+
       <!-- end of filter bar-->
-      <div class="row">
-        <div v-for="house in modifiedHouses" v-if="filterHouses(house)" >
-          <a class="link_to_house" v-bind:href="'/houses/'+ house.id">
-          <img class="card-img-top" src="http://paradeofhomesdenver.com/uploads/homes/da77c29dec3c1340fd7c4d3a59957444_preview.jpg" alt="Card image cap"> </a>
-        <div class="col-6">
-          <div class="card-block">
-            <p class="description"> {{house.neighborhood}} </p>
-            <p class= "house_name"> {{house.name}} </p>
-            <p class="price"> {{formatPrice(house.price)}} </p>
+
+        <div class="row top-buffer">
+          <div v-for="house in modifiedHouses" v-if="filterHouses(house)" >
+            <div class="imagebox">
+              <a class="link_to_house" v-bind:href="'/houses/'+ house.id">
+                <img src="http://paradeofhomesdenver.com/uploads/homes/da77c29dec3c1340fd7c4d3a59957444_preview.jpg"  class="category-banner img-responsive">
+                <div class="col-sm-4">
+                  <span class="imagebox-desc">
+                  {{house.name}}
+                  ${{formatPrice(house.price)}}
+                  </span>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="col-6"></div>
-        </div>
-      </div>
+
+        <section>
+          <%= render "layouts/footer_main" %>
+        </section>
+
       </div>
     </div>
   </div>
 </body>
 
-
-<section>
-  <%= render "layouts/footer_main" %>
-</section>
 
 <%= javascript_include_tag("g_maps.js") %>
 
