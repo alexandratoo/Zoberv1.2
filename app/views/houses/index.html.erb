@@ -5,7 +5,7 @@
 <body class='houses_list'>
   <div class='app-wrapper'>
     <div class='map-area'>
-      <div id="googleMap"> </div>
+      <%= react_component("HouseMap") %>
     </div>
     <div id="app">
       <div class='sidebar'>
@@ -16,7 +16,7 @@
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Price</a>
               <div class="dropdown-menu">
                 <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> No Cost/Income Based </label>
-                <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Below $500/month</label> 
+                <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Below $500/month</label>
                 <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Between $500 - $800/month</label>
                 <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Above $800/month</label>
               </div>
@@ -83,4 +83,9 @@
 </body>
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key= + <%= ENV['GOOGLE_MAP_API_KEY']%> + &callback=myMap"></script>
+<section>
+  <%= render "layouts/footer_main" %>
+</section>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY']%>"></script>
