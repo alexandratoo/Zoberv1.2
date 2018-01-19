@@ -82,13 +82,15 @@ export default class HouseMap extends Component {
        }
      }],
      zoom: 14,
-     center: [37.7576171,-122.4875824],
+     center: { lat: 37.7576171, lng: -122.4875824 },
     }
   }
   render() {
     return (
       <div>
-        <Map google={window.google}
+        <Map style={{width: '60%', height: '100%', position: 'relative'}}
+          initialCenter={ this.state.center }
+          google={window.google}
           zoom={this.state.zoom}>
 
           {
