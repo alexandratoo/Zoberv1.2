@@ -1,12 +1,13 @@
 <section>
-  <% render 'layouts/header' %>
+  <%= render 'layouts/header' %>
 </section>
 <section id="content-details" class="row clearfix">
-       <article id="details-article" class="col-sm-8">
+       <article id="details-article" class="col-sm-12">
            <h1 id="article-title"><%= @product.title %><br><span class="font-weight-light"><%= @product.subtitle %></span></h1>
 
-
+           <div class="row-fluid product">
        <%= raw @product.description %>
+     </div>
        </article>
        <aside id="details-aside" class="col-sm-4">
 
@@ -24,7 +25,8 @@
                  <%= hidden_field_tag 'amount', @product.price_in_cents %>
                  <%= hidden_field_tag 'stripeEmail' %>
                  <%= hidden_field_tag 'product_id', @product.id %>
-                 <button id="btn-buy" type="button" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span>Buy this!</button>
+                 <div class="col-sm-12">
+                 <button id="btn-buy" type="button" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span>Buy this!</button></div>
 <script>
    var handler = StripeCheckout.configure({
      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
@@ -36,7 +38,7 @@
 });
 document.getElementById('btn-buy').addEventListener('click', function(e) {
      handler.open({
-       name: 'Learn Rails',
+       name: 'zober',
        description: '<%= @product.title %> ($<%= @product.price %>)',
        amount: document.getElementById("amount").value
    });
@@ -48,5 +50,5 @@ document.getElementById('btn-buy').addEventListener('click', function(e) {
        </aside>
    </section>
    <section>
-     <% render 'layouts/footer_main' %>
+     <%= render 'layouts/footer_main' %>
    </section>
