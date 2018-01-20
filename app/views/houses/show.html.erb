@@ -12,6 +12,7 @@
   <% end %>
 
   <br>
+  
   <div class="row">
     <div class="col-6">
       <img class="img-fluid" src="http://paradeofhomesdenver.com/uploads/homes/da77c29dec3c1340fd7c4d3a59957444_preview.jpg" alt="house-image-1"> 
@@ -19,27 +20,49 @@
       <img class="img-fluid" src="https://cimg3.ibsrv.net/cimg/www.doityourself.com/400x300_85-1/755/kitchen-island-with-vented-cooktop-156755.jpg" alt="house-image-3"> 
       <br>
       <img class="img-fluid" src="https://odis.homeaway.com/odis/listing/4dd7d862-5129-4665-9233-c8f80c7206c9.c6.jpg"> 
-      
     </div>
+
     <div class="col-6">
       <h3> <%=@house.name%> </h3>
       <h5> <%=@house.property_description%> in <%=@house.city%>. </h5>
       <br>
+
       <p> Price: <%= number_to_currency(@house.price)%> /  Deposit: <%=number_to_currency(@house.deposit)%> </p>
       <p> Neighborhood: <%=@house.neighborhood%> </p>
       <p> Gender: <%=@house.gender%> Only </p>
       <p> Smoking Policy: <%=@house.smoking_policy%> </p>
-      <p> Transportation Available: <%=@house.transportation%> </p>
-      <p> Parking: <%=@house.parking%> </p>
       <p> Activities: <%=@house.activities%> </p>
       <p> Room Amenities: <%=@house.room_amenities%> </p>
       <p> Hot Tub: <%=@house.hotttub%> </p>
-      <p> Air Conditioning: <%=@house.ac%> </p>
-      <p> Heating: <%=@house.heating%> </p>
-      <p> TV: <%=@house.tv%> </p>
-      <p> Internet: <%=@house.internet%> </p>
-      <p> Pets allowed: <%=@house.pets%> </p>
       <p> Capacity: <%=@house.capacity%> </p>
+      
+      <!-- icon booleans -->
+      <% if @house.transportation %>
+        <p> <i id="amenities" class="fa fa-bus"></i> Transportation Available </p>
+      <% end %>
+      <% if @house.pets %>
+        <p> <i id="amenities" class="fa fa-paw"></i> Pets Accepted</p>
+      <% end %>
+      <% if @house.transportation %>
+        <p> <i id="amenities" class="fa fa-bus"></i> Transportation Available </p>
+      <% end %>
+      <% if @house.ac %>
+        <p> <i id="amenities" class="fa fa-snowflake-o"></i> AC </p>
+      <% end %>
+      <% if @house.heating %>
+        <p> <i id="amenities" class="fa fa-thermometer-three-quarters"></i> Heat </p>
+      <% end %>
+      <% if @house.parking %>
+        <p> <i id="amenities" class="fa fa-car"></i> Parking Available </p>
+      <% end %>
+      <% if @house.insurance %>
+        <p> <i id="amenities" class="fa fa-id-card-o"></i> Insurance Accepted</p>
+      <% end %>
+      <!-- end of icon booleans -->
+
+      <p> <i id="amenities" class="fa fa-television" ></i> TV: <%= @house.tv %> </p>
+      <p> <i id="amenities" class="fa fa-wifi" ></i> Internet: <%= @house.internet %> </p>
+
     </div>
   </div>
 </section>
