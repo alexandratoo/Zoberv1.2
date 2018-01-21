@@ -286,6 +286,7 @@ onMapClicked(props) {
               return (
                   <Marker
                     key={ i }
+                    content={ m.content }
                     onClick={ this.onMarkerClick }
                     name={ m.name }
                     position={ m.position }
@@ -298,7 +299,8 @@ onMapClicked(props) {
               this.state.meetups.map((m, i) => {
                 return (
                     <Marker
-                      key={ i }s
+                      key={ i }
+                      content={ m.content }
                       onClick={ this.onMarkerClick }
                       name={ m.name }
                       position={ m.position }
@@ -313,12 +315,31 @@ onMapClicked(props) {
               <div>
                 <div>
                   <h1>Z-house: { this.state.selectedPlace.name }</h1>
-                  {/* {(content = this.state.selectedPlace.content) => {
+                  {console.log(this.state.selectedPlace)}
+                  {(content = this.state.selectedPlace.content) => {
                     if (content != undefined)
                       return (
-
+                        <div class="card-body d-flex flex-column align-items-start">
+                          <strong class="d-inline-block mb-2 text-primary">Amenities</strong>
+                          <div class="mb-1 text-muted">{new Date.now().getMonth()}</div>
+                          <p class="card-text mb-auto"></p>
+                          <span>Website<a href="https://zober.co"></a></span>
+                          <hr/>
+                          <p><h4>Activities: </h4>{ content.activities  }</p>
+                          <p><h4>Capacity: </h4>{ content.capacity }</p>
+                          <p><h4>Gender: </h4>{ content.gender }</p>
+                          <p><h4>Heating: </h4>{ content.heating }</p>
+                          <p><h4>A/C: </h4>{ content.ac }</p>
+                          <p><h4>hot-tub: </h4>{ content.hotttub }</p>
+                          <p><h4>WiFi/internet: </h4>{ content.internet }</p>
+                          <p><h4>Parking: </h4>{ content.parking }</p>
+                          <p><h4>Pets: </h4>{ content.pets }</p>
+                          <p><h4>Smoking: </h4>{ content.smoking_policy }</p>
+                          <p><h4>Transportation: </h4>{ content.transportation }</p>
+                          <p><h2>Price: </h2>{ content.price }</p>
+                        </div>
                       );
-                  }} */}
+                  }}
                 </div>
               </div>
             </InfoWindow>
