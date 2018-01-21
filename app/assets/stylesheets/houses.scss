@@ -50,6 +50,8 @@
 .filter-bar {
   width: 782px;
   position: fixed;
+  background: black;
+  z-index: 500;
 }
 
 .top-buffer {
