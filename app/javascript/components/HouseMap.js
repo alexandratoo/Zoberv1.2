@@ -1,113 +1,162 @@
 import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
-const contentString = `
-'<div id="content">'+
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h1 id="firstHeading" class="firstHeading">Sober on the Coast</h1>'+
-    '<div id="bodyContent">'+
-    '<br><a style="color: orange; font-size: 4rem;" href="zober.co">zober.co</a>'+
-    '<p><b>Company:</b> Zober LLC' +
-    '(303)445-2114'+
-    '<p>Bacon ipsum dolor amet spare ribs fatback short loin cow picanha.'+
-    ' Prosciutto tri-tip flank, rump shankle burgdoggen filet mignon t-bone strip steak tongue shank. '+
-    'Heritage Site.</p>'+
-
-    '<p>Attribution: Uluru, <a style="color: orange;" href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-    'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-    '(last visited Jan 19, 2018).</p>'+
-    '</div>'+
-    '</div>'
-
-`;
-
 export default class HouseMap extends Component {
   constructor(){
     super();
     this.state = {
-      markers: [{
-        name: 'zober-home',
-        position: { lat: 37.7576171, lng: -122.4976844 },
-        content: contentString,
-        icon: {
-          url: 'http://localhost:3000/icon/z_house.png',
-          anchor: new google.maps.Point(32,32),
-          scaledSize: new google.maps.Size(64,64)
-        }
-       }, {
-        name: 'zober-home',
-        position: { lat: 37.7576171, lng: -122.4875824 },
-        content: contentString,
-        icon: {
-          url: 'http://localhost:3000/icon/z_house.png',
-          anchor: new google.maps.Point(32,32),
-          scaledSize: new google.maps.Size(64,64)
-        }
-       }, {
-        name: 'zober-home',
-        position: { lat: 37.7876172, lng: -122.4776854 },
-        content: contentString,
-        icon: {
-          url: 'http://localhost:3000/icon/z_house.png',
-          anchor: new google.maps.Point(32,32),
-          scaledSize: new google.maps.Size(64,64)
-        }
-       }, {
-        name: 'zober-home',
-        position: { lat: 37.7376171, lng: -122.4776874 },
-        content: contentString,
-        icon: {
-          url: 'http://localhost:3000/icon/z_house.png',
-          anchor: new google.maps.Point(32,32),
-          scaledSize: new google.maps.Size(64,64)
-        }
-       }, {
-        name: 'zober-home',
-        position: { lat: 37.7476172, lng: -122.4776844 },
-        content: contentString,
-        icon: {
-          url: 'http://localhost:3000/icon/z_coffee.png',
-          anchor: new google.maps.Point(32,32),
-          scaledSize: new google.maps.Size(64,64)
-        }
-      }, {
-       name: 'zober-home',
-       position: { lat: 37.7426171, lng: -122.4776874 },
-       content: contentString,
-       icon: {
-         url: 'http://localhost:3000/icon/z_scroll.png',
-         anchor: new google.maps.Point(32,32),
-         scaledSize: new google.maps.Size(64,64)
-       }
-     }],
-     zoom: 14,
+      activeMarker: {},
+      selectedPlace: {},
+      showingInfoWindow: false,
+      markers: [],
+     //  markers: [{
+     //    name: 'zober-home',
+     //    position: { lat: 37.7576171, lng: -122.4976844 },
+     //    icon: {
+     //      url: 'http://localhost:3000/icon/z_house.png',
+     //      anchor: new google.maps.Point(32,32),
+     //      scaledSize: new google.maps.Size(64,64)
+     //    }
+     //   }, {
+     //    name: 'zober-home',
+     //    position: { lat: 37.7576171, lng: -122.4875824 },
+     //    icon: {
+     //      url: 'http://localhost:3000/icon/z_house.png',
+     //      anchor: new google.maps.Point(32,32),
+     //      scaledSize: new google.maps.Size(64,64)
+     //    }
+     //   }, {
+     //    name: 'zober-home',
+     //    position: { lat: 37.7876172, lng: -122.4776854 },
+     //    icon: {
+     //      url: 'http://localhost:3000/icon/z_house.png',
+     //      anchor: new google.maps.Point(32,32),
+     //      scaledSize: new google.maps.Size(64,64)
+     //    }
+     //   }, {
+     //    name: 'zober-home',
+     //    position: { lat: 37.7376171, lng: -122.4776874 },
+     //    icon: {
+     //      url: 'http://localhost:3000/icon/z_house.png',
+     //      anchor: new google.maps.Point(32,32),
+     //      scaledSize: new google.maps.Size(64,64)
+     //    }
+     //   }, {
+     //    name: 'zober-home',
+     //    position: { lat: 37.7476172, lng: -122.4776844 },
+     //    icon: {
+     //      url: 'http://localhost:3000/icon/z_coffee.png',
+     //      anchor: new google.maps.Point(32,32),
+     //      scaledSize: new google.maps.Size(64,64)
+     //    }
+     //  }, {
+     //   name: 'zober-home',
+     //   position: { lat: 37.7426171, lng: -122.4776874 },
+     //   icon: {
+     //     url: 'http://localhost:3000/icon/z_scroll.png',
+     //     anchor: new google.maps.Point(32,32),
+     //     scaledSize: new google.maps.Size(64,64)
+     //   }
+     // }],
+     zoom: 12,
      center: { lat: 37.7576171, lng: -122.4875824 },
     }
+
+    this.onMarkerClick = this.onMarkerClick.bind(this);
+    this.onMapClicked = this.onMapClicked.bind(this);
   }
+
+componentWillMount() {
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:3000/api/v1/houses",
+    "method": "GET",
+  }
+
+  $.ajax(settings)
+  .then((homes) => {
+    const homesList = homes.map((house, i) => {
+      let randLat = 37.7576171 + (0.1 * Math.random());
+      let randLng = -122.4875824 + (0.1 * Math.random());
+      let houseMarker = {
+        name: house.name,
+        position: {
+          lat: randLat,
+          lng: randLng
+        },
+        // content: {},
+        icon: {
+          url: 'http://localhost:3000/icon/z_house.png',
+          anchor: new google.maps.Point(32, 32),
+          scaledSize: new google.maps.Size(64, 64)
+        }
+      }
+      //
+      // for(let prop in house) {
+      //   houseMarker.content[prop] = house[prop];
+      // }
+
+      return houseMarker
+    });
+
+    this.setState({
+      markers: homesList
+    })
+
+  });
+  this.forceUpdate();
+}
+
+onMarkerClick(props, marker, e) {
+  console.log(props);
+  this.setState({
+    selectedPlace: props,
+    activeMarker: marker,
+    showingInfoWindow: true
+  });
+}
+
+onMapClicked(props) {
+  if (this.state.showingInfoWindow) {
+    this.setState({
+      showingInfoWindow: false,
+      activeMarker: null
+    })
+  }
+}
+
   render() {
     return (
       <div>
         <Map style={{width: '60%', height: '100%', position: 'relative'}}
+          onClick={ this.state.onMapClicked }
           initialCenter={ this.state.center }
           google={window.google}
           zoom={this.state.zoom}>
 
           {
-            this.state.markers.map((m) => {
+            this.state.markers.map((m, i) => {
               return (
-                <Marker
-                  name={'Your position'}
-                  position={ m.position }
-                  icon={{
-                    url: "http://localhost:3000/icon/z_scroll.png",
-                    anchor: new google.maps.Point(32,32),
-                    scaledSize: new google.maps.Size(64,64)
-                  }} />)
-
-                })
+                  <Marker
+                    key={ i }
+                    onClick={ this.onMarkerClick }
+                    name={ m.name }
+                    position={ m.position }
+                    icon={ m.icon }
+                  />
+                )
+              })
             }
-
+            <InfoWindow
+              marker={this.state.activeMarker}
+              visible={this.state.showingInfoWindow}>
+              <div>
+                <div>
+                  <h1>Z-house: { this.state.selectedPlace.name }</h1>
+                </div>
+              </div>
+            </InfoWindow>
         </Map>
       </div>
     );
