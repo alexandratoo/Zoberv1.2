@@ -3,14 +3,14 @@
 </section>
 
 <section id="content-details" class="row clearfix">
-       <article id="details-article" class="col-sm-12">
+       <div id="details-article" class="col-sm-12">
            <h1 id="article-title"><%= @product.title %><br><span class="font-weight-light"><%= @product.subtitle %></span></h1>
 
            <div class="row-fluid product">
 
        <%= raw @product.description %>
      </div>
-       </article>
+   </div>
        <aside id="details-aside" class="col-sm-12 products">
 
 
@@ -28,10 +28,9 @@
                  <%= hidden_field_tag 'stripeEmail' %>
                  <%= hidden_field_tag 'product_id', @product.id %>
 
-                 <div class="col-sm-12 button">
-                 <button id="btn-buy" type="button" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span>Buy this!</button>
+                 <div class="col-sm-12 ">
+                 <button id="btn-buy" type="button" class="btn btn-lg "><span class="glyphicon glyphicon-ok"></span>Buy this!</button>
                </div>
-
 
 <script>
    var handler = StripeCheckout.configure({
@@ -45,11 +44,8 @@
 document.getElementById('btn-buy').addEventListener('click', function(e) {
      handler.open({
        name: 'zober',
-<<<<<<< HEAD
-        description: '<%= @product.title %> ($<%= @product.price_in_cents %>)',
-=======
-       description: '<%= @product.title %> ($<%= @product.price %>)',
->>>>>>> 061
+description: '<%= @product.title %> ($<%= @product.price_in_cents %>)',
+
        amount: document.getElementById("amount").value
    });
    e.preventDefault();
@@ -60,7 +56,7 @@ document.getElementById('btn-buy').addEventListener('click', function(e) {
        </aside>
    </section>
    <section>
-<<<<<<< HEAD
+
      <div class="row-fluid">
        <div class="col-sm-12">
        </div>
@@ -68,7 +64,5 @@ document.getElementById('btn-buy').addEventListener('click', function(e) {
    </section>
    <section>
      <% render 'layouts/footer_main' %>
-=======
-     <%= render 'layouts/footer_main' %>
->>>>>>> 061
+
    </section>

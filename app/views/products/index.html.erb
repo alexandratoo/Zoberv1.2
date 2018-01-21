@@ -21,27 +21,34 @@
       </div>
     </section>
     <section id="content-details" class="row clearfix">
-  <article id="details-article" class="col-sm-8">
+  <article id="details-article" class="col-sm-12 products">
     <h1 id="article-title">pick one of our plans below</h1>
   </article>
 </section>
 
 <section id="products">
-  <div class="col-sm-4">
+
 <% @products.each do |product| %>
- <div class="product clearfix">
+ <div class="product col-sm-4">
 <a href="<%= product_path(product) %>">
  <h3 class="product-title"><%= product.title %></h3><br></a>
- <p class="product-title"><%= product.subtitle %></p>
-     <span class="product-price">$<%= product.price %></span>
+ <p class="product-title"><%= product.subtitle %></p><br>
+     <span class="product-price">$<%= product.price_in_cents %></span>
 
-  </div>
+
  </div>
  <% end %>
+ <div class="product col-sm-4">
+<a href="#">
+ <h3 class="product-title">multiple facilities</h3><br></a>
+ <p class="product-title">contact us if you have many properties</p><br>
+     <span class="product-price">we will customize your price</span>
+
+
+ </div>
 </section>
 
 
-    <!-- <%= render 'charges/new' %> -->
 
 <section>
   <div class="container-fluid">
