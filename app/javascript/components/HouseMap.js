@@ -5,59 +5,203 @@ export default class HouseMap extends Component {
   constructor(){
     super();
     this.state = {
+    styles : [
+        {
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#242f3e'
+            }
+          ]
+        }, {
+          elementType: 'labels.text.stroke',
+          stylers: [
+            {
+              color: '#242f3e'
+            }
+          ]
+        }, {
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#746855'
+            }
+          ]
+        }, {
+          featureType: 'administrative.locality',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#d59563'
+            }
+          ]
+        }, {
+          featureType: 'poi',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#d59563'
+            }
+          ]
+        }, {
+          featureType: 'poi.park',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#263c3f'
+            }
+          ]
+        }, {
+          featureType: 'poi.park',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#6b9a76'
+            }
+          ]
+        }, {
+          featureType: 'road',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#38414e'
+            }
+          ]
+        }, {
+          featureType: 'road',
+          elementType: 'geometry.stroke',
+          stylers: [
+            {
+              color: '#212a37'
+            }
+          ]
+        }, {
+          featureType: 'road',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#9ca5b3'
+            }
+          ]
+        }, {
+          featureType: 'road.highway',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#746855'
+            }
+          ]
+        }, {
+          featureType: 'road.highway',
+          elementType: 'geometry.stroke',
+          stylers: [
+            {
+              color: '#1f2835'
+            }
+          ]
+        }, {
+          featureType: 'road.highway',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#f3d19c'
+            }
+          ]
+        }, {
+          featureType: 'transit',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#2f3948'
+            }
+          ]
+        }, {
+          featureType: 'transit.station',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#d59563'
+            }
+          ]
+        }, {
+          featureType: 'water',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#1F7491'
+            }
+          ]
+        }, {
+          featureType: 'water',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#3FB5B9'
+            }
+          ]
+        }, {
+          featureType: 'water',
+          elementType: 'labels.text.stroke',
+          stylers: [
+            {
+              color: '#17263c'
+            }
+          ]
+        }
+      ],
       activeMarker: {},
       selectedPlace: {},
       showingInfoWindow: false,
       markers: [],
-     //  markers: [{
-     //    name: 'zober-home',
-     //    position: { lat: 37.7576171, lng: -122.4976844 },
-     //    icon: {
-     //      url: 'http://localhost:3000/icon/z_house.png',
-     //      anchor: new google.maps.Point(32,32),
-     //      scaledSize: new google.maps.Size(64,64)
-     //    }
-     //   }, {
-     //    name: 'zober-home',
-     //    position: { lat: 37.7576171, lng: -122.4875824 },
-     //    icon: {
-     //      url: 'http://localhost:3000/icon/z_house.png',
-     //      anchor: new google.maps.Point(32,32),
-     //      scaledSize: new google.maps.Size(64,64)
-     //    }
-     //   }, {
-     //    name: 'zober-home',
-     //    position: { lat: 37.7876172, lng: -122.4776854 },
-     //    icon: {
-     //      url: 'http://localhost:3000/icon/z_house.png',
-     //      anchor: new google.maps.Point(32,32),
-     //      scaledSize: new google.maps.Size(64,64)
-     //    }
-     //   }, {
-     //    name: 'zober-home',
-     //    position: { lat: 37.7376171, lng: -122.4776874 },
-     //    icon: {
-     //      url: 'http://localhost:3000/icon/z_house.png',
-     //      anchor: new google.maps.Point(32,32),
-     //      scaledSize: new google.maps.Size(64,64)
-     //    }
-     //   }, {
-     //    name: 'zober-home',
-     //    position: { lat: 37.7476172, lng: -122.4776844 },
-     //    icon: {
-     //      url: 'http://localhost:3000/icon/z_coffee.png',
-     //      anchor: new google.maps.Point(32,32),
-     //      scaledSize: new google.maps.Size(64,64)
-     //    }
-     //  }, {
-     //   name: 'zober-home',
-     //   position: { lat: 37.7426171, lng: -122.4776874 },
-     //   icon: {
-     //     url: 'http://localhost:3000/icon/z_scroll.png',
-     //     anchor: new google.maps.Point(32,32),
-     //     scaledSize: new google.maps.Size(64,64)
-     //   }
-     // }],
+      meetups: [{
+        name: 'zober-home',
+        position: { lat: 37.7576171, lng: -122.4976844 },
+        icon: {
+          url: 'http://localhost:3000/icon/z_coffee.png',
+          anchor: new google.maps.Point(32,32),
+          scaledSize: new google.maps.Size(64,64)
+        }
+       }, {
+        name: 'zober-home',
+        position: { lat: 37.7576171, lng: -122.4875824 },
+        icon: {
+          url: 'http://localhost:3000/icon/z_coffee.png',
+          anchor: new google.maps.Point(32,32),
+          scaledSize: new google.maps.Size(64,64)
+        }
+       }, {
+        name: 'zober-home',
+        position: { lat: 37.7876172, lng: -122.4776854 },
+        icon: {
+          url: 'http://localhost:3000/icon/z_coffee.png',
+          anchor: new google.maps.Point(32,32),
+          scaledSize: new google.maps.Size(64,64)
+        }
+       }, {
+        name: 'zober-home',
+        position: { lat: 37.7376171, lng: -122.4776874 },
+        icon: {
+          url: 'http://localhost:3000/icon/z_coffee.png',
+          anchor: new google.maps.Point(32,32),
+          scaledSize: new google.maps.Size(64,64)
+        }
+       }, {
+        name: 'zober-home',
+        position: { lat: 37.7476172, lng: -122.4776844 },
+        icon: {
+          url: 'http://localhost:3000/icon/z_coffee.png',
+          anchor: new google.maps.Point(32,32),
+          scaledSize: new google.maps.Size(64,64)
+        }
+      }, {
+       name: 'zober-home',
+       position: { lat: 37.7426171, lng: -122.4776874 },
+       icon: {
+         url: 'http://localhost:3000/icon/z_coffee.png',
+         anchor: new google.maps.Point(32,32),
+         scaledSize: new google.maps.Size(64,64)
+       }
+     }],
      zoom: 12,
      center: { lat: 37.7576171, lng: -122.4875824 },
     }
@@ -77,6 +221,7 @@ componentWillMount() {
   $.ajax(settings)
   .then((homes) => {
     const homesList = homes.map((house, i) => {
+      console.log(house);
       let randLat = 37.7576171 + (0.1 * Math.random());
       let randLng = -122.4875824 + (0.1 * Math.random());
       let houseMarker = {
@@ -85,17 +230,17 @@ componentWillMount() {
           lat: randLat,
           lng: randLng
         },
-        // content: {},
+        content: {},
         icon: {
           url: 'http://localhost:3000/icon/z_house.png',
           anchor: new google.maps.Point(32, 32),
           scaledSize: new google.maps.Size(64, 64)
         }
       }
-      //
-      // for(let prop in house) {
-      //   houseMarker.content[prop] = house[prop];
-      // }
+
+      for(let prop in house) {
+        houseMarker.content[prop] = house[prop];
+      }
 
       return houseMarker
     });
@@ -132,8 +277,9 @@ onMapClicked(props) {
         <Map style={{width: '60%', height: '100%', position: 'relative'}}
           onClick={ this.state.onMapClicked }
           initialCenter={ this.state.center }
-          google={window.google}
-          zoom={this.state.zoom}>
+          google={ window.google }
+          zoom={ this.state.zoom }
+          styles={ this.state.styles }>
 
           {
             this.state.markers.map((m, i) => {
@@ -148,12 +294,31 @@ onMapClicked(props) {
                 )
               })
             }
+            {
+              this.state.meetups.map((m, i) => {
+                return (
+                    <Marker
+                      key={ i }s
+                      onClick={ this.onMarkerClick }
+                      name={ m.name }
+                      position={ m.position }
+                      icon={ m.icon }
+                    />
+                  )
+                })
+              }
             <InfoWindow
               marker={this.state.activeMarker}
               visible={this.state.showingInfoWindow}>
               <div>
                 <div>
                   <h1>Z-house: { this.state.selectedPlace.name }</h1>
+                  {/* {(content = this.state.selectedPlace.content) => {
+                    if (content != undefined)
+                      return (
+
+                      );
+                  }} */}
                 </div>
               </div>
             </InfoWindow>
