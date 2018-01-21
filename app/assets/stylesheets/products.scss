@@ -3,4 +3,8 @@
 #btn-buy {text-align:center;}
 .row.clearfix{ margin-top: 140px;}
 .font-weight-light.products {text-align:center;}
+.product {text-align:center; background-color:#f47f49; padding:20px; border-radius: 15px;}
 .col-sm-12.products {text-align:center;}
+.product.clearfix {display:inline-block;}
+.product.col-sm-4{display: inline-flex; margin-top:40px; margin-bottom:40px;}
+.row-fluid.product {margin-top:40px; margin-bottom:40px;}

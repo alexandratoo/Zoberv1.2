@@ -14,7 +14,7 @@ development:
   encoding: unicode
   database: myapp_development
   pool: 5
-  username: Drew
+
 
 test:
   adapter: postgresql
