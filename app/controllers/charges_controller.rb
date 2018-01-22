@@ -1,9 +1,10 @@
 class ChargesController < ApplicationController
-
+before_action :authenticate_provider!
   def new
   end
 
   def create
+
  product = Product.find(params[:product_id])
 
     customer = Stripe::Customer.create(
@@ -19,7 +20,7 @@ class ChargesController < ApplicationController
     #   currency: 'usd'
     # )
 
-purchase = Purchase.create(email: params[:stripeEmail], card: params[:stripeToken], amount: product.price_in_cents,  currency: "usd",
+purchase = Purchase.create(email: params[:stripeEmail], card: params[:stripeToken], amount: product.price,  currency: "usd",
 customer_id: customer.id, product_id: product.id, uuid: SecureRandom.uuid)
 redirect_to purchase
 

@@ -1,9 +1,4 @@
 class ProvidersController < ApplicationController
-def index
-  @product = Product.find_by_sku("yearly")
+  devise :database_authenticatable, :registerable, :recoverable, :reemberable, :trackable, :validatable
 
-end
-def new
-
-end
 end

@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
 
-
+  devise_for :providers
   mount Ckeditor::Engine => '/ckeditor'
   resources :purchases, only: [:show]
   resources :products, only: [:index, :show]
-  resources :providers do
 
-  end
+
   resources :charges
-  resources :sessions, only: [:create, :destroy, :oauth_create, :oauth_destroy]
+  resources :usersessions, only: [:create, :destroy, :oauth_create, :oauth_destroy]
   resource :home_page, only: [:show]
   resources :houses, :users, :only => [:new, :create, :index]
   resources :places, except: [:update, :edit, :destroy]
@@ -16,6 +15,7 @@ Rails.application.routes.draw do
     resources :comments
 
   end
+
 get 'register' => 'providers#register'
 
   get 'g_sessions/create'
@@ -35,17 +35,17 @@ get 'register' => 'providers#register'
   get 'index'=> 'providers#index'
   get 'signup' => 'users#new'
 
-  get 'login' => 'sessions#login'
-  post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
+  get 'login' => 'usersessions#login'
+  post 'login' => 'usersessions#create'
+  delete 'logout' => 'usersessions#destroy'
 
   get 'g_sessions/create'
 
   get 'g_sessions/destroy'
 
-  get 'auth/:provider/callback', to: 'sessions#oauth_create'
+  get 'auth/:provider/callback', to: 'usersessions#oauth_create'
   get 'auth/failure', to: redirect('/')
-  get 'signout', to: 'sessions#oauth_destroy', as: 'signout'
+  get 'signout', to: 'usersessions#oauth_destroy', as: 'signout'
 
 
   root to: 'home_page#index'

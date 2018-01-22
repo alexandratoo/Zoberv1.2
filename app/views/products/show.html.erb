@@ -25,7 +25,7 @@
                  <script src="https://checkout.stripe.com/checkout.js"></script>
                  <%= hidden_field_tag 'stripeToken' %>
                  <%= hidden_field_tag 'amount', @product.price_in_cents %>
-                 <%= hidden_field_tag 'stripeEmail' %>
+                 <%= hidden_field_tag 'stripeEmail'  %>
                  <%= hidden_field_tag 'product_id', @product.id %>
 
                  <div class="col-sm-12 ">
