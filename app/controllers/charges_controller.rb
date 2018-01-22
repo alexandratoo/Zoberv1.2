@@ -1,9 +1,10 @@
 class ChargesController < ApplicationController
-
+before_action :authenticate_provider!
   def new
   end
 
   def create
+
  product = Product.find(params[:product_id])
 
     customer = Stripe::Customer.create(

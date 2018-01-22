@@ -5,7 +5,6 @@ class Provider < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :houses
 
-end
 require "stripe"
 def stripe_user_account
   return @stripe_user_account if defined? @stripe_user_account
@@ -22,4 +21,5 @@ def stripe_user_account
     end
   end
   @stripe_user_account
+end
 end
