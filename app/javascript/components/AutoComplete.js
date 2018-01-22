@@ -337,67 +337,61 @@ class Contents extends Component {
               onClick={ this.state.onMapClicked }
               center={this.state.position}
               centerAroundCurrentLocation={false}>
-                <Marker position={this.state.position} />
-                {
-                  this.state.markers.map((m, i) => {
-                    return (
-                        <Marker
-                          key={ i }
-                          content={ m.content }
-                          onClick={ this.onMarkerClick }
-                          name={ m.name }
-                          position={ m.position }
-                          icon={ m.icon }
-                        />
-                      )
-                    })
-                  }
-                  {
-                    this.state.meetups.map((m, i) => {
-                      return (
-                          <Marker
-                            key={ i }
-                            content={ m.content }
-                            onClick={ this.onMarkerClick }
-                            name={ m.name }
-                            position={ m.position }
-                            icon={ m.icon }
-                          />
-                        )
-                      })
-                    }
-                    <InfoWindow
-                      marker={this.state.activeMarker}
-                      visible={this.state.showingInfoWindow}>
-                      <div className='card mb-2 box-shadow'>
-                        <h1>Z-house: { this.state.selectedPlace.name }</h1>
-                          { content = this.state.selectedPlace.content, console.log(content) }
-                          { (content === undefined) ? '' :
-                            (  <div className="card-body d-flex flex-column align-items-start">
-                              <p><h4>Cost:</h4>{ content.price }</p>
+          <Marker position={this.state.position} />
+          {
+            this.state.markers.map((m, i) => {
+              return (
+                  <Marker
+                    key={ i }
+                    content={ m.content }
+                    onClick={ this.onMarkerClick }
+                    name={ m.name }
+                    position={ m.position }
+                    icon={ m.icon }
+                  />
+                )
+              })
+            }
+            {
+              this.state.meetups.map((m, i) => {
+                return (
+                    <Marker
+                      key={ i }
+                      content={ m.content }
+                      onClick={ this.onMarkerClick }
+                      name={ m.name }
+                      position={ m.position }
+                      icon={ m.icon }
+                    />
+                  )
+                })
+              }
+              <InfoWindow
+                marker={this.state.activeMarker}
+                visible={this.state.showingInfoWindow}>
+                <div className='card mb-2 box-shadow'>
+                  <h1>Z-house: { this.state.selectedPlace.name }</h1>
+                    { content = this.state.selectedPlace.content, console.log(content) }
+                    { (content === undefined) ? '' :
+                      (  <div className="card-body d-flex flex-column align-items-start">
+                        <div className="mb-1 text-muted">last updated: ...</div>
+                        <hr/>
+                        <p><h4>Cost:</h4>{ content.price }</p>
+                          <p><h4>Activities: </h4>{ content.activities  }</p>
+                          <p><h4>Capacity: </h4>{ content.capacity }</p>
+                          <p><h4>Gender: </h4>{ content.gender }</p>
+                          <p><h4>Heating: </h4>{ content.heating }</p>
+                          <p><h4>A/C: </h4>{ content.ac }</p>
+                          <p><h4>hot-tub: </h4>{ content.hotttub }</p>
+                          <p><h4>WiFi/internet: </h4>{ content.internet }</p>
+                          <p><h4>Parking: </h4>{ content.parking }</p>
+                          <p><h4>Pets: </h4>{ content.pets }</p>
+                          <p><h4>Smoking: </h4>{ content.smoking_policy }</p>
+                          <p><h4>Transportation: </h4>{ content.transportation }</p>
+                        </div>)}
 
-                                <div className="d-inline-block mb-2 text-primary">
-                                  Amenities
-                                </div>
-                                <div className="mb-1 text-muted">Jan, 21st</div>
-                                <p className="card-text mb-auto"></p>
-                                <span>Website<a href="https://zober.co"></a></span>
-                                <hr/>
-                                <p><h4>Activities: </h4>{ content.activities  }</p>
-                                <p><h4>Capacity: </h4>{ content.capacity }</p>
-                                <p><h4>Gender: </h4>{ content.gender }</p>
-                                <p><h4>Heating: </h4>{ content.heating }</p>
-                                <p><h4>A/C: </h4>{ content.ac }</p>
-                                <p><h4>hot-tub: </h4>{ content.hotttub }</p>
-                                <p><h4>WiFi/internet: </h4>{ content.internet }</p>
-                                <p><h4>Parking: </h4>{ content.parking }</p>
-                                <p><h4>Pets: </h4>{ content.pets }</p>
-                                <p><h4>Smoking: </h4>{ content.smoking_policy }</p>
-                                <p><h4>Transportation: </h4>{ content.transportation }</p>
-                              </div>)}
-
-                      </div>
-                    </InfoWindow>
+                </div>
+              </InfoWindow>
           </Map>
         </div>
       </div>
