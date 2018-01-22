@@ -8,7 +8,8 @@ class CreateProviders < ActiveRecord::Migration[5.1]
       t.string :email
       t.string :encrypted_password
       t.string :salt
-
+      t.integer :stripe_account_id
+      t.boolean :subscribed
       t.timestamps
     end
   end
