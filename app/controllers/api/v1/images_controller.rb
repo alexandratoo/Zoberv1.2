@@ -1,4 +1,4 @@
 class Api::V1::ImagesController < ApplicationController
-  @image = Image.all 
+  @images = Image.all 
   render 'index.json.jbuilder' 
 end

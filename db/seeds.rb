@@ -125,7 +125,7 @@ index = 11
   index += 1
   end
 
-array = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEMj3ZPd75vNC3z5B9lDiWL1KF6suTK4zu0VUDiAHkdZ1yAEHt", "http://bhag.us/wp-content/uploads/2018/01/how-to-decorate-living-room-in-indian-style-how-to-decorate-drawing-room-in-low-budget-indian-drawing-room-decoration-pictures-living-room-designs-indian-apartments-cheap-decorating-ideas-for-living-room-walls-400x300.jpg", "http://www.ikea.com/ms/media/cho_room/20171/hospitality/20171_cobh01a/20171_cobh01a_01_PH137648.jpg"]
+array = ["https://odis.homeaway.com/odis/stayz/7a90e073-e358-4fd8-b075-133f59c4e8e7.s2.jpg", "https://www.lexington.com/assets/images/Living-Room.jpg", "http://jmdfurniture.com/images/products/thumb/image1.JPG"]
 
  
 index = 1
