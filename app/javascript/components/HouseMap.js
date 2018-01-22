@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 export default class HouseMap extends Component {
+
   constructor(){
     super();
     this.state = {
-    styles : [
+    currentLocation: false,
+    styles: [
         {
           elementType: 'geometry',
           stylers: [
@@ -203,11 +205,12 @@ export default class HouseMap extends Component {
        }
      }],
      zoom: 12,
-     center: { lat: 37.7576171, lng: -122.4875824 },
+     center: {},
     }
 
     this.onMarkerClick = this.onMarkerClick.bind(this);
     this.onMapClicked = this.onMapClicked.bind(this);
+    this.houseList = this.houseList.bind(this);
   }
 
 componentWillMount() {
@@ -221,7 +224,6 @@ componentWillMount() {
   $.ajax(settings)
   .then((homes) => {
     const homesList = homes.map((house, i) => {
-      console.log(house);
       let randLat = 37.7576171 + (0.1 * Math.random());
       let randLng = -122.4875824 + (0.1 * Math.random());
       let houseMarker = {
@@ -250,11 +252,9 @@ componentWillMount() {
     })
 
   });
-  this.forceUpdate();
 }
 
 onMarkerClick(props, marker, e) {
-  console.log(props);
   this.setState({
     selectedPlace: props,
     activeMarker: marker,
@@ -267,17 +267,36 @@ onMapClicked(props) {
     this.setState({
       showingInfoWindow: false,
       activeMarker: null
-    })
+    });
   }
+}
+
+houseList(){
+  this.setState({center: { lat: 37.7576171, lng: -122.4875823 } });
+}
+
+toggleTheme(){
+  this.setState({styles: [{
+    elementType: 'geometry',
+    stylers: [
+      {
+        color: '#242f3e'
+      }
+    ]
+  }]})
 }
 
   render() {
     let content = undefined;
     return (
       <div>
+        <button className='btn-danger'
+          onClick={ this.houseList }>Houses</button>
+
         <Map style={{width: '60%', height: '100%', position: 'relative'}}
+          centerAroundCurrentLocation={ true }
           onClick={ this.state.onMapClicked }
-          initialCenter={ this.state.center }
+          center={ this.state.center }
           google={ window.google }
           zoom={ this.state.zoom }
           styles={ this.state.styles }>
