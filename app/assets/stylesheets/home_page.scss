@@ -101,8 +101,13 @@ html, body {
   color: #fff;
   border-radius: 0;
 }
-
-
+.row-fluid.image {
+  text-align:center;
+}
+.img-fluid.mx-auto {
+  text-align:center;
+  margin:none;
+}
 
 
 //modal styling//
@@ -141,11 +146,12 @@ html, body {
 
 //search bar styling//
 #search {
-border-radius: 15px 15px 15px 15px;
-width:100%;
-}
 
-.house_submit{border-radius: 15px 15px 15px 15px; color:white;   background-color: #f47f49;  -webkit-transition-duration: 0.4s;}
+width:80%;
+}
+.search_field {border-radius: 15 15px 15px 15; width:80%;}
+#search_form {display:inline;}
+.house_submit{border-radius: 15 15px 15px 15; color:white;   background-color: #f47f49;  -webkit-transition-duration: 0.4s;}
 .house_submit:hover{ background-color: #fcfcfc;
     color: #626262;}
 .search_field {width: 100%; padding-left:20px; font-style: italic;}
