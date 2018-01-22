@@ -30,7 +30,9 @@ json.array! @houses.each do |house|
   json.heating house.heating
   json.tv house.tv
   json.internet house.internet
-  # json.images house.images.each do |image|
-  #   json.id image.id
-  #   json.image image.image
+  json.images house.images.each do |image|
+    json.id image.id
+    json.house_id house.id
+    json.image image.image
+  end
 end 

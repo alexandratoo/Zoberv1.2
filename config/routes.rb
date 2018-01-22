@@ -56,6 +56,7 @@ get 'register' => 'providers#register'
   namespace :api do
     namespace :v1 do
       get '/houses' => 'houses#index'
+      get '/images' => 'images#index'
     end
   end
 

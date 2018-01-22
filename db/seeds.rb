@@ -51,76 +51,90 @@ index = 1
       index += 1
     end
 
-    index = 6
-    5.times do
-      House.create!({
-        name: "Treatment Center #{index}",
-        street: "789 Grove Street",
-        state: "CO",
-        city: "Denver",
-        zip_code: "80123",
-        email: "test@test.com",
-        website: "www.soberliving123",
-        facebook: "facebook_url",
-        instagram: "instagram_url",
-        linkedin: "linkedin_url",
-        twitter: "twitter_url",
-        capacity: 100,
-            price: 750.00,
-            deposit: 1000.00,
-            gender: "male",
-            payment_forms: "Check",
-            insurance: false,
-            property_description: "A sober living home",
-            neighborhood: "Lower Pac Heights",
-            smoking_policy: "Vaping allowed",
-            transportation: true,
-            parking: true,
-            activities: "Tennis",
-            room_amenities: "Room Service",
-            pets: true,
-            hotttub: false,
-            ac: true,
-            heating: true,
-            tv: "Flatscreen",
-            internet: "Wifi"
-          })
-       index += 1
-      end
+index = 6
+5.times do
+House.create!({
+  name: "Treatment Center #{index}",
+  street: "789 Grove Street",
+  state: "CO",
+  city: "Denver",
+  zip_code: "80123",
+  email: "test@test.com",
+  website: "www.soberliving123",
+  facebook: "facebook_url",
+  instagram: "instagram_url",
+  linkedin: "linkedin_url",
+  twitter: "twitter_url",
+  capacity: 100,
+  price: 750.00,
+  deposit: 1000.00,
+  gender: "male",
+  payment_forms: "Check",
+  insurance: false,
+  property_description: "A sober living home",
+  neighborhood: "Lower Pac Heights",
+  smoking_policy: "Vaping allowed",
+  transportation: true,
+  parking: true,
+  activities: "Tennis",
+  room_amenities: "Room Service",
+  pets: true,
+  hotttub: false,
+  ac: true,
+  heating: true,
+  tv: "Flatscreen",
+  internet: "Wifi"
+    })
+ index += 1
+end
 
-      index = 11
-      5.times do
-        House.create!({
-          name: "Sober Living House #{index}",
-          street: "456 Market Street",
-          state: "CA",
-          city: "San Francisco",
-          zip_code: "94111",
-          email: "test@test.com",
-          website: "www.soberliving123",
-          facebook: "facebook_url",
-          instagram: "instagram_url",
-          linkedin: "linkedin_url",
-          twitter: "twitter_url",
-          capacity: 100,
-          price: 2000.00,
-          deposit: 4000.00,
-           gender: "female",
-          payment_forms: "Credit Cards",
-          insurance: false,
-          property_description: "A sober living house",
-          neighborhood: "North Beach",
-          smoking_policy: "No Smoking",
-          transportation: true,
-          parking: false,
-          activities: "Chess",
-          room_amenities: "Room Service",
-          pets: true,
-          hotttub: true,
-          ac: true,
-          heating: true,
-          tv: "Flatscreen",
-          internet: "Ethernet"
-        })
-        index += 1
-        end
+index = 11
+5.times do
+  House.create!({
+    name: "Sober Living House #{index}",
+    street: "456 Market Street",
+    state: "CA",
+    city: "San Francisco",
+    zip_code: "94111",
+    email: "test@test.com",
+    website: "www.soberliving123",
+    facebook: "facebook_url",
+    instagram: "instagram_url",
+    linkedin: "linkedin_url",
+    twitter: "twitter_url",
+    capacity: 100,
+    price: 2000.00,
+    deposit: 4000.00,
+     gender: "female",
+    payment_forms: "Credit Cards",
+    insurance: false,
+    property_description: "A sober living house",
+    neighborhood: "North Beach",
+    smoking_policy: "No Smoking",
+    transportation: true,
+    parking: false,
+    activities: "Chess",
+    room_amenities: "Room Service",
+    pets: true,
+    hotttub: true,
+    ac: true,
+    heating: true,
+    tv: "Flatscreen",
+    internet: "Ethernet"
+  })
+  index += 1
+  end
+
+array = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEMj3ZPd75vNC3z5B9lDiWL1KF6suTK4zu0VUDiAHkdZ1yAEHt", "http://bhag.us/wp-content/uploads/2018/01/how-to-decorate-living-room-in-indian-style-how-to-decorate-drawing-room-in-low-budget-indian-drawing-room-decoration-pictures-living-room-designs-indian-apartments-cheap-decorating-ideas-for-living-room-walls-400x300.jpg", "http://www.ikea.com/ms/media/cho_room/20171/hospitality/20171_cobh01a/20171_cobh01a_01_PH137648.jpg"]
+
+ 
+index = 1
+15.times do 
+  array.each do |link|
+    Image.create!({
+    house_id: index,
+    image: link
+  })
+  end 
+index += 1
+end
