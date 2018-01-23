@@ -313,7 +313,7 @@ class Contents extends Component {
     const {position} = this.state;
 
     return (
-      <div>
+      <div className='map-resize'>
         <div>
           <form onSubmit={this.onSubmit}>
             <input
