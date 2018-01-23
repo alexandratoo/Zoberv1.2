@@ -51,6 +51,17 @@
   height: auto;
   margin-bottom: 15px; padding: 9px 7px;
 }
-.password.required {width:160px;}
+.password.required {width:160px; margin-right:10px;}
 .string.email.required {width:200px;}
-h2.provider_signup{color:#f47f49; font-weight:400; font-size: 4rem; font-family:raleway;}
+h2.provider_signup{color:#f47f49; font-weight:400; font-size: 4rem; text-align:center; font-family:raleway;}
+.string.required {padding-right:40px;}
+.input.required.email.provider_email {display:inline;}
+.input.required.password.provider_password_confirmation{display:inline;}
+.input.required.password.provider_password.field_with_hint{display:inline;}
+.btn.btn-md.signup-btn { background-color:#f47f49; color:white; horizontal:center;}
+.btn.btn-md.signup-btn:hover{color:f47f49; background-color:#626262;}
+.devise_login {color: #f47f49;}
+.devise_registration {color:#f47f49;}
+.container-fluid.login {margin-top:140px;}
+.string.email.optional {width:300px;}
+.password.optional {width:300px;}
