@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'index' => 'dashboard#index'
+
   devise_for :providers
   mount Ckeditor::Engine => '/ckeditor'
   resources :purchases, only: [:show]
@@ -15,8 +17,8 @@ Rails.application.routes.draw do
     resources :comments
 
   end
-get 'providers' => 'dashboard#providers'
-get 'register' => 'providers#register'
+
+
 
   get 'g_sessions/create'
   get 'g_sessions/destroy'
@@ -30,17 +32,12 @@ get 'register' => 'providers#register'
   get 'houses/home'
   get 'houses/:id' => 'houses#show'
   get 'new' => 'users#new'
-
-
-  get 'index'=> 'providers#index'
   get 'signup' => 'users#new'
-
   get 'login' => 'usersessions#login'
   post 'login' => 'usersessions#create'
   delete 'logout' => 'usersessions#destroy'
 
   get 'g_sessions/create'
-
   get 'g_sessions/destroy'
 
   get 'auth/:provider/callback', to: 'usersessions#oauth_create'
