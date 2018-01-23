@@ -27,6 +27,7 @@
   margin-top:140px;
 
 }
+.form-inputs{margin-left:30%;}
 .border-form-div {
   max-width: 600px;
   padding: 19px 29px 29px;
@@ -47,21 +48,32 @@
 .border-form-div input[type="text"],
 .border-form-div input[type="email"],
 .border-form-div input[type="password"] {
-  font-size: 16px;
+  font-size: 14px;
   height: auto;
-  margin-bottom: 15px; padding: 9px 7px;
+  padding: 9px 7px;
+  margin-top:10px;
+max-width:300px;
 }
 .password.required {width:160px; margin-right:10px;}
-.string.email.required {width:200px;}
-h2.provider_signup{color:#f47f49; font-weight:400; font-size: 4rem; text-align:center; font-family:raleway;}
-.string.required {padding-right:40px;}
-.input.required.email.provider_email {display:inline;}
-.input.required.password.provider_password_confirmation{display:inline;}
-.input.required.password.provider_password.field_with_hint{display:inline;}
-.btn.btn-md.signup-btn { background-color:#f47f49; color:white; horizontal:center;}
+.string.email.required {width:300px;}
+.provider_signup{color:#f47f49; font-weight:400; font-size: 4rem; margin-left:30%; font-family:raleway;}
+.string.required {padding-right:40px; max-width:300px;}
+
+.btn.btn-md.signup-btn { background-color:#f47f49; color:white; width: 40%;
+margin-left: 30%;
+ margin-top:15px;}
 .btn.btn-md.signup-btn:hover{color:f47f49; background-color:#626262;}
-.devise_login {color: #f47f49;}
-.devise_registration {color:#f47f49;}
+.devise_login {color: #f47f49; width: 40%;
+margin-left: 30%;
+margin-right: 30%}
+.devise_registration {color:#f47f49; width: 40%;
+margin-left: 30%;
+margin-right: 30%}
 .container-fluid.login {margin-top:140px;}
 .string.email.optional {width:300px;}
 .password.optional {width:300px;}
+.input.email.optional.provider_email {width: 40%;
+margin-left: 30%;
+margin-right: 30%}
+.input.password.optional.provider_password{width:40%; margin-left:30%; }
+.input.boolean.optional.provider_remember_me {width:40%; margin-left:30%; }

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :comments
 
   end
-
+get 'providers' => 'dashboard#providers'
 get 'register' => 'providers#register'
 
   get 'g_sessions/create'
