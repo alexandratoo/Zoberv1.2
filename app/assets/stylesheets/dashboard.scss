@@ -9,6 +9,7 @@
 .card-header.provider {font-family:raleway; font-weight:400; font-size: 3rem;color:#fff; background-color: #f47f49;}
 .card-title.provider_home {font-family:raleway; padding-left:20px; color:#626262;}
 .card-text.provider_home {font-family:raleway; padding-left:20px; color:#626262; font-size:1.5rem;}
-.card-block.provider {border: 1px solid #f47f49;}
-.card-block.provider_home {padding:10px;}
+.card-block.provider {border: 1px solid #f47f49; box-shadow: 2px 21px 67px -5px #626262; padding-bottom:20px; padding-top:20px;}
+.card-block.provider_home {padding:10px; }
 .card-header.add_homes {color:#fff; background-color: #f47f49; font-family:raleway;}
+.card.text-center.provider_home {box-shadow: 2px 21px 67px -5px #626262;  padding-bottom:10px;}

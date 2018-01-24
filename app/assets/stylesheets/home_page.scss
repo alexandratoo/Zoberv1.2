@@ -145,10 +145,7 @@ html, body {
 // #modal-launcher{margin: 30% 0 0 30%; }
 
 //search bar styling//
-#search {
-
-width:80%;
-}
+#search {width:70%;}
 .search_field {border-radius: 15 15px 15px 15; width:80%;}
 #search_form {display:inline;}
 .house_submit{border-radius: 15 15px 15px 15; color:white;   background-color: #f47f49;  -webkit-transition-duration: 0.4s;}
@@ -163,3 +160,7 @@ text-align:center;
 li.nav-item{
   color:white;
 }
+.dropdown-toggle {color:white;}
+.dropdown-toggle:hover {color:white;}
+.link_items {color:#f47f49}
+.link_items:hover {color:#f47f49}
