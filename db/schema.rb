@@ -109,6 +109,8 @@ ActiveRecord::Schema.define(version: 20180127193546) do
     t.string "email"
     t.string "encrypted_password"
     t.string "salt"
+    t.integer "stripe_account_id"
+    t.boolean "subscribed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "reset_password_token"
