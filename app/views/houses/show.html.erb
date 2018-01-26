@@ -3,25 +3,34 @@
 </section>
 
 <section class="house-display">
-  
-  <div id="carousel" class="carousel slide" data-ride="carousel">
+
+<div>
+  <div id="carousel" class="carousel slide" data-interval="false">
     <ol class="carousel-indicators">
       <li data-target="#carousel" data-slide-to="0" class="active"></li>
       <li data-target="#carousel" data-slide-to="1"></li>
-      <!-- <li data-target="#carousel" data-slide-to="2"></li> -->
+      <li data-target="#carousel" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
 
       <div class="carousel-item active">
+        <div class="row">
+          <div class="col-12">
+            <img class="d-block" src="https://pbs.twimg.com/media/C6z4T2nWwAIau5r.jpg" class="img-fluid" alt="First slide">
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
           <div class="row">
             <div class="col-sm">
-              <img class="d-block w-100" src= <%=@house.images[0].image %> alt="First slide">
-            </div>
-            <div class="col-sm"> 
-              <img class="d-block w-100" src= <%=@house.images[1].image %> alt="Second slide">
+              <img class="d-block" src= <%=@house.images[0].image %> alt="First slide">
             </div>
             <div class="col-sm">
-              <img class="d-block w-100" src= <%=@house.images[2].image %> alt="Third slide">
+              <img class="d-block" src= <%=@house.images[1].image %> alt="Second slide">
+            </div>
+            <div class="col-sm">
+              <img class="d-block" src= <%=@house.images[2].image %> alt="Third slide">
             </div>
           </div>
       </div>
@@ -29,13 +38,13 @@
       <div class="carousel-item">
           <div class="row">
             <div class="col-sm">
-              <img class="d-block w-100" src="https://st.hzcdn.com/fimgs/e611e9c00c13a4db_1000-w400-h300-b0-p0--eclectic-kitchen.jpg" alt="First slide">
-            </div>
-            <div class="col-sm"> 
-              <img class="d-block w-100" src="https://www.99northconstruction.com/wp-content/uploads/2016/05/99northconstruction-bathroom-remodeling-400x300.jpg" alt="Second slide">
+              <img class="d-block" src="https://st.hzcdn.com/fimgs/e611e9c00c13a4db_1000-w400-h300-b0-p0--eclectic-kitchen.jpg" alt="First slide">
             </div>
             <div class="col-sm">
-              <img class="d-block w-100" src="http://www.suncoastbrickpavers.com/images/pool-decks-01.jpg" alt="Third slide">
+              <img class="d-block" src="https://www.99northconstruction.com/wp-content/uploads/2016/05/99northconstruction-bathroom-remodeling-400x300.jpg" alt="Second slide">
+            </div>
+            <div class="col-sm">
+              <img class="d-block" src="http://www.suncoastbrickpavers.com/images/pool-decks-01.jpg" alt="Third slide">
             </div>
           </div>
       </div>
@@ -50,61 +59,66 @@
     </a>
   </div>
 
-  <br>
-  
-  <div class="row">
-    <div class="col-6">
-  
-      <img class="img-fluid" src= <%=@house.images[0].image %> alt="house-image-1"> 
-      <br>
-      <img class="img-fluid" src= <%=@house.images[1].image %> alt="house-image-2"> 
-      <br>
-      <img class="img-fluid" src= <%=@house.images[2].image %> alt="house-image-3"> 
-    </div>
-
-    <div class="col-6">
-      <h3> <%=@house.name%> </h3>
-      <h5> <%=@house.property_description%> in <%=@house.city%>. </h5>
-      <br>
-
-      <p> Price: <%= number_to_currency(@house.price)%> /  Deposit: <%=number_to_currency(@house.deposit)%> </p>
-      <p> Neighborhood: <%=@house.neighborhood%> </p>
-      <p> Gender: <%=@house.gender%> Only </p>
-      <p> Smoking Policy: <%=@house.smoking_policy%> </p>
-      <p> Activities: <%=@house.activities%> </p>
-      <p> Room Amenities: <%=@house.room_amenities%> </p>
-      <p> Hot Tub: <%=@house.hotttub%> </p>
-      <p> Capacity: <%=@house.capacity%> </p>
-      
+  <div class="col-12">
+    <ul>
       <!-- icon booleans -->
       <% if @house.transportation %>
-        <p> <i id="amenities" class="fa fa-bus"></i> Transportation Available </p>
+        <li> <i id="amenities" class="fa fa-bus"></i> Transportation Available </li>
       <% end %>
       <% if @house.pets %>
-        <p> <i id="amenities" class="fa fa-paw"></i> Pets Accepted</p>
-      <% end %>
-      <% if @house.transportation %>
-        <p> <i id="amenities" class="fa fa-bus"></i> Transportation Available </p>
+        <li> <i id="amenities" class="fa fa-paw"></i> Pets Accepted</li>
       <% end %>
       <% if @house.ac %>
-        <p> <i id="amenities" class="fa fa-snowflake-o"></i> AC </p>
+        <li> <i id="amenities" class="fa fa-snowflake-o"></i> AC </li>
       <% end %>
       <% if @house.heating %>
-        <p> <i id="amenities" class="fa fa-thermometer-three-quarters"></i> Heat </p>
+        <li> <i id="amenities" class="fa fa-thermometer-three-quarters"></i> Heat </li>
       <% end %>
       <% if @house.parking %>
-        <p> <i id="amenities" class="fa fa-car"></i> Parking Available </p>
+        <li> <i id="amenities" class="fa fa-car"></i> Parking Available </li>
       <% end %>
       <% if @house.insurance %>
-        <p> <i id="amenities" class="fa fa-id-card-o"></i> Insurance Accepted</p>
+        <li> <i id="amenities" class="fa fa-id-card-o"></i> Insurance Accepted</li>
       <% end %>
       <!-- end of icon booleans -->
+      <li> <i id="amenities" class="fa fa-television" ></i> TV: <%= @house.tv %> </li>
+      <li> <i id="amenities" class="fa fa-wifi" ></i> Internet: <%= @house.internet %> </li>
+    </ul>
+  </div>
 
-      <p> <i id="amenities" class="fa fa-television" ></i> TV: <%= @house.tv %> </p>
-      <p> <i id="amenities" class="fa fa-wifi" ></i> Internet: <%= @house.internet %> </p>
+  <div class="container-fluid">
+    <div class="row">
 
+      <!-- left sidebar -->
+      <div class="col-md-2 fixed"> </div>
+
+      <!-- center content -->
+      <div class="col fluid d-flex flex-column">
+
+
+      <!-- main content -->
+      <div class="row flex-grow">
+
+        <div class="col-8 col-md-auto">
+          <h3 class="title"> <%=@house.name%> </h3>
+            <h5 class="description"> <%=@house.property_description%> in <%=@house.city%>. </h5>
+            <br>
+            <p> Price: <%= number_to_currency(@house.price)%> /  Deposit: <%=number_to_currency(@house.deposit)%> </p>
+            <p> Neighborhood: <%=@house.neighborhood%> </p>
+            <p> Gender: <%=@house.gender%> Only </p>
+            <p> Smoking Policy: <%=@house.smoking_policy%> </p>
+            <p> Activities: <%=@house.activities%> </p>
+            <p> Room Amenities: <%=@house.room_amenities%> </p>
+            <p> Hot Tub: <%=@house.hotttub%> </p>
+            <p> Capacity: <%=@house.capacity%> </p>
+      </div>
+
+      </div>
+      <!-- right sidebar -->
+      <div class="col-md-2 fixed"></div>
     </div>
   </div>
+
 </section>
 
 
