@@ -23,6 +23,7 @@
 @import "footer_main";
 @import "signup_form";
 //devise form styling//
+body {background-color: #fff;}
 .simple_form.new_provider {
   margin-top:200px;
 
@@ -64,9 +65,9 @@ border-radius: 15px;
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
           border-radius: 5px;
-  -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.05);
-     -moz-box-shadow: 0 2px 3px rgba(0,0,0,.05);
-          box-shadow: 0 2px 3px rgba(0,0,0,.05);
+  -webkit-box-shadow: 0 3px 3px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 3px 3px rgba(0,0,0,.05);
+          box-shadow: 0 3px 5px rgba(0,0,0,.05);
 }
 .border-form-div-login .form-signin-heading,
 .border-form-div-login .checkbox {
@@ -84,7 +85,6 @@ border-radius: 15px;
 }
 .border-form-div-login {
   display: table;
-
   width: 100%;
   height: auto;
   padding: 0;
@@ -101,18 +101,28 @@ border-radius: 15px;
   opacity: .5;
   border-radius: 15px;
   margin-top:140px;
+  padding-bottom:40px;
 }
-.password.required {width:160px; margin-right:10px; color:black;}
-.string.email.required {width:300px; color:black;}
+.password.required {width:160px; margin-right:10px; color:white;}
+.string.email.required {width:300px; color:white;}
 .provider_signup{color:#f47f49; font-weight:400; font-size: 4rem; margin-left:30%; font-family:raleway;}
-.string.required {padding-right:40px; max-width:300px; color:black;}
-.email {color:black;}
-.btn.btn-lg.signup-btn { background-color:#f47f49; color:white;
- margin-top:15px;}
+.string.required {padding-right:40px; max-width:300px; color:white;}
+.string.required#provider_organization{color:black;}
+.email.required#provider_email{color:black;}
+.password.required#provider_password{color:black;}
+.string.required#provider_password{color:black;}
+.string.required#provider_lastname{color:black;}
+.string.required#provider_firstname{color:black;}
+.string.required#provider_occupation{color:black;}
+.password.required#provider_password_confirmation{color:black; margin-bottom:40px;}
+.email {color:white;}
+.btn.btn-lg.signup-btn { background-color:black; color:white;
+ margin-top:15px; margin-bottom:40px;}
 .btn.btn-lg.signup-btn:hover{color:f47f49; background-color:#626262;}
-.devise_login {color: #black;; width: 40%;
+.devise_login {color: white; width: 40%;
 margin-left: 30%;
-margin-right: 30%}
+margin-right: 30%; margin-bottom:40px; font-size:18px;}
+.devise_login:hover{color:black;}
 .devise_registration {color:white; width: 40%;
 margin-left: 30%;
 margin-right: 30%}
@@ -125,10 +135,13 @@ margin-right: 30%}
 .input.password.optional.provider_password{width:40%; margin-left:30%; }
 .input.boolean.optional.provider_remember_me {width:40%; margin-left:30%; }
 .hint{color:#fff;}
-.provider_login{color:black; font-size:4rem; font-weight:400; font-family:raleway; margin-top:80px}
-.btn.btn-lg.login-btn {background-color:black; color:#fff; font-family:raleway;}
-.devise_forgot {color:white;}
-.email.optional{color:black; text-align:center;}
-.password.optional {color:white; }
+.provider_login{color:black; font-size:4rem; font-weight:400; font-family:raleway; margin-top:80px; text-align:center; margin-right:50px;}
+.btn.btn-lg.login-btn {background-color:black; color:#fff; font-family:raleway; margin-bottom:20px;}
+.devise_forgot {color:white; }
+.email.optional{color:black; }
+.password.optional {color:black; }
+.devise_registration{margin-bottom:20px;}
 .boolean.optional.checkbox {color:white; padding-left:20px;}
 .boolean.optional{margin-right:20px;}
+.password.optional#provider_password{margin-bottom:80px;}
+.container-fluid.signup {margin-top:140px;}
