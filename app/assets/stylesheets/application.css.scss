@@ -24,7 +24,7 @@
 @import "signup_form";
 //devise form styling//
 .simple_form.new_provider {
-  margin-top:140px;
+  margin-top:200px;
 
 }
 .form-inputs{margin-left:30%;}
@@ -37,9 +37,9 @@
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
           border-radius: 5px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 2px 3px rgba(0,0,0,.05);
+          box-shadow: 0 2px 3px rgba(0,0,0,.05);
 }
 .border-form-div .form-signin-heading,
 .border-form-div .checkbox {
@@ -48,22 +48,22 @@
 .border-form-div input[type="text"],
 .border-form-div input[type="email"],
 .border-form-div input[type="password"] {
-  font-size: 14px;
+  font-size: 16px;
   height: auto;
   padding: 9px 7px;
   margin-top:10px;
 max-width:300px;
+border-radius: 15px;
 }
-.password.required {width:160px; margin-right:10px;}
-.string.email.required {width:300px;}
+.password.required {width:160px; margin-right:10px; color:black;}
+.string.email.required {width:300px; color:black;}
 .provider_signup{color:#f47f49; font-weight:400; font-size: 4rem; margin-left:30%; font-family:raleway;}
-.string.required {padding-right:40px; max-width:300px;}
+.string.required {padding-right:40px; max-width:300px; color:black;}
 
-.btn.btn-md.signup-btn { background-color:#f47f49; color:white; width: 40%;
-margin-left: 30%;
+.btn.btn-lg.signup-btn { background-color:#f47f49; color:white;
  margin-top:15px;}
-.btn.btn-md.signup-btn:hover{color:f47f49; background-color:#626262;}
-.devise_login {color: #f47f49; width: 40%;
+.btn.btn-lg.signup-btn:hover{color:f47f49; background-color:#626262;}
+.devise_login {color: #ffffff;; width: 40%;
 margin-left: 30%;
 margin-right: 30%}
 .devise_registration {color:#f47f49; width: 40%;
@@ -77,3 +77,4 @@ margin-left: 30%;
 margin-right: 30%}
 .input.password.optional.provider_password{width:40%; margin-left:30%; }
 .input.boolean.optional.provider_remember_me {width:40%; margin-left:30%; }
+.hint{color:#fff;}

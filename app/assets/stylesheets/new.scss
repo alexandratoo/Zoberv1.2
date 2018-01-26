@@ -7,7 +7,7 @@ h1 {text-align:center; color: #626262; font-family: Raleway; margin-top:140px; }
 .signup .container-fluid{margin-top:140px;}
 //styling of the signup form//
 .signupForm {text-align:center; font-family:raleway;}
-label {font-family:raleway; color: #626262;}
+label {font-family:raleway; color: black;}
 input{color:#626262;}
 .profile {text-align:center; font-family:raleway; color:#626262; margin-top:20px;}
 button {margin:auto;}
@@ -17,3 +17,24 @@ button {margin:auto;}
 .createAccount:hover{color:#ffffff; background-color: #ffffff; color:#f47f49;}
 .computer{padding-left:35px; padding-right:35px;}
 .signup_field {width: 30%; }
+.border-form-div {
+  display: table;
+
+  width: 100%;
+  height: auto;
+  padding: 0;
+
+  text-align: center;
+
+  color: white;
+  background: url('sunsetring.jpg') no-repeat bottom center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: .5;
+  border-radius: 15px;
+  margin-top:140px;
+}
+h2.provider_signup {color:#626262; text-align:center; padding-right:120px;}
