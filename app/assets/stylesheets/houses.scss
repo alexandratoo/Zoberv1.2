@@ -20,7 +20,7 @@
 }
 
 .map-area {
-  width: calc(100% - 800px);
+  width: calc(100% - 810px);
   height: 100vh;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .map-resize {
-  width: 60%;
+  width: calc(100% - 810px);
   height: 100vh;
 }
 
@@ -101,6 +101,42 @@
   font-size: 25px;
   margin: 0px;
   padding: 0px;
+}
+
+/* fixed and fluid only on sm and up */
+@media (min-width: 576px) {
+
+    .fixed {
+        flex: 0 0 200px;
+        min-height: 100vh;
+    }
+    .col .fluid {
+       min-height: 100vh;
+    }
+}
+
+.flex-grow {
+   flex:1;
+}
+
+.d-block {
+  height: 300px;
+  width: 100%;
+}
+
+.description {
+  color: #898989;
+}
+
+.title {
+  font-size: 39px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+ul li {
+  display: inline;
+  list-style-type: none;
 }
 
 
