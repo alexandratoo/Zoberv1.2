@@ -1,5 +1,4 @@
 
-#article-title {text-align:center;}
 #btn-buy {text-align:center;}
 .row.clearfix{ margin-top: 140px;}
 .font-weight-light.products {text-align:center;}
@@ -8,4 +7,12 @@
 .product.clearfix {display:inline-block;}
 .product.col-sm-4{display: inline-flex; margin-top:40px; margin-bottom:40px;}
 .row-fluid.product {margin-top:40px; margin-bottom:40px;}
-.header.header--nologo {background-color:#f47f49;}
+.Header.Header--noLogo {background-color:#f47f49;}
+#wall_ring {  display: table; width: 100%; height: auto; padding: 200px 0;
+    background: url('wall_ring.jpg') no-repeat bottom center scroll; background-color: black;
+    background-color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;  }
+  // .img-fluid.mx-auto {text-align:center; margin:none;}
