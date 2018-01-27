@@ -29,24 +29,38 @@
 </section>
 
 <section id="products">
-
+  <div class="container-fluid">
+  <div class="row flex-items-xs-middle flex-items-xs-center">
 <% @products.each do |product| %>
- <div class="product col-sm-4">
-<a href="<%= product_path(product) %>">
- <h3 class="product-title"><%= product.title %></h3><br></a>
- <p class="product-title"><%= product.subtitle %></p><br>
-     <span class="product-price">$<%= product.price_in_cents %></span>
+
+    <div class="col-xs-12 col-lg-4">
+      <div class="card text-xs-center">
+        <div class="card-header products">
+          <h3 class="display-2"><%=image_tag("wall_ring.jpg", alt: "logo", class: "img-fluid wall_ring")%></h3>
+        </div>
+        <div class="card-block products">
+          <h4 class="card-title products">
+          <%= product.title %>
+          </h4>
+          <ul class="list-group">
+            <li class="list-group-item products"><%= product.subtitle %></li>
+            <li class="list-group-item products">Responsive Ready</li>
 
 
- </div>
- <% end %>
- <div class="product col-sm-4">
+          <a href="<%= product_path(product) %>" class="btn btn-light btn-md products">Choose Plan</a>
+        </ul>  </div>
+      </div>
+    </div>
+    <% end %>
+
+ <div class="row-fluid">
+ <div class="product col-sm-12">
 <a href="#">
- <h3 class="product-title">multiple facilities</h3><br></a>
- <p class="product-title">contact us if you have many properties</p><br>
+ <h3 class="product-title">multiple facilities</h3></a>
+ <p class="product-title">contact us if you have many properties</p>
      <span class="product-price">we will customize your price</span>
 
-
+</div>
  </div>
 </section>
 

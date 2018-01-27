@@ -2,7 +2,7 @@
 #btn-buy {text-align:center;}
 .row.clearfix{ margin-top: 140px;}
 .font-weight-light.products {text-align:center;}
-.product {text-align:center; background-color:#f47f49; padding:20px; border-radius: 15px;}
+.product {text-align:center; background-color:#f47f49; padding:20px; border-radius: 15px; opacity:.9}
 .col-sm-12.products {text-align:center;}
 .product.clearfix {display:inline-block;}
 .product.col-sm-4{display: inline-flex; margin-top:40px; margin-bottom:40px;}
@@ -15,4 +15,67 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;  }
-  // .img-fluid.mx-auto {text-align:center; margin:none;}
+  .img-fluid.mx-auto {text-align:center; margin:none;}
+.product-title{margin-top:40px; margin-bottom:40px;}
+.product:hover {
+    box-shadow: 0 10px 14px 0 rgba(0,0,0,0.5)
+}
+
+.btn.btn-light.btn-md.products {margin-top:40px; width:40%;margin-left:30%; margin-right:40%;}
+.card-title.products{text-align:center; font-family:raleway; color:#626262; font-size:3rem;}
+.row.flex-items-xs-middle.flex-items-xs-center {
+  min-height: 200vh;
+}
+
+.card {
+  border: 0;
+  border-radius: 0px;
+  -webkit-box-shadow: 0 3px 0px 0 rgba(0, 0, 0, .08);
+  box-shadow: 0 3px 0px 0 rgba(0, 0, 0, .08);
+  transition: all .3s ease-in-out;
+  padding: 2.25rem 0;
+  position: relative;
+  will-change:transform;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+
+    transition: 0.5s;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    -webkit-box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .08);
+    box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .08);
+
+    &:after {
+      width: 100%;
+    }
+
+  }
+  & .card-header {
+    background-color: white;
+    padding-left: 2rem;
+    border-bottom: 0px;
+    text-align:center;
+  }
+  & .card-title.product {
+    margin-bottom: 1rem;
+  }
+  & .card-block.product {
+    padding-top: 0;
+  }
+  & .list-group-item.products{
+    border: 1px;
+    padding: .25rem;
+    text-align:center;
+    font-family:raleway;
+
+  }
+}
+.card.text-xs-center {margin-bottom:40px; margin-top:40px;}
