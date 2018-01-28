@@ -14,6 +14,16 @@ class Contents extends Component {
         showingInfoWindow: false,
         place: null,
         position: null,
+        // ///////// added filters
+        womenFilter: false,
+        petsFilter: false,
+        transitFilter: false,
+        menFilter: false,
+        parkingFilter: false,
+        acFilter: false,
+        internetFilter: false,
+        tvFilter: false,
+        smokingFilter: false,
         styles: [
             {
               elementType: 'geometry',
@@ -231,8 +241,11 @@ class Contents extends Component {
           for(let prop in house) {
             houseMarker.content[prop] = house[prop];
           }
-
+          // conditional for filtering
+          // if(this._filterHouses(house)){
+          //   console.log(house);
           return houseMarker
+          // }
         });
 
         this.setState({
@@ -242,10 +255,68 @@ class Contents extends Component {
       });
     }
 
+/////////////////filter function
+  _filterHouses(house) {
+    var isValid = true
+    if(this.state.petsFilter === true && isValid){
+      if(!house.pets) {
+        isValid = false;
+      }
+    }
+
+    if(this.state.transitFilter === true && isValid){
+      if(!house.transportation) {
+        isValid = false;
+      }
+    }
+
+    if(this.state.womenFilter === true && isValid){
+      if(house.gender !== "female") {
+        isValid = false;
+      }
+    }
+
+    if(this.state.menFilter === true && isValid){
+      if(house.gender !== "male") {
+        isValid = false;
+      }
+    }
+
+    if(this.state.parkingFilter === true && isValid){
+      if(!house.parking) { 
+        isValid = false;
+      }
+    }
+
+    if(this.state.acFilter === true && isValid){
+      if(!house.ac) {
+        isValid = false;
+      }
+    }
+
+    if(this.state.internetFilter === true && isValid){
+      if(house.internet === "None") { 
+        isValid = false;
+      }
+    }
+
+    if(this.state.tvFilter === true && isValid){
+      if(house.tv !== "Flatscreen") {
+        isValid = false;
+      }
+    }
+
+    if(this.state.smokingFilter === true && isValid){
+      if(house.smoking_policy === "No Smoking") {
+        isValid = false;
+      }
+    }
+    return isValid;
+  }
+
   onSubmit(e) {
     e.preventDefault();
   }
-
 
   componentDidMount() {
     this.renderAutoComplete();
