@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   get 'index' => 'dashboard#index'
 
   devise_for :providers
+  # resources :providers, :only => [:show]
+  devise_scope :provider do
+  get '/providers/:id' => 'providers#show'
+end
   mount Ckeditor::Engine => '/ckeditor'
   resources :purchases, only: [:show]
   resources :products, only: [:index, :show]
@@ -19,7 +23,7 @@ Rails.application.routes.draw do
   end
 
 
-
+match '/providers/:id',     to: 'providers#show',       via: 'get'
   get 'g_sessions/create'
   get 'g_sessions/destroy'
 

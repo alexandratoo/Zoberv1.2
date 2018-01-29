@@ -4,6 +4,11 @@ class Provider < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :houses
+has_many :products
+
+def self.find_by_uid!(uid)
+   Provider.find_by!("firstname = :p OR id = :p", p: uid)
+ end
 
 require "stripe"
 def stripe_user_account
