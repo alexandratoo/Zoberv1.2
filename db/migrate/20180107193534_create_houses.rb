@@ -26,12 +26,14 @@ class CreateHouses < ActiveRecord::Migration[5.1]
       t.string :activities
       t.string :room_amenities
       t.boolean :pets
-        t.boolean :hotttub
-          t.boolean :ac
-            t.boolean :heating
-            t.string :tv
-            t.string :internet
-          
+      t.boolean :hotttub
+      t.boolean :ac
+      t.boolean :heating
+      t.string :tv
+      t.string :internet
+      t.string :curfew
+      t.string :overnight_passes
+
       t.timestamps
     end
   end
