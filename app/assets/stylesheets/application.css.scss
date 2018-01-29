@@ -119,19 +119,13 @@ border-radius: 15px;
 .btn.btn-lg.signup-btn { background-color:black; color:white;
  margin-top:15px; margin-bottom:40px;}
 .btn.btn-lg.signup-btn:hover{color:f47f49; background-color:#626262;}
-.devise_login {color: white; width: 40%;
-margin-left: 30%;
-margin-right: 30%; margin-bottom:40px; font-size:18px;}
+.devise_login {color: white; width: 40%;margin-left: 30%;margin-right: 30%; margin-bottom:40px; font-size:18px;}
 .devise_login:hover{color:black;}
-.devise_registration {color:white; width: 40%;
-margin-left: 30%;
-margin-right: 30%}
+.devise_registration {color:white; width: 40%;margin-left: 30%;margin-right: 30%}
 .container-fluid.login {margin-top:140px;}
 .string.email.optional {width:300px;}
 .password.optional {width:300px;}
-.input.email.optional.provider_email {width: 40%;
-margin-left: 30%;
-margin-right: 30%}
+.input.email.optional.provider_email {width: 40%;margin-left: 30%;margin-right: 30%}
 .input.password.optional.provider_password{width:40%; margin-left:30%; }
 .input.boolean.optional.provider_remember_me {width:40%; margin-left:30%; }
 .hint{color:#fff;}
