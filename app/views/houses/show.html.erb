@@ -59,66 +59,70 @@
     </a>
   </div>
 
-  <div class="col-12">
-    <ul>
-      <!-- icon booleans -->
-      <% if @house.transportation %>
-        <li> <i id="amenities" class="fa fa-bus"></i> Transportation Available </li>
-      <% end %>
-      <% if @house.pets %>
-        <li> <i id="amenities" class="fa fa-paw"></i> Pets Accepted</li>
-      <% end %>
-      <% if @house.ac %>
-        <li> <i id="amenities" class="fa fa-snowflake-o"></i> AC </li>
-      <% end %>
-      <% if @house.heating %>
-        <li> <i id="amenities" class="fa fa-thermometer-three-quarters"></i> Heat </li>
-      <% end %>
-      <% if @house.parking %>
-        <li> <i id="amenities" class="fa fa-car"></i> Parking Available </li>
-      <% end %>
-      <% if @house.insurance %>
-        <li> <i id="amenities" class="fa fa-id-card-o"></i> Insurance Accepted</li>
-      <% end %>
-      <!-- end of icon booleans -->
-      <li> <i id="amenities" class="fa fa-television" ></i> TV: <%= @house.tv %> </li>
-      <li> <i id="amenities" class="fa fa-wifi" ></i> Internet: <%= @house.internet %> </li>
-    </ul>
-  </div>
+  <ul class= "amenity-list">
+    <!-- icon booleans -->
+    <% if @house.transportation %>
+      <li> <i id="amenities" class="fa fa-bus"></i> Transportation </li>
+    <% end %>
+    <% if @house.pets %>
+      <li> <i id="amenities" class="fa fa-paw"></i> Pets </li>
+    <% end %>
+    <% if @house.ac %>
+      <li> <i id="amenities" class="fa fa-snowflake-o"></i> AC </li>
+    <% end %>
+    <% if @house.heating %>
+      <li> <i id="amenities" class="fa fa-thermometer-three-quarters"></i> Heat </li>
+    <% end %>
+    <% if @house.parking %>
+      <li> <i id="amenities" class="fa fa-car"></i> Parking </li>
+    <% end %>
+    <% if @house.insurance %>
+      <li> <i id="amenities" class="fa fa-id-card-o"></i> Insurance Accepted</li>
+    <% end %>
+    <% if @house.internet != "none" %>
+      <li> <i id="amenities" class="fa fa-wifi" ></i> <%= @house.internet %> </li>
+    <% end %>
+    <!-- end of icon booleans -->
+    <li> <i id="amenities" class="fa fa-television" ></i> TV </li>
+  </ul>
+
 
   <div class="container-fluid">
     <div class="row">
-
-      <!-- left sidebar -->
-      <div class="col-md-2 fixed"> </div>
-
-      <!-- center content -->
-      <div class="col fluid d-flex flex-column">
-
-
-      <!-- main content -->
-      <div class="row flex-grow">
-
-        <div class="col-8 col-md-auto">
+      <div class="col-xs-12 col-lg-6">
+        <div class="house-details">
           <h3 class="title"> <%=@house.name%> </h3>
-            <h5 class="description"> <%=@house.property_description%> in <%=@house.city%>. </h5>
-            <br>
-            <p> Price: <%= number_to_currency(@house.price)%> /  Deposit: <%=number_to_currency(@house.deposit)%> </p>
-            <p> Neighborhood: <%=@house.neighborhood%> </p>
-            <p> Gender: <%=@house.gender%> Only </p>
-            <p> Smoking Policy: <%=@house.smoking_policy%> </p>
-            <p> Activities: <%=@house.activities%> </p>
-            <p> Room Amenities: <%=@house.room_amenities%> </p>
-            <p> Hot Tub: <%=@house.hotttub%> </p>
-            <p> Capacity: <%=@house.capacity%> </p>
+          <h5 class="description"> <%=@house.property_description%> in <%=@house.city%>. </h5>
+          <p> Price: <%= number_to_currency(@house.price)%> /  Deposit: <%=number_to_currency(@house.deposit)%> </p>
+          <p> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+          <p> Neighborhood: <%=@house.neighborhood%> </p>
+          <p> Gender: <%=@house.gender%> Only </p>
+          <p> Smoking Policy: <%=@house.smoking_policy%> </p>
+          <p> Activities: <%=@house.activities%> </p>
+          <p> Room Amenities: <%=@house.room_amenities%> </p>
+          <p> Hot Tub: <%=@house.hotttub%> </p>
+          <p> Capacity: <%=@house.capacity%> </p>
+        </div>
       </div>
-
+      <div class="col-xs-4 col-lg-4">
+        <div class = "contact-card">
+          <div class="card text-center">
+            <div class="card-header">
+              Contact this Zober Listing:
+            </div>
+            <div class="card-block">
+              <h4 class="card-title call">Email: <%=@house.email %> </h4>
+              <h4 class="card-title call">Phone: 555-555-5555 </h4>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+            </div>
+            <div class="card-footer end">
+              <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%>
+            </div>
+          </div>
       </div>
-      <!-- right sidebar -->
-      <div class="col-md-2 fixed"></div>
+      </div>
     </div>
   </div>
-
 </section>
 
 

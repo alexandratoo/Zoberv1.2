@@ -84,10 +84,6 @@
   transition: 0.5s padding;
 }
 
-// .imagebox:hover img {
-//   opacity: 0.7;
-// }
-
 .house-display .img-fluid {
   display:block;
   margin:auto;
@@ -101,22 +97,7 @@
   font-size: 25px;
   margin: 0px;
   padding: 0px;
-}
-
-/* fixed and fluid only on sm and up */
-@media (min-width: 576px) {
-
-    .fixed {
-        flex: 0 0 200px;
-        min-height: 100vh;
-    }
-    .col .fluid {
-       min-height: 100vh;
-    }
-}
-
-.flex-grow {
-   flex:1;
+  color: #F47F49;
 }
 
 .d-block {
@@ -132,11 +113,31 @@
   font-size: 39px;
   font-weight: bold;
   margin-bottom: 5px;
+  margin-top: 0px; 
 }
 
-ul li {
+.amenity-list li {
   display: inline;
   list-style-type: none;
+}
+
+.house-details {
+  margin-left: 50px; 
+  margin-top: 0px; 
+}
+
+@media (max-width: 80em) {
+ .contact-card {
+display: none;
+}
+}
+
+.contact-card {
+  margin-left: 90px; 
+}
+
+.card-title.call{
+  padding-top: 20px; 
 }
 
 
