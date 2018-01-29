@@ -3,12 +3,13 @@
 </section>
 
 <section id="content-details" class="row clearfix">
+
        <div id="details-article" class="col-sm-12">
            <h1 id="article-title"><%= @product.title %><br><span class="font-weight-light"><%= @product.subtitle %></span></h1>
 
            <div class="row-fluid product">
-
-       <%= raw @product.description %>
+<p class="product_desc">
+       <%= raw @product.description %></p>
      </div>
    </div>
        <aside id="details-aside" class="col-sm-12 products">
@@ -26,6 +27,7 @@
                  <%= hidden_field_tag 'stripeToken' %>
                  <%= hidden_field_tag 'amount', @product.price_in_cents %>
                  <%= hidden_field_tag 'stripeEmail'  %>
+
                  <%= hidden_field_tag 'product_id', @product.id %>
 
                  <div class="col-sm-12 ">

@@ -5,14 +5,14 @@
 </section>
 <section>
 <%= debug @provider %>
-<% @provider = current_provider %>
+
   <div class="container-fluid provider_info">
     <div class="card provider">
 
-      <h3 class="card-header provider"><%= current_provider.firstname %>Hello</h3>
+      <h3 class="card-header provider"><%= @provider.firstname %>Hello</h3>
       <div class="card-block provider">
-        <h4 class="card-title provider_home"><%= current_provider.organization %></h4>
-        <p class="card-text provider_home"><%= current_provider.occupation %></p>
+        <h4 class="card-title provider_home"><%= @provider.organization %></h4>
+        <p class="card-text provider_home"><%= @provider.occupation %></p>
 
       </div>
     </div>

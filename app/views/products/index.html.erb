@@ -34,7 +34,7 @@
 <% @products.each do |product| %>
 
     <div class="col-xs-12 col-lg-4">
-      <div class="card text-xs-center">
+      <div class="card products text-xs-center">
         <div class="card-header products">
           <h3 class="display-2"><%=image_tag("wall_ring.jpg", alt: "logo", class: "img-fluid wall_ring")%></h3>
         </div>
@@ -53,15 +53,23 @@
     </div>
     <% end %>
 
- <div class="row-fluid">
- <div class="product col-sm-12">
+  <div class="row flex-items-xs-middle flex-items-xs-center">
+      <div class="col-xs-12 col-lg-4">
+ <div class="card products text-xs-center">
+   <div class="card-header products">
+     <h3 class="display-2"><%=image_tag("wall_ring.jpg", alt: "logo", class: "img-fluid wall_ring")%></h3></div>
 <a href="#">
- <h3 class="product-title">multiple facilities</h3></a>
- <p class="product-title">contact us if you have many properties</p>
-     <span class="product-price">we will customize your price</span>
-
+  <div class="card-block products">
+ <h4 class="card-title products">multiple facilities</h4></a>
+ <ul class='list-group'>
+ <li class="list-group-item products">contact us if you have many properties</li>
+     <li class="list-group-item products">we will customize your price</li>
+   </ul>
+</div>
+</div>
 </div>
  </div>
+
 </section>
 
 
