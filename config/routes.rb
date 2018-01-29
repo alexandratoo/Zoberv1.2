@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sitemap/index'
+
   get 'index' => 'dashboard#index'
 
   devise_for :providers
@@ -22,7 +24,7 @@ end
 
   end
 
-
+match 'sitemap', :to => 'sitemap#index', :via => [:get]
 match '/providers/:id',     to: 'providers#show',       via: 'get'
   get 'g_sessions/create'
   get 'g_sessions/destroy'
