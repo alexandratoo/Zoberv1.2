@@ -6,11 +6,17 @@ export default class Message extends Component {
   }
 
   componentDidMount() {
+
   }
 
   onDeleteMessage(){
-    const index = this.props.index
+    const index = this.props.position;
     this.props.onDelete(index);
+  }
+
+  onToggleContent() {
+    const index = this.props.position;
+    this.props.showContent(index);
   }
 
   render() {
@@ -19,7 +25,7 @@ export default class Message extends Component {
     return (
       <li className='msg'>
         <div className='card'>
-          <h3 className='card msg-title'>Title: { this.props.title }</h3>
+          <h3 className='card msg-title' onClick={ this.onToggleContent.bind(this) }>Title: { this.props.title }</h3>
           <span className="message-owner">Sender: { this.props.owner } |
           <span className="msg-time">{ timeFormat }</span> <button className="delete-msg" onClick={ this.onDeleteMessage.bind(this) }>X</button></span>
           <p className="msg-preview">Msg-preview: { this.props.text }</p>
