@@ -2,16 +2,29 @@
   <%= render 'layouts/header' %>
 </header>
 <main>
+
 <div class="container-fluid">
-  <div class="hero-unit">
-<div class=row-fluid>
-    <button class="btn btn-md btn-light blogs"><%= link_to "all blogs", blogs_path %></button>
-  </div>
+  <div class="float-right-area">
+  <div class="inner-right">
+    <ul>
+<button class="btn btn-md btn-light blogs"><%= link_to "all blogs", blogs_path %></button>
+<h2 class="blog_archive">archive</h2>
+</ul>
+</div>
+</div>
+  <div class="float-left-area">
+  <div class="inner-left">
+
+
+
+
+
     <div class="row-fluid">
+
               <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-heading">
 
-                  <%= image_tag(@blog.image_url(:medium).to_s, :class=> "img-fluid") %>
+                  <%= image_tag(@blog.image_url(:medium).to_s, :class=> "img-fluid blog") %>
 
 <h1 class='title'>
   <%= @blog.title %>
@@ -46,18 +59,26 @@
 <% else %>
 <%= social_share_button_tag(@blog.title) %>
 </div>
+
 <div id="comments">
-  <h2 class="comments-count"><%= @blog.comments.count %> comments</h2>
+  <h2 class="comments-count"><%= @blog.comments.count %> comments</h2><br>
+
 <%= render @blog.comments %>
+
 <% end %>
+
 <% if current_user %>
+
 <%= render 'comments/form' %>
+
 <% end %>
 
 
+</div>
+</div>
 </div>
 </div>
 </main>
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <%= render 'layouts/footer_main' %>
-</div>
+</div> -->
