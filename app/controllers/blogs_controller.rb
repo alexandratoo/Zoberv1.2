@@ -35,6 +35,17 @@ end
     @blog.destroy
     redirect_to blogs_path
   end
+
+
+
+def archive
+  #this will return a hash in which the month names are the keys,
+  #and the values are arrays of the posts belonging to such months
+  #something like:
+  #{ "February" => [#<Post 0xb5c836a0>,#<Post 0xb5443a0>],
+
+  @blogs_by_month = Blog.find(:all).group_by { |blog| blog.created_at.strftime("%B") }
+end
   private
   def blog_params
     params.require(:blog).permit(:image, :title, :post, :name, :website, )
