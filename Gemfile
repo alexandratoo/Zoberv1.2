@@ -18,6 +18,8 @@ gem 'bcrypt-ruby', '3.1.2'
 gem "omniauth-google-oauth2", "~> 0.2.1"
 
 gem 'geocoder', '~> 1.4'
+# To reate/maintain how elements fade in
+gem "scrollreveal-rails"
 # A simple asset-pipeline wrapper for Vue.js
 gem 'vuejs-rails'
 # A simple asset-pipeline wrapper for React
