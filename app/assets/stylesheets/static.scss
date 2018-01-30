@@ -1,6 +1,7 @@
 // Place all the styles related to the Static controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//static and privacy pae styling//
 .wrapper_fluid {
   margin-top:200px;
 }
@@ -14,3 +15,19 @@ body{color: #ffffff;}
 .col-sm-6{display:inline; text-align:center; font-size: 1.5rem; font-weight:400; font-family:Raleway; color: #c0c0c0;}
 .container-fluid.privacy{margin-top:140px;}
 .privacy { font-size:48px; font-family:roboto,sans-serif; }
+//about page styling//
+.container-fluid.about{margin-top:140px;}
+.container-fluid.about {margin-top:40px; margin-bottom:40px;}
+.card.text-center.about {margin-left:10px; margin-right:10px; border: 1px solid #f47f49}
+.card.about {margin-top:140px; margin-bottom:40px; }
+.card-title.about {font-family:raleway; font-weight:200; font-size:2rem;}
+.card-header.about {font-family:raleway; font-weight:400; font-size: 3rem;color:#fff; background-color: #f47f49;}
+.card-title.about {font-family:raleway; padding-left:20px; color:#626262;}
+.card-text.about {font-family:raleway; padding-left:20px; color:#626262; font-size:1.5rem;}
+
+.card-block.about {padding:10px; }
+.about-staff{text-align:center;}
+.about-title{text-align:center; font-family:raleway; font-weight:400; font-size:4rem; margin-top:140px;}
+.card.text-center.about {  padding-bottom:10px;}
+.img-responsive {max-width:260px; text-align:center;margin-right:30%;}
+.rounded-circle{max-width:300px; text-align:center;}
