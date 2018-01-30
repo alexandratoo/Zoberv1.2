@@ -29,5 +29,15 @@ body{color: #ffffff;}
 .about-staff{text-align:center;}
 .about-title{text-align:center; font-family:raleway; font-weight:400; font-size:4rem; margin-top:140px;}
 .card.text-center.about {  padding-bottom:10px;}
-.img-responsive {max-width:260px; text-align:center;margin-right:30%;}
-.rounded-circle{max-width:300px; text-align:center;}
+.img-responsive {margin-top: 20px; width: 100%;
+  height: auto;}
+.rounded-circle{position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;}
+  @media (min-width: 992px) and (max-width: 1199px) {
+     .team-member img {
+        height: 100px;
+    }
+}
