@@ -93,7 +93,7 @@ margin-right: 0px;
 background: #fcfcfc;
 color: #6b6e80;
 position: relative;}
-.date {font-family: 'Khula', sans-serif; font-size:16px; color:#626262; float:left;}
+.date {font-family: roboto, sans-serif; font-size:16px; color:#626262; float:left;}
 .panel
 //index page for blogs
 {border: 1px solid #626262;
@@ -123,12 +123,12 @@ position: relative; }
 .field-name{width:250px; border-radius:0 0 0 0;}
 .field-title{width:250px; border-radius:0 0 0 0;}
 .website{color: #626262; font-family:roboto;}
-.name {font-family: roboto, sans-serif; font-size:18px; color:#626262; float: left;}
-.website-form-link {color:#f47f49; font-size:18px; font-family: roboto, sans-serif; }
-.img-fluid.blog {float:left; padding:20px; border:1px solid #626262}
+.name {font-family: roboto, sans-serif; font-size:16px; color:#626262; float: left;}
+.website-form-link {color:#626262; font-size:16px; font-family: roboto, sans-serif; }
+.img-fluid.blog {float:left; padding:20px; border:1px solid #626262;  background-color: #edecea;}
 //link button from show page to all blogs//
-.btn.btn-md.btn-light.blogs { color:#ffffff; background-color:#f47f49;}
-.btn.btn-md.btn-light.blogs:hover {color: #f47f49; background-color: #fff; border-radius: 1px solid #f47f49}
+.btn.btn-lg.btn-light.blogs { color:#ffffff; background-color:#626262; width:40%; margin-left:30%; margin-right:30%; font-family:roboto, sans-serif;}
+.btn.btn-lg.btn-light.blogs:hover {color: #f47f49; background-color: #f47f49; border-radius: 1px solid #626262}
 //index page css for edit and new blog buttons//
 .button{border-radius: 15px; color:#f47f49;}
 .button:hover{background-color:#f47f49;}
@@ -137,29 +137,33 @@ position: relative; }
 .logout-link{color:#f47f49;}
 .logout-link:hover{color:#fff; background-color:#f47f49; }
 .page-wrapper.blog {margin-top:140px;}
-.title {color:#626262; font-family:roboto;}
+.title {color:black; font-family:roboto, sans-serif;;}
 .float-left-area  {
-		  width: 70%;
+		  width: 75%;
 		  float: left;
 		  }
 
 .float-right-area {
-		  width: 30%;
+		  width: 25%;
 		  float: left;
+        background-color: #edecea;
 		  }
 
 .inner-left	  {
 		  padding: 5px 5px 5px 5px;
 		  margin-right: 10px;
 		  border: #999999 1px solid;
-		  min-height: 60px;
+		  min-height: 600px;
+
 		  }
 
 .inner-right	  {
 		  font-size: 11px;
 		  padding: 5px 5px 5px 5px;
 		  border: #999999 1px solid;
-		  min-height: 60px;
+		  min-height: 800px;
 		  }
       .archive_link {color:#626262;}
-// .img-fluid.coffee {width:100%;}
+      .blog_archive {color:#f47f49; font-size:48px; font-family:roboto, sans-serif; text-align:center;}
+.archive_link{color:black; font-family:roboto, sans-serif;}
+.container-fluid.show_blog{  background: url('sunset.jpg') no-repeat bottom center scroll;}

@@ -3,13 +3,14 @@
 </header>
 <main>
 
-<div class="container-fluid">
+<div class="container-fluid show_blog">
   <div class="float-right-area">
   <div class="inner-right">
-    <ul>
-<button class="btn btn-md btn-light blogs"><%= link_to "all blogs", blogs_path %></button>
-<h2 class="blog_archive">archive</h2>
 
+
+<button class="btn btn-lg btn-light blogs"><%= link_to "all blogs", blogs_path %></button>
+<h2 class="blog_archive">archive</h2>
+<ul>
 <% if @blogs.to_a.empty? %>
 <div class="post">
     <p>No articles found...</p>
@@ -30,15 +31,17 @@
 
 <h4 class="archivemonth"><%= (Date::MONTHNAMES[blog.created_at.month]) %></h4>
 <% end %>
+<li>
 <div class="archivepost">
 <%= link_to blog.title, blog_path(blog), :remote => true, class:"archive_link" %> on <%= blog.created_at.strftime('%A')%> - <%= blog.created_at.strftime('%d') + "th"%>
-</div>
+</div></li>
 <% end %>
 <%end %>
 
 </ul>
 </div>
 </div>
+
   <div class="float-left-area">
   <div class="inner-left">
 
@@ -105,6 +108,7 @@
 </div>
 </div>
 </div>
+
 </main>
 <!-- <div class="container-fluid">
   <%= render 'layouts/footer_main' %>

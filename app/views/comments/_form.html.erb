@@ -3,13 +3,13 @@
 <%= form_for([@blog, @blog.comments.build]) do |f| %>
 <div class="container-fluid comments">
   <h3 class="comments-count">add a comment:</h3>
-<p >
-  <%= f.label :body %><br>
+<p class="comment-body-form">
+  <%= f.label :comment,class:"comment-label" %><br>
   <%= f.text_area :body, class: "comment-body-form" %>
 </p>
 <br>
 
-<p><%= f.submit %></p>
+<p class="submit-comment"><%= f.submit  %></p>
 <% end %>
 </div>
 </div>
