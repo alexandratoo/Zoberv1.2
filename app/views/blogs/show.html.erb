@@ -9,7 +9,33 @@
     <ul>
 <button class="btn btn-md btn-light blogs"><%= link_to "all blogs", blogs_path %></button>
 <h2 class="blog_archive">archive</h2>
-<li>Feburary 2018</li>
+
+<% if @blogs.to_a.empty? %>
+<div class="post">
+    <p>No articles found...</p>
+</div>
+<% else %>
+<% current_month = 0 %>
+<% current_year = 0 %>
+<% for blog in @blogs %>
+  <% if (blog.created_at.year != current_year)
+     current_year = blog.created_at.year
+   %>
+      <h3 class="archiveyear"><%= blog.created_at.year%></h3>
+<% end %>
+<% if (blog.created_at.month != current_month || blog.created_at.year != current_year)
+ current_month = blog.created_at.month
+ current_year = blog.created_at.year
+%>
+
+<h4 class="archivemonth"><%= (Date::MONTHNAMES[blog.created_at.month]) %></h4>
+<% end %>
+<div class="archivepost">
+<%= link_to blog.title, blog_path(blog), :remote => true, class:"archive_link" %> on <%= blog.created_at.strftime('%A')%> - <%= blog.created_at.strftime('%d') + "th"%>
+</div>
+<% end %>
+<%end %>
+
 </ul>
 </div>
 </div>

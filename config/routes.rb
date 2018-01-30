@@ -23,7 +23,7 @@ end
     resources :comments
 
   end
-
+get 'blogs/by_year_and_month/:year/:month' => 'blogs#by_year_and_month', :as=> :blogs_by_year_and_month
 match 'sitemap', :to => 'sitemap#index', :via => [:get]
 match '/providers/:id',     to: 'providers#show',       via: 'get'
   get 'g_sessions/create'
