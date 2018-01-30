@@ -17,7 +17,7 @@ body{color: #ffffff;}
 .privacy { font-size:48px; font-family:roboto,sans-serif; }
 //about page styling//
 .container-fluid.about{margin-top:140px;}
-.container-fluid.about {margin-top:40px; margin-bottom:40px;}
+.container-fluid.about { margin-bottom:80px;}
 .card.text-center.about {margin-left:10px; margin-right:10px; border: 1px solid #f47f49}
 .card.about {margin-top:140px; margin-bottom:40px; }
 .card-title.about {font-family:raleway; font-weight:200; font-size:2rem;}
@@ -26,7 +26,7 @@ body{color: #ffffff;}
 .card-text.about {font-family:raleway; padding-left:20px; color:#626262; font-size:1.5rem;}
 
 .card-block.about {padding:10px; }
-.about-staff{text-align:center;}
+.about-staff{text-align:center; margin-top:40px; font-size:48px; font-weight:600; font-family:raleway; margin-top:40px;}
 .about-title{text-align:center; font-family:raleway; font-weight:400; font-size:4rem; margin-top:140px;}
 .card.text-center.about {  padding-bottom:10px;}
 .img-responsive {margin-top: 20px; width: 100%;
@@ -41,3 +41,4 @@ body{color: #ffffff;}
         height: 100px;
     }
 }
+.col-sm-12.about {text-align:left; border:1px solid #f47f49;padding:40px;margin-top:40px;}
