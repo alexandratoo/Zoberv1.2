@@ -15,7 +15,7 @@ yearly = Product.create(title: "yearly plan",
     });
 
 index = 1
-5.times do
+10.times do
   House.create!({
     name: "Sober Living #{index}",
     street: "123 Main Street",
@@ -51,90 +51,30 @@ index = 1
       index += 1
     end
 
-index = 6
-5.times do
-House.create!({
-  name: "Treatment Center #{index}",
-  street: "789 Grove Street",
-  state: "CO",
-  city: "Denver",
-  zip_code: "80123",
-  email: "test@test.com",
-  website: "www.soberliving123",
-  facebook: "facebook_url",
-  instagram: "instagram_url",
-  linkedin: "linkedin_url",
-  twitter: "twitter_url",
-  capacity: 100,
-  price: 750.00,
-  deposit: 1000.00,
-  gender: "male",
-  payment_forms: "Check",
-  insurance: false,
-  property_description: "A sober living home",
-  neighborhood: "Lower Pac Heights",
-  smoking_policy: "Vaping allowed",
-  transportation: true,
-  parking: true,
-  activities: "Tennis",
-  room_amenities: "Room Service",
-  pets: true,
-  hotttub: false,
-  ac: true,
-  heating: true,
-  tv: "Flatscreen",
-  internet: "Wifi"
-    })
- index += 1
-end
-
-index = 11
-5.times do
-  House.create!({
-    name: "Sober Living House #{index}",
-    street: "456 Market Street",
-    state: "CA",
-    city: "San Francisco",
-    zip_code: "94111",
-    email: "test@test.com",
-    website: "www.soberliving123",
-    facebook: "facebook_url",
-    instagram: "instagram_url",
-    linkedin: "linkedin_url",
-    twitter: "twitter_url",
-    capacity: 100,
-    price: 2000.00,
-    deposit: 4000.00,
-     gender: "female",
-    payment_forms: "Credit Cards",
-    insurance: false,
-    property_description: "A sober living house",
-    neighborhood: "North Beach",
-    smoking_policy: "No Smoking",
-    transportation: true,
-    parking: false,
-    activities: "Chess",
-    room_amenities: "Room Service",
-    pets: true,
-    hotttub: true,
-    ac: true,
-    heating: true,
-    tv: "Flatscreen",
-    internet: "Ethernet"
-  })
-  index += 1
-  end
-
-array = ["https://odis.homeaway.com/odis/stayz/7a90e073-e358-4fd8-b075-133f59c4e8e7.s2.jpg", "https://www.lexington.com/assets/images/Living-Room.jpg", "http://jmdfurniture.com/images/products/thumb/image1.JPG"]
+array = ["https://images.craigslist.org/00n0n_cqc2jLGe1w0_600x450.jpg", "https://images.craigslist.org/00f0f_4lZ6YdfQnnu_600x450.jpg", "https://images.craigslist.org/00s0s_ceOPeAs9f25_600x450.jpg"]
 
  
 index = 1
-15.times do 
+10.times do 
   array.each do |link|
     Image.create!({
     house_id: index,
     image: link
   })
+  end 
+index += 1
+end
+
+
+index = 1
+10.times do 
+  filter_index = 3
+  14.times do
+    HouseFilter.create!({
+    house_id: index,
+    filter_id: filter_index
+  })
+    filter_index += 3
   end 
 index += 1
 end
