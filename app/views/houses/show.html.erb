@@ -102,6 +102,9 @@
           <p> Room Amenities: <%=@house.room_amenities%> </p>
           <p> Hot Tub: <%=@house.hotttub%> </p>
           <p> Capacity: <%=@house.capacity%> </p>
+          <% @filters.each do |filter| %>
+            <p> <%= filter.filter %> </p>
+          <% end %>
         </div>
       </div>
       <div class="col-xs-4 col-lg-4">

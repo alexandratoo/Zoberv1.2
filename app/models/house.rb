@@ -1,5 +1,7 @@
 class House < ApplicationRecord
   has_many :images
+  has_many :house_filters
+  has_many :filters, through: :house_filters
   geocoded_by :address
 
   def address
