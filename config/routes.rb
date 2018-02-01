@@ -28,10 +28,10 @@ match 'sitemap', :to => 'sitemap#index', :via => [:get]
 match '/providers/:id',     to: 'providers#show',       via: 'get'
   get 'g_sessions/create'
   get 'g_sessions/destroy'
-get 'privacy' => 'static#privacy'
+  get 'privacy' => 'static#privacy'
   get 'list' => 'houses#list'
-get 'terms'=>'static#terms'
-  get 'place' => 'places#index'
+  get 'terms'=>'static#terms'
+  get 'provider-markers' => 'places#index'
 
   get 'individual' => 'houses#individual'
 
