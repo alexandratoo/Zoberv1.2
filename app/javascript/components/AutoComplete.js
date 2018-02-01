@@ -212,9 +212,10 @@ class Contents extends Component {
     }
 
     componentWillMount() {
-      const { google, map } = this.props;
+      // const { google, map } = this.props;
 
-      var settings = {
+
+      const settings = {
         "async": true,
         "crossDomain": true,
         "url": "http://localhost:3000/api/v1/houses",
@@ -241,11 +242,8 @@ class Contents extends Component {
           for(let prop in house) {
             houseMarker.content[prop] = house[prop];
           }
-          // conditional for filtering
-          // if(this._filterHouses(house)){
-          //   console.log(house);
+
           return houseMarker
-          // }
         });
 
         this.setState({
@@ -283,7 +281,7 @@ class Contents extends Component {
     }
 
     if(this.state.parkingFilter === true && isValid){
-      if(!house.parking) { 
+      if(!house.parking) {
         isValid = false;
       }
     }
@@ -295,7 +293,7 @@ class Contents extends Component {
     }
 
     if(this.state.internetFilter === true && isValid){
-      if(house.internet === "None") { 
+      if(house.internet === "None") {
         isValid = false;
       }
     }
@@ -316,10 +314,6 @@ class Contents extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-  }
-
-  componentDidMount() {
-    this.renderAutoComplete();
   }
 
   componentDidUpdate(prevProps) {
@@ -346,7 +340,8 @@ class Contents extends Component {
     }
   }
 
-  renderAutoComplete() {
+  renderAutoComplete(e) {
+    console.log(e);
 
     const {google, map} = this.props;
 
@@ -354,11 +349,31 @@ class Contents extends Component {
 
     const aref = this.refs.autocomplete;
     const node = ReactDOM.findDOMNode(aref);
-    var autocomplete = new google.maps.places.Autocomplete(node);
+
+    const geocoder = new google.maps.Geocoder();
+
+
+
+    let autocomplete = new google.maps.places.Autocomplete(node);
     autocomplete.bindTo('bounds', map);
 
     autocomplete.addListener('place_changed', () => {
-      const place = autocomplete.getPlace();
+
+      let place = autocomplete.getPlace();
+
+      let getAddress = () => {
+        geocoder.geocode({'address': place.name }, (results, status) => {
+          let res = results;
+          if(res) {
+            console.log(res[0].formatted_address);
+            place.name = res[0].formatted_address;
+          }
+        });
+      }
+
+      getAddress();
+
+
       if (!place.geometry) {
         return;
       }
@@ -377,6 +392,10 @@ class Contents extends Component {
     })
   }
 
+  // geocodeLocation(e){
+  //
+  // }
+
   render() {
     let content = undefined;
 
@@ -389,6 +408,7 @@ class Contents extends Component {
           <form onSubmit={this.onSubmit}>
             <input
               ref='autocomplete'
+              // onChange={ this.geocodeLocation.bind(this) }
               type="text"
               placeholder="enter on autoComp" />
           </form>
@@ -442,7 +462,7 @@ class Contents extends Component {
                 visible={this.state.showingInfoWindow}>
                 <div className='card mb-2 box-shadow'>
                   <h1>Z-house: { this.state.selectedPlace.name }</h1>
-                    { content = this.state.selectedPlace.content, console.log(content) }
+                    { content = this.state.selectedPlace.content }
                     { (content === undefined) ? '' :
                       (  <div className="card-body d-flex flex-column align-items-start">
                         <div className="mb-1 text-muted">last updated: ...</div>
