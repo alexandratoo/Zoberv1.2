@@ -58,6 +58,7 @@ source 'https://rails-assets.org' do
 end
 gem 'stripe'
 gem 'devise'
+gem 'toastr-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'social-share-button'

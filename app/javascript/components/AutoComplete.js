@@ -24,117 +24,7 @@ class Contents extends Component {
         internetFilter: false,
         tvFilter: false,
         smokingFilter: false,
-        mode_2: [
-              {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
-              {elementType: 'labels.text.fill', stylers: [{color: '#523735'}]},
-              {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
-              {
-                featureType: 'administrative',
-                elementType: 'geometry.stroke',
-                stylers: [{color: '#c9b2a6'}]
-              },
-              {
-                featureType: 'administrative.land_parcel',
-                elementType: 'geometry.stroke',
-                stylers: [{color: '#dcd2be'}]
-              },
-              {
-                featureType: 'administrative.land_parcel',
-                elementType: 'labels.text.fill',
-                stylers: [{color: '#ae9e90'}]
-              },
-              {
-                featureType: 'landscape.natural',
-                elementType: 'geometry',
-                stylers: [{color: '#dfd2ae'}]
-              },
-              {
-                featureType: 'poi',
-                elementType: 'geometry',
-                stylers: [{color: '#dfd2ae'}]
-              },
-              {
-                featureType: 'poi',
-                elementType: 'labels.text.fill',
-                stylers: [{color: '#93817c'}]
-              },
-              {
-                featureType: 'poi.park',
-                elementType: 'geometry.fill',
-                stylers: [{color: '#a5b076'}]
-              },
-              {
-                featureType: 'poi.park',
-                elementType: 'labels.text.fill',
-                stylers: [{color: '#447530'}]
-              },
-              {
-                featureType: 'road',
-                elementType: 'geometry',
-                stylers: [{color: '#f5f1e6'}]
-              },
-              {
-                featureType: 'road.arterial',
-                elementType: 'geometry',
-                stylers: [{color: '#fdfcf8'}]
-              },
-              {
-                featureType: 'road.highway',
-                elementType: 'geometry',
-                stylers: [{color: '#f8c967'}]
-              },
-              {
-                featureType: 'road.highway',
-                elementType: 'geometry.stroke',
-                stylers: [{color: '#e9bc62'}]
-              },
-              {
-                featureType: 'road.highway.controlled_access',
-                elementType: 'geometry',
-                stylers: [{color: '#e98d58'}]
-              },
-              {
-                featureType: 'road.highway.controlled_access',
-                elementType: 'geometry.stroke',
-                stylers: [{color: '#db8555'}]
-              },
-              {
-                featureType: 'road.local',
-                elementType: 'labels.text.fill',
-                stylers: [{color: '#806b63'}]
-              },
-              {
-                featureType: 'transit.line',
-                elementType: 'geometry',
-                stylers: [{color: '#dfd2ae'}]
-              },
-              {
-                featureType: 'transit.line',
-                elementType: 'labels.text.fill',
-                stylers: [{color: '#8f7d77'}]
-              },
-              {
-                featureType: 'transit.line',
-                elementType: 'labels.text.stroke',
-                stylers: [{color: '#ebe3cd'}]
-              },
-              {
-                featureType: 'transit.station',
-                elementType: 'geometry',
-                stylers: [{color: '#dfd2ae'}]
-              },
-              {
-                featureType: 'water',
-                elementType: 'geometry.fill',
-                stylers: [{color: '#b9d3c2'}]
-              },
-              {
-                featureType: 'water',
-                elementType: 'labels.text.fill',
-                stylers: [{color: '#92998d'}]
-              }
-            ],
-            mode_1: [
+        styles: [
             {
               elementType: 'geometry',
               stylers: [
@@ -314,8 +204,7 @@ class Contents extends Component {
            icon: {
              url: 'http://localhost:3000/icon/z_coffee.png'
            }
-         }],
-         styles: this.mode_1
+         }]
       }
 
       this.onMarkerClick = this.onMarkerClick.bind(this);
@@ -323,10 +212,9 @@ class Contents extends Component {
     }
 
     componentWillMount() {
-      // const { google, map } = this.props;
+      const { google, map } = this.props;
 
-
-      const settings = {
+      var settings = {
         "async": true,
         "crossDomain": true,
         "url": "http://localhost:3000/api/v1/houses",
@@ -353,8 +241,11 @@ class Contents extends Component {
           for(let prop in house) {
             houseMarker.content[prop] = house[prop];
           }
-
+          // conditional for filtering
+          // if(this._filterHouses(house)){
+          //   console.log(house);
           return houseMarker
+          // }
         });
 
         this.setState({
@@ -392,7 +283,7 @@ class Contents extends Component {
     }
 
     if(this.state.parkingFilter === true && isValid){
-      if(!house.parking) {
+      if(!house.parking) { 
         isValid = false;
       }
     }
@@ -404,7 +295,7 @@ class Contents extends Component {
     }
 
     if(this.state.internetFilter === true && isValid){
-      if(house.internet === "None") {
+      if(house.internet === "None") { 
         isValid = false;
       }
     }
@@ -425,6 +316,10 @@ class Contents extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+  }
+
+  componentDidMount() {
+    this.renderAutoComplete();
   }
 
   componentDidUpdate(prevProps) {
@@ -451,8 +346,7 @@ class Contents extends Component {
     }
   }
 
-  renderAutoComplete(e) {
-    console.log(e);
+  renderAutoComplete() {
 
     const {google, map} = this.props;
 
@@ -460,31 +354,11 @@ class Contents extends Component {
 
     const aref = this.refs.autocomplete;
     const node = ReactDOM.findDOMNode(aref);
-
-    const geocoder = new google.maps.Geocoder();
-
-
-
-    let autocomplete = new google.maps.places.Autocomplete(node);
+    var autocomplete = new google.maps.places.Autocomplete(node);
     autocomplete.bindTo('bounds', map);
 
     autocomplete.addListener('place_changed', () => {
-
-      let place = autocomplete.getPlace();
-
-      let getAddress = () => {
-        geocoder.geocode({'address': place.name }, (results, status) => {
-          let res = results;
-          if(res) {
-            console.log(res[0].formatted_address);
-            place.name = res[0].formatted_address;
-          }
-        });
-      }
-
-      getAddress();
-
-
+      const place = autocomplete.getPlace();
       if (!place.geometry) {
         return;
       }
@@ -503,15 +377,6 @@ class Contents extends Component {
     })
   }
 
-  onToggleStyles(){
-    this.setState({ styles: this.state.mode_2 })
-  }
-  
-  // geocodeLocation(e){
-  //
-  // }
-
-
   render() {
     let content = undefined;
 
@@ -524,7 +389,6 @@ class Contents extends Component {
           <form onSubmit={this.onSubmit}>
             <input
               ref='autocomplete'
-              // onChange={ this.geocodeLocation.bind(this) }
               type="text"
               placeholder="enter on autoComp" />
           </form>
@@ -534,7 +398,6 @@ class Contents extends Component {
           </div>
         </div>
         <div>
-          {/* <button onClick={ this.onToggleStyles.bind(this) }>Toggle Mode</button> */}
           <Map {...props}
               styles={ this.state.styles }
               containerStyle={{
@@ -579,7 +442,7 @@ class Contents extends Component {
                 visible={this.state.showingInfoWindow}>
                 <div className='card mb-2 box-shadow'>
                   <h1>Z-house: { this.state.selectedPlace.name }</h1>
-                    { content = this.state.selectedPlace.content }
+                    { content = this.state.selectedPlace.content, console.log(content) }
                     { (content === undefined) ? '' :
                       (  <div className="card-body d-flex flex-column align-items-start">
                         <div className="mb-1 text-muted">last updated: ...</div>
