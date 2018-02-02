@@ -19,7 +19,10 @@ class HousesController < ApplicationController
 
   def show
     @house = House.find(params[:id])
-    @filters = @house.filters
+    @filter_array = @house.filters.each do |filter|
+      filter
+    end 
+    @categories = Category.all 
   end
 
 
