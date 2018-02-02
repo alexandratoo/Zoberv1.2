@@ -8,15 +8,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
       sortAscending: true,
       priceFilter: '',
       distanceFilter: '',
-      womenFilter: false,
-      petsFilter: false,
-      transitFilter: false,
-      menFilter: false,
+      femaleFilter: false,
+      maleFilter: false,
+      coedFilter: false,
       parkingFilter: false,
-      acFilter: false,
       internetFilter: false,
-      tvFilter: false,
-      smokingFilter: false
+      poolFilter: false, 
+      adultFilter: false,
+      youthFilter: false,
+      seniorFilter: false,
+      hottubFilter: false,
+      laundryFilter: false,
+      dogsFilter: false,
+      catsFilter: false, 
+      smokingFilter: false, 
+      vapingFilter: false
     },
 
     mounted: function() {
@@ -27,59 +33,99 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
 
     methods: {
-
       filterHouses: function(house) {
-        var isValid = true
-        if(this.petsFilter === true && isValid){
-          if(!house.pets) {
+        // define filter array
+        var filterArray = house.filters.map(function (filter) {
+        return filter.filter;
+        });
+        var isValid = true;
+        
+        if(this.catsFilter === true && isValid){
+          if(!filterArray.includes("Cats")) {
             isValid = false;
           }
         }
 
-        if(this.transitFilter === true && isValid){
-          if(!house.transportation) {
+        if(this.dogsFilter === true && isValid){
+          if(!filterArray.includes("Dogs")) {
             isValid = false;
           }
         }
 
-        if(this.womenFilter === true && isValid){
-          if(house.gender !== "female") {
+        if(this.femaleFilter === true && isValid){
+          if(!filterArray.includes("Female")) { 
             isValid = false;
           }
         }
 
-        if(this.menFilter === true && isValid){
-          if(house.gender !== "male") {
+        if(this.maleFilter === true && isValid){
+          if(!filterArray.includes("Male")) { 
+            isValid = false;
+          }
+        }
+
+        if(this.coedFilter === true && isValid){
+          if(!filterArray.includes("Coed")) { 
             isValid = false;
           }
         }
 
         if(this.parkingFilter === true && isValid){
-          if(!house.parking) { 
-            isValid = false;
-          }
-        }
-
-        if(this.acFilter === true && isValid){
-          if(!house.ac) {
+          if(!filterArray.includes("Parking")) {
             isValid = false;
           }
         }
 
         if(this.internetFilter === true && isValid){
-          if(house.internet === "None") { 
-            isValid = false;
-          }
-        }
-
-        if(this.tvFilter === true && isValid){
-          if(house.tv !== "Flatscreen") {
+          if(!filterArray.includes("Internet (wi-fi)")) { 
             isValid = false;
           }
         }
 
         if(this.smokingFilter === true && isValid){
-          if(house.smoking_policy === "No Smoking") {
+          if(!filterArray.includes("Smoking Allowed in Designated Areas")) {
+            isValid = false;
+          }
+        }
+
+        if(this.vapingFilter === true && isValid){
+          if(!filterArray.includes("Vaping Allowed in Designated Areas")) {
+            isValid = false;
+          }
+        }
+
+        if(this.poolFilter === true && isValid){
+          if(!filterArray.includes("Pool")) { 
+            isValid = false;
+          }
+        }
+
+        if(this.adultFilter === true && isValid){
+          if(!filterArray.includes("Adult (18+)")) { 
+            isValid = false;
+          }
+        }
+
+        if(this.youthFilter === true && isValid){
+          if(!filterArray.includes("Youth")) { 
+            isValid = false;
+          }
+        }
+
+        if(this.seniorFilter === true && isValid){
+          if(!filterArray.includes("Senior(65+)")) { 
+            isValid = false;
+          }
+        }
+
+        if(this.hottubFilter === true && isValid){
+          if(!filterArray.includes("Hot Tub")) { 
+            isValid = false;
+          }
+        }
+
+        if(this.laundryFilter === true && isValid){
+          if(!filterArray.includes("Laundry Onsite")) { 
             isValid = false;
           }
         }
