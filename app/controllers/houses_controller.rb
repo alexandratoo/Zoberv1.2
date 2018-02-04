@@ -13,8 +13,16 @@ class HousesController < ApplicationController
 
     @house.save(validate: false)
 
-      flash[:notice] = "House added successfully"
+    params[:filter_ids].each do |filter_id|
+    HouseFilter.create(
+      house_id: @house.id,
+      filter_id: filter_id
+      )
+    end 
+
+    flash[:notice] = "House added successfully"
     render 'index'
+
   end
 
   def show
@@ -41,7 +49,7 @@ class HousesController < ApplicationController
 private
 
 def house_params
-  params.require(:house).permit(:name, :address, :city, :state, :zip_code, :email, :website, :facebook, :twitter, :linkedin, :capacity, :price, :deposit, :gender, :insurance, :payment_forms, :property_description, :neighborhood,
+  params.require(:house).permit(:name, :street, :city, :state, :zip_code, :email, :website, :facebook, :twitter, :linkedin, :capacity, :price, :deposit, :gender, :insurance, :payment_forms, :property_description, :neighborhood,
    :smoking_policy, :insurance, :activities, :hotttub, :ac, :heating, :internet, :parking)
  end
 end
