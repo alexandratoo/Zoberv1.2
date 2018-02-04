@@ -74,6 +74,8 @@
 </div>
 </div>
 
+<!-- not showing this chunk of code -->
+<% if false %> 
 <div class = "row-fluid internet">
   <h6>Which genders can stay at your facility?</h6>
 <%= radio_button_tag(:gender, "male") %>
@@ -158,6 +160,28 @@
 <%= check_box_tag(:internet) %>
 <%= label_tag(:internet, "Ethernet", class: "label-house") %>
 </div>
+<% end %>
+<!-- not showing this chunk of code -->
+
+<div class="checkbox-filters" >
+  <% @categories.each do |category| %>
+  <hr>
+    <p class="label-house"> <%= category.category %> </p>
+    <div class="form-check">
+      <% category.filters.each do |filter| %>
+        <label class="form-check-label">
+          <div class="col">
+            <div class="row">
+            <input class="form-check-input" type="checkbox" name="filter_ids[]" value= <%= filter.id %> />
+            <p class="label-house"> <%= filter.filter %> </p>
+          </div>
+          </div>
+        </label>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
 <div class="container-fluid-image">
   <h6>Please add 5 images of your property</h6>
 <div class="row-fluid-image">

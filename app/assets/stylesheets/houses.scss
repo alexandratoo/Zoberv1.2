@@ -146,12 +146,16 @@ display: none;
 {background-color: #FAFAFA;padding: 10px 40px 60px;margin: 10px 0px 60px;border: 1px solid GREY;}
   h6 {margin-right: 30px;}
   //housing form styling//
-  .label-house{font-family: roboto; margin-right:20px; margin-left:20px; font-size:16px;}
+  .label-house .label-house p {font-family: roboto; margin-right:20px; margin-left:20px; font-size:16px;}
   .row-fluid.internet{display:flex; margin-top:20px; text-align:left; font-family:roboto;}
   .row-fluid-image {display:inline-block; }
   .col-sm-6.image{display:inline-block; font-family:roboto; font-size: 16px;}
   .container-fluid-image {margin-bottom: 40px; margin-top:40px; border-top: 1px solid GREY; border-bottom:1px solid GREY;padding:30px}
 
+  .checkbox-filters {
+    text-align: left; 
+    margin-top: 30px; 
+  }
 
 .field-house{border-radius: 0 0 0 0;}
 
