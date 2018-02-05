@@ -16,6 +16,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require jquery.slick
 //= require ckeditor/init
 //= require react
 //= require react_ujs
