@@ -22,6 +22,8 @@ gem 'geocoder', '~> 1.4'
 gem "scrollreveal-rails"
 # A simple asset-pipeline wrapper for Vue.js
 gem 'vuejs-rails'
+# Integrates Slick carousel, a jQuery plugin, into your Rails app.
+gem "jquery-slick-rails"
 # A simple asset-pipeline wrapper for React
 gem 'react-rails'
 gem 'webpacker'
