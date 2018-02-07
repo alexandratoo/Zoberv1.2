@@ -58,9 +58,11 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 
 end
+gem 'role_model', '~> 0.8.2'
 gem 'stripe'
 gem 'devise'
 gem 'toastr-rails'
+gem 'pundit'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'social-share-button'
