@@ -9,7 +9,7 @@
   <!-- <%= f.error_notification %> --><h2 class="provider_signup">sign up</h2><br>
 <%= devise_error_messages! %>
   <div class="form-inputs">
-
+<%= f.select :role, Provider.roles.keys, {}, class: 'user-roles-select' %>
     <%= f.input :firstname, required: true, autofocus:true %><br>
     <%= f.input :lastname, required: true, autofocus:true %><br>
     <%= f.input :organization, required: true, autofocus:true %><br>
