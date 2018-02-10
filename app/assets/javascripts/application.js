@@ -12,6 +12,9 @@
 //
 
 //= require vue
+//= require vue-router 
+//= require vue-resource 
+//= require vuex 
 //= require rails-ujs
 //= require jquery3
 //= require popper
