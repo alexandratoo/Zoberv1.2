@@ -4,10 +4,16 @@
 
 <body class='houses_list'>
   <div class='app-wrapper'>
-    <div class='map-area'>
-      <%= render :file => 'places/index' %>
-      <%= react_component("MapIndex") %>
+
+    <div id="mapp">
+      <vue-map :markers="locations"></vue-map>
     </div>
+
+    <script type="text/x-template" id="map">
+      <div class="map">
+      </div>
+    </script>
+
     <div id="app">
       <div class='sidebar'>
         <!-- filter bar -->
@@ -118,4 +124,4 @@
 </body>
 
 
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY']%>"></script> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY']%>"></script>
