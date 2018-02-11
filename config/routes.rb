@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+devise_for :users, path: 'users', controllers: { sessions: "users/sessions", registrations: "users/registrations"}
   get 'sitemap/index'
 
   get 'index' => 'dashboard#index'
@@ -15,7 +16,7 @@ end
 
 
   resources :charges
-  resources :usersessions, only: [:create, :destroy, :oauth_create, :oauth_destroy]
+  # resources :usersessions, only: [:create, :destroy, :oauth_create, :oauth_destroy]
   resource :home_page, only: [:show]
   resources :houses, :users, :only => [:new, :create, :index]
   resources :places, except: [:update, :edit, :destroy]
@@ -26,8 +27,8 @@ end
 get 'blogs/by_year_and_month/:year/:month' => 'blogs#by_year_and_month', :as=> :blogs_by_year_and_month
 match 'sitemap', :to => 'sitemap#index', :via => [:get]
 match '/providers/:id',     to: 'providers#show',       via: 'get'
-  get 'g_sessions/create'
-  get 'g_sessions/destroy'
+  # get 'g_sessions/create'
+  # get 'g_sessions/destroy'
   get 'privacy' => 'static#privacy'
   get 'list' => 'houses#list'
   get 'terms'=>'static#terms'
@@ -37,18 +38,18 @@ match '/providers/:id',     to: 'providers#show',       via: 'get'
 
   get 'houses/home'
   get 'houses/:id' => 'houses#show'
-  get 'new' => 'users#new'
-  get 'signup' => 'users#new'
-  get 'login' => 'usersessions#login'
-  post 'login' => 'usersessions#create'
-  delete 'logout' => 'usersessions#destroy'
+  # get 'new' => 'users#new'
+  # get 'signup' => 'users#new'
+  # get 'login' => 'usersessions#login'
+  # post 'login' => 'usersessions#create'
+  # delete 'logout' => 'usersessions#destroy'
 
-  get 'g_sessions/create'
-  get 'g_sessions/destroy'
+  # get 'g_sessions/create'
+  # get 'g_sessions/destroy'
 
-  get 'auth/:provider/callback', to: 'usersessions#oauth_create'
-  get 'auth/failure', to: redirect('/')
-  get 'signout', to: 'usersessions#oauth_destroy', as: 'signout'
+  # get 'auth/:provider/callback', to: 'usersessions#oauth_create'
+  # get 'auth/failure', to: redirect('/')
+  # get 'signout', to: 'usersessions#oauth_destroy', as: 'signout'
 
 
   root to: 'home_page#index'
