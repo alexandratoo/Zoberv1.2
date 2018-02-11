@@ -1,30 +1,43 @@
 /* global Vue */
 document.addEventListener("DOMContentLoaded", function(event) {
 
-   var app = new Vue({
-     el: '#app',
-     data: {
-       houses: [],
-       sortAttribute: 'name',
-       sortAscending: true,
-       priceFilter: '',
-       distanceFilter: '',
-       femaleFilter: false,
-       maleFilter: false,
-       coedFilter: false,
-       parkingFilter: false,
-       internetFilter: false,
-       poolFilter: false,
-       adultFilter: false,
-       youthFilter: false,
-       seniorFilter: false,
-       hottubFilter: false,
-       laundryFilter: false,
-       dogsFilter: false,
-       catsFilter: false,
-       smokingFilter: false,
-       vapingFilter: false
-     },
+  const store = new Vuex.Store({
+    actions: {
+      getHouses() {
+        return new Promise((resolve, reject) => {
+          axios.get('/api/v1/houses.json')
+            .then(response => resolve(response))
+            .catch(err => reject(error))
+        });
+      }
+    }
+  })
+
+
+  var app = new Vue({
+    el: '#app',
+    data: {
+     houses: [],
+     sortAttribute: 'name',
+     sortAscending: true,
+     priceFilter: '',
+     distanceFilter: '',
+     femaleFilter: false,
+     maleFilter: false,
+     coedFilter: false,
+     parkingFilter: false,
+     internetFilter: false,
+     poolFilter: false,
+     adultFilter: false,
+     youthFilter: false,
+     seniorFilter: false,
+     hottubFilter: false,
+     laundryFilter: false,
+     dogsFilter: false,
+     catsFilter: false,
+     smokingFilter: false,
+     vapingFilter: false
+   },
 
      mounted: function() {
      $.get('/api/v1/houses.json', function(result) {
@@ -229,10 +242,11 @@ Vue.component('vue-map', {
 
 
 let vm = new Vue({
+  store,
   el: '#mapp',
   data: {
-    homes: [],
-    hello: "hello",
+    homes: {},
+    
     locations: [{
       title: 'Location A',
       lat: 37.769436,
@@ -260,7 +274,15 @@ let vm = new Vue({
       description: 'this is Location D',
     }]
   },
-});
+
+    created () {
+      this.$store.dispatch('getHouses').then(res => {
+        this.homes = res.data[0]
+        console.log(this.homes)
+      })
+    }
+
+  });
 
 
 });
