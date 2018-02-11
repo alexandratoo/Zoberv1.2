@@ -6,12 +6,13 @@
     <div class="border-form-div">
 <h2 class='user_sign'>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, as: :user, url: registration_path(:user)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :first_name, required: true, autofocus:true, class: 'signup_input' %><br>
     <%= f.input :last_name, required: true, autofocus:true,class: 'signup_input' %><br>
+    <%= f.input :username, required: true, autofocus:true,class: 'signup_input' %><br>
     <%= f.input :email, required: true, autofocus: true, class: 'signup_input' %>
     <%= f.input :password, required: true, class: 'signup_input', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true, class: 'signup_input' %>

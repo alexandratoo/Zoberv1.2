@@ -11,13 +11,13 @@ before_action :configure_permitted_parameters, if: :devise_controller?
     devise_parameter_sanitizer.permit(:sign_up) { |params|
       params.permit(
         :email, :password, :password_confirmation, :firstname,
-        :lastname, :organization, :occupation
+        :lastname, :organization, :occupation, :first_name, :last_name, :username
       )
     }
     devise_parameter_sanitizer.permit(:account_update) { |params|
       params.permit(
         :email, :password, :password_confirmation, :firstname,
-        :lastname, :organization, :occupation
+        :lastname, :organization, :occupation, :first_name, :last_name, :username
       )
     }
   end
