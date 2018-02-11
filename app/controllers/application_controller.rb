@@ -25,9 +25,9 @@ end
 
 
 
-  private
-
-  def current_user
-    @current_user ||= User.find(session[:id]) if session[:id]
-     rescue ActiveRecord::RecordNotFound
-  end
+  # private
+  #
+  # def current_user
+  #   @current_user ||= User.find(session[:id]) if session[:id]
+  #    rescue ActiveRecord::RecordNotFound
+  # end
