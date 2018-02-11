@@ -142,3 +142,9 @@ border-radius: 15px;
 .boolean.optional.checkbox {color:white; padding-left:20px;}
 .boolean.optional{margin-right:20px;}
 .password.optional#provider_password{margin-bottom:80px;}
+//user sign up css
+.string.required#user_last_name {color:black;}
+.string.required#user_first_name {color:black;}
+.string.email.required#user_email {color:black;}
+.password.required#user_password {color:black;}
+.password.required#user_password_confirmation {color:black;}
