@@ -19,7 +19,7 @@ body {
   border: #EEE 1px solid;
 }
 .redes >ul li span {
-  color: #CCC;
+  color: #ffffff;
   font-size: 18px;
 }
 
@@ -31,3 +31,8 @@ body {
   display: -webkit-inline-box;
   overflow: scroll;
 }
+.card-header.bg-dark.text-white {font-fmaily:raleway; font-size:4rem; font-weight:300;}
+.card-title.user {color:#626262; font-family: raleway;}
+.card-text.user{color:#626262; font-family: raleway;}
+.small-user{color:#626262; font-family: raleway;}
+.user_email{color:#626262; font-family: raleway;}
