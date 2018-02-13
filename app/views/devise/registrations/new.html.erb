@@ -2,14 +2,16 @@
   <%= render 'layouts/header' %>
 </section>
 <div class="container-fluid signup">
-<div class="border-form-div">
+<div class="border-form-div-login">
 
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <!-- <%= f.error_notification %> --><h2 class="provider_signup">sign up</h2><br>
 <%= devise_error_messages! %>
   <div class="form-inputs">
+    <div class="please_select">please select if you are a provider or a non-profit
 <%= f.select :role, Provider.roles.keys, {}, class: 'user-roles-select' %>
+</div>
     <%= f.input :firstname, required: true, autofocus:true %><br>
     <%= f.input :lastname, required: true, autofocus:true %><br>
     <%= f.input :organization, required: true, autofocus:true %><br>
@@ -20,7 +22,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up", class: 'btn btn-lg signup-btn' %>
+    <%= f.button :submit, "Sign up", class: 'user_submit' %>
   </div>
 <% end %>
 

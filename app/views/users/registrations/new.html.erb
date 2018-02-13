@@ -3,10 +3,11 @@
 </section>
 <section>
   <div class="container-fluid signup">
-    <div class="border-form-div">
-<h2 class='user_sign'>Sign up</h2>
+    <div class="border-form-div-login">
+
 
 <%= simple_form_for(resource, as: :user, url: registration_path(:user)) do |f| %>
+<h2 class='provider_signup'>sign up</h2><br>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -19,7 +20,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class:"user_submit" %>
   </div>
 <% end %>
 
