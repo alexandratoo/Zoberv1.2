@@ -17,5 +17,6 @@ def provider_params
                                :lastname,
                                :organization,
                                :occupation,
-                               :email)
+                               :email,
+                               :role)
 end

@@ -12,7 +12,7 @@ class Provider < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :houses
 has_many :products
-
+end
 def self.find_by_uid!(uid)
    Provider.find_by!("firstname = :p OR id = :p", p: uid)
  end
@@ -33,5 +33,4 @@ def stripe_user_account
     end
   end
   @stripe_user_account
-end
 end
