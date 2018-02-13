@@ -86,12 +86,20 @@
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="/blogs">blog</a>
         </li>
-        <li class="nav-item">
-          <a class=" click nav-link js-scroll-trigger" href="/new">signup</a>
-        </li>
-        <li class="nav-item">
-          <a class="click nav-link js-scroll-trigger" href="/login" >login</a>
-        </li>
+        <li class="dropdown users">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">users <span class="caret"></span></a>
+                 <ul class="dropdown-menu providers">
+                 <% if user_signed_in? %>
+                  <li class="link_items"><%= link_to "logout", destroy_user_session_path, method: :delete, class: "link_items" %></li>
+<li ><%= link_to "dashboard", index_path, class: "link_items" %></li>
+                 <% else %>
+                  <li class="link_items"><%= link_to "register", new_user_registration_path, class: "link_items" %></li>
+                  <li class="link_items"><%= link_to "login", new_user_session_path, class: "link_items" %></li>
+
+                 <% end %>
+
+                 </ul>
+               </li>
       </ul>
     </div>
   </div>
