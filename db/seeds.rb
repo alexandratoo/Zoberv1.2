@@ -31,22 +31,8 @@ index = 1
     capacity: 50,
     price: 1000.00,
     deposit: 2000.00,
-    gender: "Coed",
-    payment_forms: "Cash",
-    insurance: false,
     property_description: "A sober living home",
     neighborhood: "Lower Pac Heights",
-    smoking_policy: "Smoking allowed outside",
-    transportation: true,
-    parking: true,
-    activities: "Yoga",
-    room_amenities: "Room Service",
-    pets: true,
-    hotttub: true,
-    ac: true,
-    heating: true,
-    tv: "Flatscreen",
-    internet: "None"
      })
       index += 1
     end
