@@ -16,6 +16,11 @@ json.array! @houses.each do |house|
   json.deposit house.deposit
   json.property_description house.property_description
   json.neighborhood house.neighborhood
+  json.latitude house.latitude
+  json.longitude house.longitude
+  json.street2 house.street2
+  json.phone house.phone
+
   json.images house.images.each do |image|
     json.id image.id
     json.house_id house.id
