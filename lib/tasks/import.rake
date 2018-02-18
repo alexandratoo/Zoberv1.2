@@ -25,3 +25,34 @@ namespace :import do
     end
   end 
 end 
+
+namespace :import do 
+  desc "Import data from csv"
+  task sf: :environment do 
+    filename = File.join Rails.root, "sf_samhsa.csv"
+    CSV.foreach(filename, headers: true) do |row|
+      House.create({
+    name: row[0],
+    property_description: row[1],
+    street: row[2],
+    street2: row[3],
+    city: row[4],
+    state: row[5],
+    zip_code: row[6],
+    phone: row[7],
+    website: row[8],
+    latitude: row[9],
+    longitude: row[10],
+    email: "NA",
+    facebook: "NA",
+    linkedin: "NA",
+    twitter: "NA",
+    price: 0.00,
+    deposit: 0.00,
+    neighborhood: "NA",
+    curfew: "NA",
+    overnight_passes: "NA"
+      })
+    end
+  end 
+end 

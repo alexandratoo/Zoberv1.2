@@ -30,3 +30,4 @@ logfile
 /public/packs
 /public/packs-test
 /node_modules
+/sf_samhsa.csv

@@ -28,15 +28,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     created () {
       this.$store.dispatch('getHouses').then(res => {
         this.homes = res.data
-        var index = .006
+        
         for(var i = 0; i < this.homes.length; i++) {
           var details = {};
           details.title = this.homes[i].property_description;
-          details.lat = (37.736220 + index);
-          details.lng = (-122.459338 + index);
+          details.lat = this.homes[i].latitude;
+          details.lng = this.homes[i].longitude;
           details.description = this.homes[i].name;
           this.$set(this.locations, [i], details);
-          index += .001;
         }
       })
     }
@@ -250,10 +249,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         let marker = new google.maps.Marker({
           position: latlng,
           map: this.map,
-          title: pos.title
+          title: pos.title,
+          description: pos.description
         })
         let infoWindow = new google.maps.InfoWindow();
-        infoWindow.setContent('<div class="map__info">' + pos.description + '</div>');
+        infoWindow.setContent('<div class="map__info">' + pos.description + ": " + pos.title + '</div>');
 
         // Setup event for marker
         google.maps.event.addListener(marker, 'mouseover', () => {
