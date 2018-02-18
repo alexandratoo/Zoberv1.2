@@ -107,7 +107,7 @@
             <div class="card-block">
               <h4 class="card-title call">Email: <%=@house.email %> </h4>
               <h4 class="card-title call">Phone: <%=@house.phone %> </h4>
-              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a class="house-website" href=<%=@house.website%>>  <h4 class="card-title call"> Website </h4> </a> 
             </div>
             <div class="card-footer end">
               <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%>

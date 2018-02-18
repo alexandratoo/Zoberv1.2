@@ -250,6 +250,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
           position: latlng,
           map: this.map,
           title: pos.title,
+          icon: {
+              url: 'http://localhost:3000/icon/z_house.png',
+              scaledSize: new google.maps.Size(30, 30), // scaled size
+            },
           description: pos.description
         })
         let infoWindow = new google.maps.InfoWindow();
