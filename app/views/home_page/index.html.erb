@@ -93,7 +93,7 @@
 
           <div class="row-fluid">
             <%= form_tag(houses_path, :method => "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "find sober living by city, state, or zip", class: "search_field" %>
+            <%= text_field_tag :search, params[:search], id: "search_term", name:"user_location", placeholder: "find sober living by city, state, or zip", class: "search_field" %>
             <%= submit_tag "Search", :name => nil, class: 'house_submit' %>
           </div>
           <% end %>
@@ -108,3 +108,16 @@
 </body>
 
 </html>
+
+<script> 
+  function activatePlacesSearch(){
+    var input = document.getElementById('search_term');
+    var options = {
+      types: ['geocode'],
+      componentRestrictions: {country: 'us'}
+    };
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+  }
+</script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key= + <%=ENV['GOOGLE_MAP_API_KEY']%> + &libraries=places&callback=activatePlacesSearch"></script>
