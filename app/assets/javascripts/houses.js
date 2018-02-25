@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 // BEGIN: houses display for right column & filter methods
   var app = new Vue({
+    store,
     el: '#app',
     data: {
       houses: [],
