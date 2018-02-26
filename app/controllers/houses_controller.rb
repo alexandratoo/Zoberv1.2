@@ -1,7 +1,5 @@
 class HousesController < ApplicationController
   def index
-    @houses = House.all
-    @places = Place.order('created_at DESC');
   end
 
   def new
