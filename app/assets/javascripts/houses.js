@@ -34,6 +34,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
           details.title = this.homes[i].property_description;
           details.lat = this.homes[i].latitude;
           details.lng = this.homes[i].longitude;
+          details.imageUrl = this.homes[i].images[0].image
+          details.id = this.homes[i].id; 
+          details.price = this.homes[i].price; 
           details.description = this.homes[i].name;
           this.$set(this.locations, [i], details);
         }
@@ -245,6 +248,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     methods: {
       // set marker
       // @param {Object} pos
+      formatPrice: function(value) {
+        let val = (value/1).toFixed(2)
+        return val;
+      },
+
       setMarker(pos) {
         let latlng = new google.maps.LatLng(pos.lat, pos.lng);
         let marker = new google.maps.Marker({
@@ -258,16 +266,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
           description: pos.description
         })
         let infoWindow = new google.maps.InfoWindow();
-        infoWindow.setContent('<div class="map__info">' + pos.description + ": " + pos.title + '</div>');
+        infoWindow.setContent('<div class="map__info"><a href="houses/' + pos.id + '"> <img width="120" height="90" src=' + pos.imageUrl + '> </a>' + pos.description + '<p>' + this.formatPrice(pos.price) + '</p> </div>');
 
-        // Setup event for marker
-        google.maps.event.addListener(marker, 'mouseover', () => {
+        // // Setup event for marker
+        google.maps.event.addListener(marker, 'click', () => {
           infoWindow.open(this.map, marker);
         });
 
-        google.maps.event.addListener(marker, 'mouseout', () => {
-          infoWindow.close(this.map, marker);
-        });
+        // google.maps.event.addListener(marker, 'mouseout', () => {
+        //   infoWindow.close(this.map, marker);
+        // });
 
         google.maps.event.addListener(marker, 'click', () => {
           console.log("abc");
