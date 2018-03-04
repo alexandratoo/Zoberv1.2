@@ -98,6 +98,16 @@
     position: relative;
 }
 
+.slick-prev {
+  margin-left: 40px;
+  z-index:3;
+}
+
+.slick-next {
+  margin-right: 40px;
+  z-index:3;
+}
+
 .caption {
     position: absolute;
     top: 45%;
