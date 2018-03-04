@@ -2,13 +2,16 @@
   <%= render "layouts/header" %>
 </section>
 
-<section class="house-display">
+<head>
+  <meta charset="UTF-8">
+</head>
 
+<section class="house-display">
   <div class="slick-carousel">
     <div class="thumbnail text-center">
       <img src="https://i1.wp.com/blog.extraspace.com/wp-content/uploads/2017/06/VSP-Virtuall-Staged-Bedroom.jpg?resize=1500%2C400">
       <div class="caption">
-          <p> <%=@house.name%> </p>
+        <p> <%=@house.name%> </p>
       </div>
     </div>
     <% @house.images.each do |image| %>
@@ -17,58 +20,6 @@
       </div>
     <% end %>
   </div>
-
-<div>
-
-
-
-
-  <ul class= "amenity-list">
-
-    <% @categories.each do |category| %>
-      <% category.filters.each do |filter| %>
-        <% if @filter_array.include?(filter) %>
-
-          <% if filter.filter== "Dogs" %>
-            <li> <i id="amenities" class="fa fa-paw"></i> Dogs Allowed </li>
-
-          <% elsif filter.filter== "Pool" %>
-            <li> <img id="icons8" src="https://png.icons8.com/windows/50/F47F49/swimming-pool.png"> Pool </li>
-
-          <% elsif filter.filter== "Hot Tub" %>
-            <li> <img id="icons8" src="https://png.icons8.com/ios/50/F47F49/spa-filled.png"> Hot Tub </li>
-
-          <% elsif filter.filter== "Streaming Services" %>
-            <li> <img id="icons8" src="https://png.icons8.com/ios/50/F47F49/tv-show-filled.png"> Streaming Services </li>
-
-          <% elsif filter.filter== "Coffee Provided" %>
-            <li> <img id="icons8" src="https://png.icons8.com/metro/50/F47F49/coffee.png"> Coffee Provided </li>
-
-          <% elsif filter.filter== "Air Conditioning" %>
-            <li> <i id="amenities" class="fa fa-snowflake-o"></i> AC </li>
-
-          <% elsif filter.filter== "Heat" %>
-            <li> <i id="amenities" class="fa fa-thermometer-three-quarters"></i> Heat </li>
-
-          <% elsif filter.filter== "Parking" %>
-            <li> <i id="amenities" class="fa fa-car"></i> Parking </li>
-
-          <% elsif filter.filter== "Commercial Insurance" %>
-            <li> <i id="amenities" class="fa fa-id-card-o"></i> Insurance Accepted</li>
-
-          <% elsif filter.filter== "Internet (wi-fi)" %>
-            <li> <i id="amenities" class="fa fa-wifi" ></i> Internet (wi-fi) </li>
-
-          <% elsif filter.filter== "Television" %>
-            <li> <i id="amenities" class="fa fa-television" ></i> TV </li>
-
-          <% end %>
-
-        <% end %>
-      <% end %>
-    <% end %>
-  </ul>
-
 
   <div class="container-fluid">
     <div class="row">
@@ -83,6 +34,51 @@
           <p> Capacity: <%=@house.capacity%> </p>
 
           <ul class= "amenity-list">
+            <% @categories.each do |category| %>
+              <% category.filters.each do |filter| %>
+                <% if @filter_array.include?(filter) %>
+
+                  <% if filter.filter== "Dogs" %>
+                    <li> <i id="amenities" class="fa fa-paw"></i> Dogs Allowed </li>
+
+                  <% elsif filter.filter== "Pool" %>
+                    <li> <img id="icons8" src="https://png.icons8.com/windows/50/F47F49/swimming-pool.png"> Pool </li>
+
+                  <% elsif filter.filter== "Hot Tub" %>
+                    <li> <img id="icons8" src="https://png.icons8.com/ios/50/F47F49/spa-filled.png"> Hot Tub </li>
+
+                  <% elsif filter.filter== "Streaming Services" %>
+                    <li> <img id="icons8" src="https://png.icons8.com/ios/50/F47F49/tv-show-filled.png"> Streaming Services </li>
+
+                  <% elsif filter.filter== "Coffee Provided" %>
+                    <li> <img id="icons8" src="https://png.icons8.com/metro/50/F47F49/coffee.png"> Coffee Provided </li>
+
+                  <% elsif filter.filter== "Air Conditioning" %>
+                    <li> <i id="amenities" class="fa fa-snowflake-o"></i> AC </li>
+
+                  <% elsif filter.filter== "Heat" %>
+                    <li> <i id="amenities" class="fa fa-thermometer-three-quarters"></i> Heat </li>
+
+                  <% elsif filter.filter== "Parking" %>
+                    <li> <i id="amenities" class="fa fa-car"></i> Parking </li>
+
+                  <% elsif filter.filter== "Commercial Insurance" %>
+                    <li> <i id="amenities" class="fa fa-id-card-o"></i> Insurance Accepted</li>
+
+                  <% elsif filter.filter== "Internet (wi-fi)" %>
+                    <li> <i id="amenities" class="fa fa-wifi" ></i> Internet (wi-fi) </li>
+
+                  <% elsif filter.filter== "Television" %>
+                    <li> <i id="amenities" class="fa fa-television" ></i> TV </li>
+
+                  <% end %>
+
+                <% end %>
+              <% end %>
+            <% end %>
+          </ul>
+
+          <ul class= "amenity-list">
 
             <% @categories.each do |category| %>
               <h5> <%= category.category %> </h5>
@@ -93,9 +89,6 @@
               <% end %>
             <% end %>
           </ul>
-
-          <%= render "form" %>
-
         </div>
       </div>
       <div class="col-xs-4 col-lg-4">
@@ -126,6 +119,7 @@
 
 
 <script>
+$(document).ready(function(){
   $('.slick-carousel').slick({
     dots: false,
     arrows: true,
@@ -135,6 +129,7 @@
     centerMode: true,
     variableWidth: true
   }); 
+});
 </script>
 
 
