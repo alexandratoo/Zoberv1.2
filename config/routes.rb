@@ -45,6 +45,7 @@ match '/providers/:id',     to: 'providers#show',       via: 'get'
   namespace :api do
     namespace :v1 do
       get '/houses' => 'houses#index'
+      get '/houses/:id' => 'houses#show'
       get '/images' => 'images#index'
     end
   end
