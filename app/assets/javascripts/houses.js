@@ -3,14 +3,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 // BEGIN: Vuex store to contain ajax call for houses (to use globally)
   const store = new Vuex.Store({
+    
     actions: {
       getHouses() {
+        let uri = window.location.search.substring(1); 
+        let params = new URLSearchParams(uri);
+
         return new Promise((resolve, reject) => {
-          axios.get('/api/v1/houses.json')
+          axios.get('/api/v1/houses/' + params.get("user_location") + '.json')
             .then(response => resolve(response))
             .catch(err => reject(error))
         });
-      }
+      },
     }
   })
 // END: Vuex store to contain ajax call for houses (to use globally)
@@ -41,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           this.$set(this.locations, [i], details);
         }
       })
-    }
+    },
   });
 // END: markers for map from houses json
 
