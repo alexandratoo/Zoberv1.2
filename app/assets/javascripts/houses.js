@@ -3,8 +3,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 // BEGIN: Vuex store to contain ajax call for houses (to use globally)
   const store = new Vuex.Store({
-    
+
+    state: {
+      facilities: []
+    },
+
+    getters: {
+      facilities: state => state.facilities
+    },
+
     actions: {
+      getList: function ({ commit }) {
+        let uri = window.location.search.substring(1);
+        let params = new URLSearchParams(uri);
+        axios.get('/api/v1/houses/' + params.get("user_location") + '.json').then((response) => {
+          commit('setHousesList', { list: response.data })
+        }, (err) => {
+          console.log(err)
+        })
+      },
+
       getHouses() {
         let uri = window.location.search.substring(1); 
         let params = new URLSearchParams(uri);
@@ -14,8 +32,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
             .then(response => resolve(response))
             .catch(err => reject(error))
         });
-      },
+      }
+    },
+
+    mutations: {
+      setHousesList: (state, { list }) => {
+        state.facilities = list
+      }
     }
+
   })
 // END: Vuex store to contain ajax call for houses (to use globally)
 
@@ -29,23 +54,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
       locations: []
     },
 
+    computed: {
+      facilities () {
+        return this.$store.getters.facilities
+      }
+    },
+
     created () {
+      this.$store.dispatch('getList')
       this.$store.dispatch('getHouses').then(res => {
         this.homes = res.data
-        
-        for(var i = 0; i < this.homes.length; i++) {
+        console.log(this.$store.getters.facilities)
+        for(var i = 0; i < this.$store.getters.facilities.length; i++) {
           var details = {};
-          details.title = this.homes[i].property_description;
-          details.lat = this.homes[i].latitude;
-          details.lng = this.homes[i].longitude;
-          details.imageUrl = this.homes[i].images[0].image
-          details.id = this.homes[i].id; 
-          details.price = this.homes[i].price; 
-          details.description = this.homes[i].name;
+          details.title = this.$store.getters.facilities[i].property_description;
+          details.lat = this.$store.getters.facilities[i].latitude;
+          details.lng = this.$store.getters.facilities[i].longitude;
+          details.imageUrl = this.$store.getters.facilities[i].images[0].image;
+          details.id = this.$store.getters.facilities[i].id; 
+          details.price = this.$store.getters.facilities[i].price; 
+          details.description = this.$store.getters.facilities[i].name;
           this.$set(this.locations, [i], details);
         }
       })
-    },
+    }
   });
 // END: markers for map from houses json
 
