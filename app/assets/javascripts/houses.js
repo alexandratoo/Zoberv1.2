@@ -5,11 +5,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const store = new Vuex.Store({
 
     state: {
-      facilities: []
+      facilities: [],
+      femaleFilter: false,
+      maleFilter: false,
+      coedFilter: false,
+      parkingFilter: false,
+      internetFilter: false,
+      poolFilter: false,
+      adultFilter: false,
+      youthFilter: false,
+      seniorFilter: false,
+      hottubFilter: false,
+      laundryFilter: false,
+      dogsFilter: false,
+      catsFilter: false,
+      smokingFilter: false,
+      vapingFilter: false
     },
 
     getters: {
-      facilities: state => state.facilities
+
+      femaleFilter(state) {
+        return state.femaleFilter
+      },
+
+      facilities: state => {
+        return state.facilities.filter(facility => facility.zip_code == '94117') 
+      }
+      
     },
 
     actions: {
@@ -32,12 +55,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
             .then(response => resolve(response))
             .catch(err => reject(error))
         });
+      },
+
+      filterHouses: function(house) {
+        var filterArray = house.filters.map(function (filter) {
+          return filter.filter;
+        });
+        var isValid = true;
+
+        if(this.femaleFilter === true && isValid){
+          if(!filterArray.includes("Female")) {
+           isValid = false;
+          }
+        }
+        return isValid;
       }
+
     },
 
     mutations: {
       setHousesList: (state, { list }) => {
         state.facilities = list
+      },
+
+      updateFilter (state, femaleFilter) {
+        state.femaleFilter = femaleFilter
       }
     }
 
@@ -54,26 +96,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
       locations: []
     },
 
-    computed: {
-      facilities () {
-        return this.$store.getters.facilities
-      }
-    },
-
     created () {
       this.$store.dispatch('getList')
       this.$store.dispatch('getHouses').then(res => {
-        this.homes = res.data
-        console.log(this.$store.getters.facilities)
-        for(var i = 0; i < this.$store.getters.facilities.length; i++) {
+        this.homes = this.$store.getters.facilities
+        for(var i = 0; i < this.homes.length; i++) {
           var details = {};
-          details.title = this.$store.getters.facilities[i].property_description;
-          details.lat = this.$store.getters.facilities[i].latitude;
-          details.lng = this.$store.getters.facilities[i].longitude;
-          details.imageUrl = this.$store.getters.facilities[i].images[0].image;
-          details.id = this.$store.getters.facilities[i].id; 
-          details.price = this.$store.getters.facilities[i].price; 
-          details.description = this.$store.getters.facilities[i].name;
+          details.title = this.homes[i].property_description;
+          details.lat = this.homes[i].latitude;
+          details.lng = this.homes[i].longitude;
+          details.imageUrl = this.homes[i].images[0].image;
+          details.id = this.homes[i].id; 
+          details.price = this.homes[i].price; 
+          details.description = this.homes[i].name;
           this.$set(this.locations, [i], details);
         }
       })
@@ -92,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       sortAscending: true,
       priceFilter: '',
       distanceFilter: '',
-      femaleFilter: false,
+      // femaleFilter: false,
       maleFilter: false,
       coedFilter: false,
       parkingFilter: false,
@@ -109,10 +144,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
       vapingFilter: false
     },
 
+    // computed: {
+    //   facilities () {
+    //     return this.$store.getters.facilities
+    //   }
+    // },
+
+    created () {
+      // this.$store.dispatch('getList')
+      this.$store.dispatch('getHouses').then(res => {
+        this.houses = this.$store.getters.facilities
+      })
+    },
+
     mounted: function() {
-      $.get('/api/v1/houses.json', function(result) {
-        this.houses = result;
-      }.bind(this));
+      this.houses = this.$store.getters.facilities;
+      console.log(this.houses)
     },
 
     methods: {
@@ -232,6 +279,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
 
     computed: {
+
+      femaleFilter:{
+        get(){ return this.$store.getters.femaleFilter; },
+        set( femaleFilter ){ this.$store.commit("updateFilter", femaleFilter );}
+      },
+
       modifiedHouses: function() {
         return this.houses.sort(function(house1, house2) {
           if (this.sortAscending) {
@@ -281,6 +334,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       this.map.fitBounds(bounds);
     },
+
     methods: {
       // set marker
       // @param {Object} pos
