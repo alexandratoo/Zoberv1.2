@@ -6,16 +6,31 @@
     <h1 class="provider-title">register your facility</h1>
   </div>
     </section>
+    <% if current_provider %>
     <section>
       <div class="container-fluid">
 
         <div class="col-sm-12 mx-auto why">
 
-          <p></p>
+          <p>Zober offers a number of different options and plans depending on your needs Please look at the different plans below and decide which one is best suited to your needs.
+          If you need help, please reach out to us at any time. Thanks! we look forward to helping you in this journey.</p>
         </div>
 
 </div>
     </section>
+    <% else %>
+    <section>
+      <div class="container-fluid">
+
+        <div class="col-sm-12 mx-auto why">
+
+          <p>zober is always free for non-profits. select either residential treatment center or sober living facility and get started to get your facilities listed today.
+          If you have any questions, please contact us via email at any time! Thanks so much!</p>
+        </div>
+
+</div>
+    </section>
+    <% end %>
     <section id="content-details" class="row clearfix">
   <div id="details-article" class="col-sm-12 products">
       <!-- <div class="img-fluid mx-auto" id="wall_ring"> -->
