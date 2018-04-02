@@ -1,5 +1,5 @@
 class HousesController < ApplicationController
-
+belongs_to :provider, optional: true
   def index
   end
 
@@ -17,7 +17,7 @@ class HousesController < ApplicationController
       house_id: @house.id,
       filter_id: filter_id
       )
-    end 
+    end
 
     flash[:notice] = "House added successfully"
     render 'index'
@@ -28,8 +28,8 @@ class HousesController < ApplicationController
     @house = House.find(params[:id])
     @filter_array = @house.filters.each do |filter|
       filter
-    end 
-    @categories = Category.all 
+    end
+    @categories = Category.all
   end
 
 
