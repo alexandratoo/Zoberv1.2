@@ -125,7 +125,7 @@
   font-size: 25px;
   margin: 0px;
   padding: 0px;
-  color: #F47F49;
+  color: #626262;
 }
 
 #icons8 {
@@ -154,6 +154,12 @@
 
 .amenity-list li {
   display: inline;
+  list-style-type: none;
+  color: #626262;
+}
+
+.amenity-list {
+  padding: 0;
   list-style-type: none;
 }
 
