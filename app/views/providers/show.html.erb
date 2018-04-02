@@ -9,10 +9,10 @@
   <div class="container-fluid provider_info">
     <div class="card provider">
 
-      <h3 class="card-header provider"><%= @provider.firstname %>Hello</h3>
+      <h3 class="card-header provider"> <%= @provider.firstname %></h3>
       <div class="card-block provider">
-        <h4 class="card-title provider_home"><%= @provider.organization %></h4>
-        <p class="card-text provider_home"><%= @provider.occupation %></p>
+        <h4 class="card-title provider_home">organization:  <%= @provider.organization %></h4>
+        <p class="card-text provider_home">position<%= @provider.occupation %></p>
 
       </div>
     </div>
@@ -66,7 +66,7 @@
 <div class="card-block">
   <h4 class="card-title">add your homes below!!</h4>
   <p class="card-text">add to your home listings and manage current listings from here. click below to get started with your first home.</p>
-  <a href="products" class="btn btn-primary">Go somewhere</a>
+  <a href="products" class="btn btn-primary">list a facility</a>
   <a href="provider-markers" class="btn btn-primary">Add Marker</a>
 </div>
 </div>
