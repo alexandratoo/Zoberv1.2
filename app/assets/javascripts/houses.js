@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       },
 
       facilities: state => {
-        return state.facilities.filter(facility => facility.zip_code == '94117') 
+        return state.facilities
+        // .filter(facility => facility.zip_code == '94117') 
       }
       
     },

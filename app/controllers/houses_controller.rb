@@ -1,5 +1,5 @@
 class HousesController < ApplicationController
-belongs_to :provider, optional: true
+
   def index
   end
 
