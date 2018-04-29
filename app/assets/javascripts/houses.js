@@ -24,16 +24,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
 
     getters: {
-
       femaleFilter(state) {
         return state.femaleFilter
       },
 
       facilities: state => {
         return state.facilities
-        // .filter(facility => facility.zip_code == '94117') 
-      }
-      
+      }  
     },
 
     actions: {
@@ -47,31 +44,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
         })
       },
 
-      getHouses() {
-        let uri = window.location.search.substring(1); 
-        let params = new URLSearchParams(uri);
-
-        return new Promise((resolve, reject) => {
-          axios.get('/api/v1/houses/' + params.get("user_location") + '.json')
-            .then(response => resolve(response))
-            .catch(err => reject(error))
-        });
-      },
-
       filterHouses: function(house) {
         var filterArray = house.filters.map(function (filter) {
           return filter.filter;
         });
         var isValid = true;
 
-        if(this.femaleFilter === true && isValid){
+        if(this.$store.getters.femaleFilter === true && isValid){
           if(!filterArray.includes("Female")) {
            isValid = false;
           }
         }
         return isValid;
       }
-
     },
 
     mutations: {
@@ -91,28 +76,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
 // BEGIN: markers for map from houses json
   let vm = new Vue({
     store,
-    el: '#mapp',
-    data: {
-      homes: [],
-      locations: []
-    },
+    el: '#markers',
 
     created () {
       this.$store.dispatch('getList')
-      this.$store.dispatch('getHouses').then(res => {
-        this.homes = this.$store.getters.facilities
-        for(var i = 0; i < this.homes.length; i++) {
+    },
+
+    computed: {
+      locations: function() {
+        var homes = this.$store.getters.facilities;
+        var locations = [];
+        for(var i = 0; i < homes.length; i++) {
           var details = {};
-          details.title = this.homes[i].property_description;
-          details.lat = this.homes[i].latitude;
-          details.lng = this.homes[i].longitude;
-          details.imageUrl = this.homes[i].images[0].image;
-          details.id = this.homes[i].id; 
-          details.price = this.homes[i].price; 
-          details.description = this.homes[i].name;
-          this.$set(this.locations, [i], details);
+          details.title = homes[i].property_description;
+          details.lat = homes[i].latitude;
+          details.lng = homes[i].longitude;
+          details.imageUrl = homes[i].images[0].image;
+          details.id = homes[i].id; 
+          details.price = homes[i].price; 
+          details.description = homes[i].name;
+          locations.push(details);
         }
-      })
+        return locations; 
+        console.log(locations)
+      }
     }
   });
 // END: markers for map from houses json
@@ -123,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     store,
     el: '#app',
     data: {
-      houses: [],
       sortAttribute: 'name',
       sortAscending: true,
       priceFilter: '',
@@ -145,22 +131,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       vapingFilter: false
     },
 
-    // computed: {
-    //   facilities () {
-    //     return this.$store.getters.facilities
-    //   }
-    // },
-
     created () {
-      // this.$store.dispatch('getList')
-      this.$store.dispatch('getHouses').then(res => {
-        this.houses = this.$store.getters.facilities
-      })
-    },
-
-    mounted: function() {
-      this.houses = this.$store.getters.facilities;
-      console.log(this.houses)
+      this.$store.dispatch('getList')
     },
 
     methods: {
@@ -282,18 +254,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
     computed: {
 
       femaleFilter:{
-        get(){ return this.$store.getters.femaleFilter; },
-        set( femaleFilter ){ this.$store.commit("updateFilter", femaleFilter );}
+        get() { 
+          return this.$store.getters.femaleFilter; 
+        },
+        set( femaleFilter ) { 
+          this.$store.commit("updateFilter", femaleFilter);
+        }
       },
 
       modifiedHouses: function() {
-        return this.houses.sort(function(house1, house2) {
-          if (this.sortAscending) {
-            return house1[this.sortAttribute].localeCompare(house2[this.sortAttribute]);
-          } else {
-            return house2[this.sortAttribute].localeCompare(house1[this.sortAttribute]);
-          }
-        }.bind(this));
+        return this.$store.getters.facilities;
+        
+        // return this.houses.sort(function(house1, house2) {
+        //   if (this.sortAscending) {
+        //     return house1[this.sortAttribute].localeCompare(house2[this.sortAttribute]);
+        //   } else {
+        //     return house2[this.sortAttribute].localeCompare(house1[this.sortAttribute]);
+        //   }
+        // }.bind(this));
       }
      }
   });
