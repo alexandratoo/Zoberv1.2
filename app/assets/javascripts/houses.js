@@ -28,6 +28,62 @@ document.addEventListener("DOMContentLoaded", function(event) {
         return state.femaleFilter
       },
 
+      maleFilter(state) {
+        return state.maleFilter
+      },
+
+      coedFilter(state) {
+        return state.coedFilter
+      },
+
+      parkingFilter(state) {
+        return state.parkingFilter
+      },
+
+      internetFilter(state) {
+        return state.internetFilter
+      },
+
+      poolFilter(state) {
+        return state.poolFilter
+      },
+
+      adultFilter(state) {
+        return state.adultFilter
+      },
+
+      youthFilter(state) {
+        return state.youthFilter
+      },
+
+      seniorFilter(state) {
+        return state.seniorFilter
+      },
+
+      hottubFilter(state) {
+        return state.hottubFilter
+      },
+
+      laundryFilter(state) {
+        return state.laundryFilter
+      },
+
+      dogsFilter(state) {
+        return state.dogsFilter
+      },
+
+      catsFilter(state) {
+        return state.catsFilter
+      },
+
+      smokingFilter(state) {
+        return state.smokingFilter
+      },
+
+      vapingFilter(state) {
+        return state.vapingFilter
+      },
+
       facilities: state => {
         return state.facilities
       }  
@@ -64,9 +120,66 @@ document.addEventListener("DOMContentLoaded", function(event) {
         state.facilities = list
       },
 
-      updateFilter (state, femaleFilter) {
+      updateFemaleFilter (state, femaleFilter) {
         state.femaleFilter = femaleFilter
-      }
+      },
+
+      updateMaleFilter (state, maleFilter) {
+        state.maleFilter = maleFilter
+      },
+
+      updateCoedFilter (state, coedFilter) {
+        state.coedFilter = coedFilter
+      },
+
+      updateParkingFilter (state, parkingFilter) {
+        state.parkingFilter = parkingFilter
+      },
+
+      updateInternetFilter (state, internetFilter) {
+        state.internetFilter = internetFilter
+      },
+
+      updatePoolFilter (state, poolFilter) {
+        state.poolFilter = poolFilter
+      },
+
+      updateAdultFilter (state, adultFilter) {
+        state.adultFilter = adultFilter
+      },
+
+      updateYouthFilter (state, youthFilter) {
+        state.youthFilter = youthFilter
+      },
+
+      updateSeniorFilter(state, seniorFilter) {
+        state.seniorFilter = seniorFilter
+      },
+
+      updateHottubFilter(state, hottubFilter) {
+        state.hottubFilter = hottubFilter
+      },
+
+      updateLaundryFilter (state, laundryFilter) {
+        state.laundryFilter = laundryFilter
+      },
+
+      updateDogsFilter (state, dogsFilter) {
+        state.dogsFilter = dogsFilter
+      },
+
+      updateCatsFilter (state, catsFilter) {
+        state.catsFilter = catsFilter
+      },
+
+      updateSmokingFilter (state, smokingFilter) {
+        state.smokingFilter = smokingFilter
+      },
+
+      updateVapingFilter (state, vapingFilter) {
+        state.vapingFilter = vapingFilter
+      },
+
     }
 
   })
@@ -87,6 +200,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var homes = this.$store.getters.facilities;
         var locations = [];
         for(var i = 0; i < homes.length; i++) {
+
           var details = {};
           details.title = homes[i].property_description;
           details.lat = homes[i].latitude;
@@ -114,21 +228,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       sortAscending: true,
       priceFilter: '',
       distanceFilter: '',
-      // femaleFilter: false,
-      maleFilter: false,
-      coedFilter: false,
-      parkingFilter: false,
-      internetFilter: false,
-      poolFilter: false,
-      adultFilter: false,
-      youthFilter: false,
-      seniorFilter: false,
-      hottubFilter: false,
-      laundryFilter: false,
-      dogsFilter: false,
-      catsFilter: false,
-      smokingFilter: false,
-      vapingFilter: false
     },
 
     created () {
@@ -258,7 +357,133 @@ document.addEventListener("DOMContentLoaded", function(event) {
           return this.$store.getters.femaleFilter; 
         },
         set( femaleFilter ) { 
-          this.$store.commit("updateFilter", femaleFilter);
+          this.$store.commit("updateFemaleFilter", femaleFilter);
+        }
+      },
+
+      maleFilter:{
+        get() { 
+          return this.$store.getters.maleFilter; 
+        },
+        set( maleFilter ) { 
+          this.$store.commit("updateMaleFilter", maleFilter);
+        }
+      },
+
+      coedFilter:{
+        get() { 
+          return this.$store.getters.coedFilter; 
+        },
+        set( coedFilter ) { 
+          this.$store.commit("updateCoedFilter", coedFilter);
+        }
+      },
+
+      parkingFilter:{
+        get() { 
+          return this.$store.getters.parkingFilter; 
+        },
+        set( parkingFilter ) { 
+          this.$store.commit("updateParkingFilter", parkingFilter);
+        }
+      },
+
+      internetFilter:{
+        get() { 
+          return this.$store.getters.internetFilter; 
+        },
+        set( internetFilter ) { 
+          this.$store.commit("updateInternetFilter", internetFilter);
+        }
+      },
+
+      poolFilter:{
+        get() { 
+          return this.$store.getters.poolFilter; 
+        },
+        set( poolFilter ) { 
+          this.$store.commit("updatePoolFilter", poolFilter);
+        }
+      },
+
+      adultFilter:{
+        get() { 
+          return this.$store.getters.adultFilter; 
+        },
+        set( adultFilter ) { 
+          this.$store.commit("updateAdultFilter", adultFilter);
+        }
+      },
+
+      youthFilter:{
+        get() { 
+          return this.$store.getters.youthFilter; 
+        },
+        set( youthFilter ) { 
+          this.$store.commit("updateYouthFilter", youthFilter);
+        }
+      },
+
+      seniorFilter:{
+        get() { 
+          return this.$store.getters.seniorFilter; 
+        },
+        set( seniorFilter ) { 
+          this.$store.commit("updateSeniorFilter", seniorFilter);
+        }
+      },
+
+      hottubFilter:{
+        get() { 
+          return this.$store.getters.hottubFilter; 
+        },
+        set( hottubFilter ) { 
+          this.$store.commit("updateHottubFilter", hottubFilter);
+        }
+      },
+
+      laundryFilter:{
+        get() { 
+          return this.$store.getters.laundryFilter; 
+        },
+        set( laundryFilter ) { 
+          this.$store.commit("updateLaundryFilter", laundryFilter);
+        }
+      },
+
+      dogsFilter:{
+        get() { 
+          return this.$store.getters.dogsFilter; 
+        },
+        set( dogsFilter ) { 
+          this.$store.commit("updateDogFilter", dogsFilter);
+        }
+      },
+
+      catsFilter:{
+        get() { 
+          return this.$store.getters.catsFilter; 
+        },
+        set( catsFilter ) { 
+          this.$store.commit("updateCatsFilter", catsFilter);
+        }
+      },
+
+      smokingFilter:{
+        get() { 
+          return this.$store.getters.smokingFilter; 
+        },
+        set( smokingFilter ) { 
+          this.$store.commit("updateSmokingFilter", smokingFilter);
+        }
+      },
+
+      vapingFilter:{
+        get() { 
+          return this.$store.getters.vapingFilter; 
+        },
+        set( vapingFilter ) { 
+          this.$store.commit("updateFilter", vapingFilter);
         }
       },
 
