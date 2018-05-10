@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :controllers
+devise_for :admin, path: 'admin', controllers: {sessions: "admin/sessions", registrations: 'admin/registraions'}
 devise_for :users, path: 'users', controllers: { sessions: "users/sessions", registrations: "users/registrations"}
   get 'sitemap/index'
 

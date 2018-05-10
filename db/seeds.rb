@@ -13,7 +13,7 @@ yearly = Product.create(title: "yearly plan",
   subtitle: "yearly advertising subscription to zober", image_name: "tinylogo.png", price: "$365.00",
   sku: "yearly", download_url: "", description: %{<p>you now have the ability to advertise your home through zober. this is valid for one year. </p>
     });
-admin =Provider.create!(email: "sandra@zober.co", password: "mali1978", password_confirmation:"mali1978", role: :admin)
+
 
 image_array = ["https://images.craigslist.org/00n0n_cqc2jLGe1w0_600x450.jpg", "https://images.craigslist.org/00f0f_4lZ6YdfQnnu_600x450.jpg", "https://images.craigslist.org/00s0s_ceOPeAs9f25_600x450.jpg"]
 
