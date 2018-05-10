@@ -1,15 +1,12 @@
 class Provider < ApplicationRecord
 attr_accessor :role
-  enum role: [:provider, :nonprofit, :admin]
-  after_initialize :set_default_role, :if => :new_record?
-
-  def set_default_role
-    self.role ||= :provider
-  end
+  enum role: [:provider, :nonprofit]
+# after_initialize :set_default_role, :if => :new_record?
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
   has_many :houses
 has_many :products
 end

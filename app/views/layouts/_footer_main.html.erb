@@ -14,6 +14,18 @@
      <li class='links_footer'><%= link_to "contact", contact_path, class: "footer_link" %></li>
      <li class='links_footer'><%= link_to "privacy", privacy_path, class: "footer_link" %></li>
       <li class='links_footer'><%= link_to "terms", terms_path, class: "footer_link" %></li>
+      <li class="admin_link">
+
+               <% if admin_signed_in? %>
+               <!-- <li><%= link_to "dashboard", index_path, class: "link_items" %></li> -->
+                <li><%= link_to "logout", destroy_admin_session_path, method: :delete, class: "link_items" %></li>
+               <% else %>
+
+                <li><%= link_to "login", new_admin_session_path, class: "link_items" %></li>
+               <% end %>
+
+
+             </li>
    </div>
 
 

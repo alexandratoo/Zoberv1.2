@@ -54,11 +54,11 @@
 </div>
 </div>
 <div id="main_content">
-<% if current_user %>
+<% if admin_signed_in? %>
     <div class="buttons">
       <button class="button"><%= link_to "new blog", new_blog_path, class: "new-blog-link" %></button>
 
-      <button class="button"><%= link_to 'Logout', logout_path, method: :delete, class:"logout-link" %></button>
+
     </div>
 <% end %>
   <% flash.each do |name, msg| %>
