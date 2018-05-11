@@ -15,7 +15,7 @@ development:
   database: myapp_development
   pool: 5
   username: postgres
-  #password: password
+  password: password
 
 test:
   adapter: postgresql
@@ -25,10 +25,10 @@ test:
   # username: alexandratoo
   username: postgres
   # password: mali1978
-  #password: password
+  password: password
   
 production:
   <<: *default
   database: db/production.postresql
   username: postgres
-  #password: password
+  password: password
