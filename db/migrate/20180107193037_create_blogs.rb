@@ -6,7 +6,7 @@ class CreateBlogs < ActiveRecord::Migration[5.1]
       t.string :image
       t.string :name
       t.string :website
-      t.string :category
+
       t.timestamps
     end
   end
