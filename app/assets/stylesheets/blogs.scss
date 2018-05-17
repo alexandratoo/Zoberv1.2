@@ -167,3 +167,26 @@ position: relative; }
       .blog_archive {color:#f47f49; font-size:48px; font-family:roboto, sans-serif; text-align:center;}
 .archive_link{color:black; font-family:roboto, sans-serif;}
 .container-fluid.show_blog{  background: url('sunset.jpg') no-repeat bottom center scroll;}
+//for the blog index page styling//
+.container-fluid.categories {margin-top:140px;}
+a {
+  -webkit-transition: .25s all;
+  transition: .25s all;
+}
+
+.card {
+  overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-transition: .25s box-shadow;
+  transition: .25s box-shadow;
+}
+
+.card:focus,
+.card:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card-inverse .card-img-overlay .category{
+  // background-color: rgba(80, 80, 80, 0.85);
+  border-color: rgba(51, 51, 51, 0.85);
+}

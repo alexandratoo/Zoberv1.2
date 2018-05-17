@@ -10,6 +10,7 @@ class ProvidersController < ApplicationController
    @providers = Provider.all
  end
  end
+
 private
 def provider_params
   params.require(:provider).permit(

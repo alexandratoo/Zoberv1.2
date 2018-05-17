@@ -21,6 +21,7 @@ class BlogsController < ApplicationController
   def show
     @blog = Blog.find(params[:id])
     @blogs = Blog.order("created_at DESC")
+
     #  @blogs_by_month = Blog.find(:all, :order => 'created_at DESC').group_by { |blog|     blog.created_at.strftime("%B %Y") }
   end
   def edit
@@ -29,7 +30,7 @@ class BlogsController < ApplicationController
   def update
     @blog = Blog.find(params[:id])
 
-if @blog.update(params[:blog].permit(:image, :title, :post, :name, :website))
+if @blog.update(params[:blog].permit(:image, :title, :post, :name, :website, :topic_id))
 
   redirect_to @blog
 else
@@ -47,6 +48,6 @@ end
 
   private
   def blog_params
-    params.require(:blog).permit(:image, :title, :post, :name, :website, )
+    params.require(:blog).permit(:image, :title, :post, :name, :website, :topic_id)
 end
 end
