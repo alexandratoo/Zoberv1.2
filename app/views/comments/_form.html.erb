@@ -1,6 +1,6 @@
 <div class="comment clearfix">
   <div class="posts-comments">
-<%= form_for([@blog, @blog.comments.build]) do |f| %>
+<%= form_for(@blog, blog.comments.build) do |f| %>
 <div class="container-fluid comments">
   <h3 class="comments-count">add a comment:</h3>
 <p class="comment-body-form">

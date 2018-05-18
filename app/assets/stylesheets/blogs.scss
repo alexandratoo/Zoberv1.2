@@ -113,7 +113,7 @@ color: #6b6e80;
 position: relative; }
 .read-more {color:#f47f49;margin-left:20px; font-family: roboto, sans-serif;}
 .name {font-family: roboto, sans-serif; font-size:20px;}
-.blog-content{  margin:auto; background-color:#fff;}
+.blog-content{  margin:auto; background-color:#fff; font-family:raleway; font-size: 18px;}
 .form-label-title{font-family: roboto, sans-serif; font-size:20px;}
 .form-label-post{font-family: roboto, sans-serif; font-size:20px;}
 .form-label-name{font-family: roboto, sans-serif; font-size:20px;}
@@ -152,7 +152,7 @@ position: relative; }
 .inner-left	  {
 		  padding: 5px 5px 5px 5px;
 		  margin-right: 10px;
-		  // border: #999999 1px solid;
+
 		  min-height: 00px;
       background-color: #fff;
 
@@ -161,7 +161,7 @@ position: relative; }
 .inner-right	  {
 		  font-size: 11px;
 		  padding: 5px 5px 5px 5px;
-		  border: #999999 1px solid;
+		  border-right: #999999 1px solid;
 		  min-height: 840px;
 		  }
       .archive_link {color:#626262;}

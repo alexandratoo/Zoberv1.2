@@ -63,34 +63,31 @@
   <div class="inner-left">
 
   <% @blogs.each do |blog| %>
-<div class="row-fluid blogs">
+
       <h1 class="blog_title"><%= blog.title %></h1>
       <article class="blog-content">
 
-                <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="col-lg-8 col-md-10 mx-auto blog">
 
 
-        <%= raw(blog.post) %>
+        <%= raw(blog.post)%>
 
 
       </div>
 
       </article>
 
-      <!-- <p class="name"><strong>written by: </strong>
-        <%= blog.name %>
-      </p> -->
       <p class="website"><strong> website:</strong>
         <%= link_to blog.website, "http://#{blog.website}", class: "website-form-link" %></p>
         <% if current_admin %>
         <div>
 
-          <%= link_to 'edit', edit_blog_path(@blog), class: "edit-link" %>
-          <%= link_to 'delete', blog_path(@blog), method: :delete, data:{ confirm: 'are you sure?'}, class: "delete-link" %>
+          <%= link_to 'edit', edit_blog_path(blog), class: "edit-link" %>
+          <%= link_to 'delete', blog_path(blog), method: :delete, data:{ confirm: 'are you sure?'}, class: "delete-link" %>
         </div>
         <% else %>
         <%= social_share_button_tag(blog.title) %>
-        </div>
+
 
         <!-- <div id="comments">
           <h2 class="comments-count"><%= blog.comments.count %> comments</h2><br>
@@ -99,11 +96,7 @@
 
         <% end %>
 
-        <% if current_admin %>
-
-        <%= render 'comments/form' %>
-
-        <% end %>
+      
       </div>
   <% end %>
 
