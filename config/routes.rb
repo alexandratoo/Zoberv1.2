@@ -15,7 +15,7 @@ end
   resources :purchases, only: [:show]
   resources :products, only: [:index, :show]
 
-
+  resources :topics, only: [:show]
   resources :charges
 
   resource :home_page, only: [:show]
@@ -27,8 +27,8 @@ end
   end
 get 'blogs/by_year_and_month/:year/:month' => 'blogs#by_year_and_month', :as=> :blogs_by_year_and_month
 match 'sitemap', :to => 'sitemap#index', :via => [:get]
-match '/providers/:id',     to: 'providers#show',       via: 'get'
-
+# match '/providers/:id',     to: 'providers#show',       via: 'get'
+get 'topics/:id' => 'topics#show'
   get 'privacy' => 'static#privacy'
   get 'list' => 'houses#list'
   get 'terms'=>'static#terms'

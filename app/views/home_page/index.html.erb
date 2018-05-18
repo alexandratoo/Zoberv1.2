@@ -19,7 +19,7 @@
 
 
 </head>
-<body>
+<body class="main_page">
 <% if current_user %>
 
   <%= render 'user_profile' %>
@@ -36,7 +36,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="dropdown providers">
+        <!-- <li class="dropdown providers">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">providers <span class="caret"></span></a>
                  <ul class="dropdown-menu providers">
                  <% if provider_signed_in? %>
@@ -49,7 +49,7 @@
                  <% end %>
 
                  </ul>
-               </li>
+               </li> -->
         <li class="nav-item">
           <a class=" about nav-link js-scroll-trigger" href="about" style="color:white; font-family:raleway">about</a>
         </li>

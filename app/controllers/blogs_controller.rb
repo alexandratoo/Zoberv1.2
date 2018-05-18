@@ -9,6 +9,7 @@ class BlogsController < ApplicationController
   end
   def new
     @blog = Blog.new
+    @topics = Topic.all
   end
   def create
     @blog = Blog.new(blog_params)
@@ -26,6 +27,7 @@ class BlogsController < ApplicationController
   end
   def edit
     @blog = Blog.find(params[:id])
+
   end
   def update
     @blog = Blog.find(params[:id])
