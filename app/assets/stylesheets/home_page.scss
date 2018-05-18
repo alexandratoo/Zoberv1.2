@@ -43,7 +43,7 @@ html, body {
   text-align: center;
 
   color: white;
-  background: url('lifebuoy.jpg') no-repeat bottom center scroll;
+  background: url('lifebuoy.jpg') no-repeat ;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -108,7 +108,7 @@ html, body {
   text-align:center;
   margin:none;
 }
-
+.main_page {overflow-y: hidden;}
 
 //modal styling//
 // .login_modal_footer{margin-top:5px; back-ground-color: #f47f49;}
