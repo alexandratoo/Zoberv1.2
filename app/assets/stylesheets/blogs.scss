@@ -174,20 +174,24 @@ a {
   -webkit-transition: .25s all;
   transition: .25s all;
 }
+.topic_name {text-align:center; margin-top:30px; font-family:raleway;}
+.img-responsive .topic {width: 100%; height:100%;}
 
-// .card {
-//   overflow: hidden;
-//   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-//   -webkit-transition: .25s box-shadow;
-//   transition: .25s box-shadow;
-// }
-//
-// .card:focus,
-// .card:hover {
-//   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-// }
-//
-// .card-inverse .card-img-overlay .category{
-//   // background-color: rgba(80, 80, 80, 0.85);
-//   border-color: rgba(51, 51, 51, 0.85);
-// }
+
+.card-inverse .card-img-overlay .category:focus,
+.card-inverse .card-img-overlay .category:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card-inverse .card-img-overlay .category{
+  overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-transition: .25s box-shadow;
+  transition: .25s box-shadow;
+  // background-color: rgba(80, 80, 80, 0.85);
+  border-color: rgba(51, 51, 51, 0.85);
+  padding-left: 0;
+  padding-right: 0;
+}
+.topic_link{font-size:3rem; font-family:raleway;}
+.topic_link:hover{color:#f47f49;}
