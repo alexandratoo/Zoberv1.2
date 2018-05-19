@@ -93,7 +93,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
       getList: function ({ commit }) {
         let uri = window.location.search.substring(1);
         let params = new URLSearchParams(uri);
-        axios.get('/api/v1/houses/' + params.get("user_location") + '.json').then((response) => {
+        let userLocation = params.get("user_location") || "San Francisco";
+        
+        axios.get('/api/v1/houses/' + userLocation + '.json').then((response) => {
           commit('setHousesList', { list: response.data })
         }, (err) => {
           console.log(err)
@@ -554,9 +556,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
           map: this.map,
           title: pos.title,
           icon: {
-              url: 'http://localhost:3000/icon/z_house.png',
-              scaledSize: new google.maps.Size(30, 30), // scaled size
-            },
+              url: 'http://localhost:3000/icon/house_icon.svg',
+              scaledSize: new google.maps.Size(20, 20), // scaled size
+          },
           description: pos.description
         })
         let infoWindow = new google.maps.InfoWindow();

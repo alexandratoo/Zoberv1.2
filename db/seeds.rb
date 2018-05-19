@@ -16,7 +16,7 @@ yearly = Product.create(title: "yearly plan",
 Topic.create!(topic: "spirituality");
 Topic.create!(topic: "fitness");
 
-image_array = ["https://images.craigslist.org/00n0n_cqc2jLGe1w0_600x450.jpg", "https://images.craigslist.org/00f0f_4lZ6YdfQnnu_600x450.jpg", "https://images.craigslist.org/00s0s_ceOPeAs9f25_600x450.jpg"]
+image_array = ["https://i.pinimg.com/originals/f8/cc/98/f8cc984c4a18f748590ce25c90208ed7.jpg", "https://s-media-cache-ak0.pinimg.com/originals/b3/e2/0c/b3e20c684a20a0b8a8392c5b4d3eb064.jpg", "https://i.pinimg.com/736x/08/a2/04/08a2044c9e64c8643645b1285f907350--industrial-bedroom-design-urban-industrial.jpg"]
 
 
 index = 1
