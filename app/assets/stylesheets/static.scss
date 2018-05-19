@@ -16,9 +16,9 @@ body{color: #ffffff;}
 .container-fluid.privacy{margin-top:140px;}
 .privacy { font-size:48px; font-family:roboto,sans-serif; }
 //about page styling//
-.container-fluid.about{margin-top:140px;}
+.container-fluid.about{margin-top:140px; }
 .container-fluid.about { margin-bottom:80px;}
-.card.text-center.about {margin-left:10px; margin-right:10px; border: 1px solid #f47f49}
+.card.text-center.about {margin-left:10px; margin-right:10px;  height:800px;}
 .card.about {margin-top:140px; margin-bottom:40px; }
 .card-title.about {font-family:raleway; font-weight:200; font-size:2rem;}
 .card-header.about {font-family:raleway; font-weight:400; font-size: 3rem;color:#fff; background-color: #f47f49;}
@@ -26,8 +26,8 @@ body{color: #ffffff;}
 .card-text.about {font-family:raleway; padding-left:20px; color:#626262; font-size:1.5rem;}
 
 .card-block.about {padding:10px; }
-.about-staff{text-align:center; margin-top:40px; font-size:48px; font-weight:600; font-family:raleway; margin-top:40px;}
-.about-title{text-align:center; font-family:raleway; font-weight:400; font-size:4rem; margin-top:140px;}
+.about-staff{text-align:center; margin-top:40px; font-size:48px; font-weight:600; font-family:raleway; }
+.about-title{text-align:center; font-family:raleway; font-weight:400; font-size:4rem; }
 .card.text-center.about {  padding-bottom:10px;}
 .img-responsive {margin-top: 20px; width: 100%;
   height: auto;}
@@ -42,3 +42,5 @@ body{color: #ffffff;}
     }
 }
 .col-sm-12.about {text-align:left; border:1px solid #f47f49;padding:40px;margin-top:40px;}
+.row-fluid .about{margin-top:140px;}
+.btn .about{background-color:black; color:#f47f49}

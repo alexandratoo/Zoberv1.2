@@ -3,15 +3,17 @@
 <% provide(:title, 'about') %>
 
 <section>
+
   <div class='container-fluid about'>
+    <div class="btn">
+  <%= link_to 'company', company_path, :class => "btn about" %>
+</div>
+<div class="btn">
+  <%= link_to 'staff', about_path, :class => "btn about"%>
+</div>
 
 <h1 class="about-title">about us!</h1>
-<h2 class="about-staff">the company</h2>
-<div class="col-sm-12 about">
-  <p class="card-text">Founded in 2015 and established on January 1, 2018, zober is a limited liability company based in Superior, Colorado with a presence in San Francisco, California. zober is a recovery marketplace for people seeking transparent and unbiased information about supportive sober housing and other treatment services across North America.<br>
 
-Our mission is simple: save lives. It is our intention to be the best source of information for people seeking help online, supporters trying to help their loved ones, and for professionals and advocates in the industry. Everything we tackle, whether directly or indirectly, is meant to help people find the best path to their recovery. We don’t discriminate on how one obtains recovery, if it’s through traditional or holistic methods, a blend, or the unusual. We aim to contribute to the success of people as they strive to rebuild their lives, repair relationships, and re-enter the world as a better version of themselves.</p>
-</div>
 </div>
 
 <div class="container-fluid staff">
@@ -37,23 +39,13 @@ Our mission is simple: save lives. It is our intention to be the best source of 
 </div>
 <div class="card-block about">
   <h4 class="card-title about">Tyler Stratton</h4>
-  <p class="card-text">Tyler Stratton is the founder and CEO at zober. As the captain, he steers the company’s vision by overseeing all strategy, outreach, and development to ensure the optimal experience for both consumers and professionals searching for unique ways to tackle recovery. Having attended treatment 15 times, Tyler has a visceral understanding of the deficiencies in the field and is passionate about ethics, accountability, and REAL information. As an extremist, Tyler has been both a total f*ck up and a successful VP of a tech startup; he has also started three previous companies. Tyler is obsessed with color-coded calendars, coffee, real estate, cars, dogs, family, and most of all, saving lives. </p>
+  <p class="card-text">Tyler Stratton is the founder and CEO at zober. As the captain, he steers the company’s vision by overseeing all strategy, outreach, and development to ensure the optimal experience for both consumers and professionals searching for unique ways to tackle recovery. Having attended treatment 18 times, Tyler has a visceral understanding of the deficiencies in the field and is passionate about ethics, accountability, and REAL information. As an extremist, Tyler has been both a total f*ck up and a successful VP of a tech startup; he has also started three previous companies. Tyler is obsessed with color-coded calendars, coffee, real estate, cars, dogs, family, and most of all, saving lives. </p>
 </div>
 </div>
 </div>
 
 
-  <div class="col-sm-4">
-<div class="card text-center about">
-<div class="img-responsive">
-  <%=image_tag("drew.jpg", alt: "home", class: "rounded-circle ")%>
-</div>
-<div class="card-block about">
-  <h4 class="card-title about">Andrew Eskenazi</h4>
-  <p class="card-text">Andrew Eskenazi is a Web Developer who’s always finding new ways to cultivate and execute on a growth mindset. His mission is to build platforms to connect with and give back to a larger community. Having worked in restaurants from the age of 16, he was exposed to some amazing chefs and satisfied the hunger to work the line. With a desire to make a leap into something more analytical, Andrew has become obsessed with Tech. He now spends his time creating custom based logic, turning a passion into a career!.</p>
-</div>
-</div>
-</div>
+
 </div>
 <div class="card-group">
     <div class="col-sm-4">
@@ -70,7 +62,7 @@ Our mission is simple: save lives. It is our intention to be the best source of 
   <div class="col-sm-4">
 <div class="card text-center about">
 <div class="img-responsive">
-  <%=image_tag("jon.png", alt: "jon", class: "rounded-circle ")%>
+
 </div>
 <div class="card-block about">
   <h4 class="card-title about">John D'Andre</h4>
@@ -78,18 +70,8 @@ Our mission is simple: save lives. It is our intention to be the best source of 
 </div>
 </div>
 </div>
-  <div class="col-sm-4">
-<div class="card text-center about">
-<div class="img-responsive">
-  <%=image_tag("laura.jpg", alt: "home", class: "rounded-circle ")%>
-</div>
-<div class="card-block about">
-  <h4 class="card-title about">Laura Walker</h4>
-  <p class="card-text">Laura Walker has known that writing is her calling ever since she was nine years old. A favorite maxim is: “If it isn’t written, it isn’t real.” Since earning her MFA in creative writing (with an emphasis in poetry), Laura has used her wordsmithing skills as an editor, web content developer, marketing manager, award-winning business plan writer, English teacher, published poet and overachieving smartass. As an active member of Alcoholics Anonymous since 2008, our Master Gunner loves her life of sobriety and has learned to chill her type-A down to a type-A-minus/B+ and be OK with not running the world. Her friends, family, colleagues and students appreciate this very much.</p>
-</div>
-</div>
-</div>
-</div>
+
+
 <div class="card-group">
   <div class="col-sm-4">
 <div class="card text-center about">

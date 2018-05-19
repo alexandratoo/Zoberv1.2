@@ -33,7 +33,7 @@ get 'topics/:id' => 'topics#show'
   get 'list' => 'houses#list'
   get 'terms'=>'static#terms'
   get 'provider-markers' => 'places#index'
-
+get 'company' => 'static#company'
   get 'individual' => 'houses#individual'
 
   get 'houses/home'
