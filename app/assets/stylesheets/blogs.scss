@@ -32,10 +32,10 @@ h6 {
     text-align: center;
 
     color: white;
-    background: url('coffee.jpg') no-repeat bottom center scroll;
-    background-color: black;
+    // background: url('coffee.jpg') no-repeat bottom center scroll;
+    // background-color: black;
     opacity: .6;
-     background-color: #212529;
+     // background-color: #212529;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -122,7 +122,8 @@ position: relative; }
 .field-website{width:250px; border-radius:0 0 0 0;}
 .field-name{width:250px; border-radius:0 0 0 0;}
 .field-title{width:250px; border-radius:0 0 0 0;}
-.website{color: #626262; font-family:raleway;}
+.website{color: #f47f49; font-family:raleway; text-align:center;}
+
 .name {font-family: raleway, sans-serif; font-size:16px; color:#626262; float: left;}
 .website-form-link {color:#626262; font-size:16px; font-family: roboto, sans-serif; }
 .img-fluid.blog {float:left; padding:20px; border:1px solid #626262;  background-color: #edecea;}

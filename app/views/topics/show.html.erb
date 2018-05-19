@@ -4,18 +4,18 @@
 <header class="masthead3">
   <div class="intro-body">
     <div class="row-fluid image">
-      <div class="img-fluid mx-auto" id="coffee">
 
+<%= image_tag(@blogs.first.image_url.to_s, :class=> "img-fluid blog_topic") %>
 <h2 class="blog_title"><h2>
 
         <div class="col-md-10 mx-auto">
 
-          <div class="row-fluid">
+          <!-- <div class="row-fluid">
             <h2 class="blog_info"><%= @topic.name %></h2>
             <p>website info can be here</p>
-          </div>
 
-        </div>
+
+        </div> -->
       </div>
     </div>
   </div>
