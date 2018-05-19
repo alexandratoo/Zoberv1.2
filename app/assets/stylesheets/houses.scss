@@ -6,8 +6,17 @@
 }
 
 // houses index/list
-.legend-items {
-  color: #FFF;
+
+menu {
+  width: 100%;
+  height: 50px;
+  background-color: #000000;
+  background-size:100% 100%;
+  position: fixed;
+  top: 60px;
+  .nav {
+    padding-top: 15px;
+  }
 }
 
 .col-sm-12.mx-auto {margin-top:200px;}
@@ -16,12 +25,17 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 90px;
+  margin-top: 130px;
 }
 
 .map-area {
-  width: calc(100% - 600px);
+  width: calc(100% - 800px);
   height: 100vh;
+}
+
+.map {
+  width: 100%;
+  height: 84.5vh;
 }
 
 .houses_list {
@@ -29,45 +43,20 @@
   margin:0;
 }
 
-.map {
-  width: 100%;
-  height: 100vh;
-  margin-bottom: 0px; 
-  background-color: #ccc;
-}
-
 .info-price {
   float: right;
 }
 
 .sidebar {
-  border-left: 5px solid #ddd;
-  width: 600px;
-  height: 100vh;
+  margin-left: 5px;
+  width: 800px;
+  height: 85vh;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
-.filter-bar .nav {
-  background-color: #424242;
-  padding-top: 5px;
-}
-
-.filter-bar {
-  width: 582px;
-  position: fixed;
-  background: black;
-  z-index: 500;
-}
-
-.top-buffer {
-  margin-top: 13px;
-  background:inherit;
-}
-
 .imagebox #carousel{
-  margin-top: 5px;
-  margin-left: 8px;
+  border-left: 5px solid white;
 }
 
 .imagebox img {
@@ -82,7 +71,6 @@
   left: 15px;
   right: 0px;
   position: absolute;
-  transition: 0.5s padding;
 }
 
 .house-display .img-fluid {
@@ -95,7 +83,7 @@
 }
 
 .thumbnail {
-    position: relative;
+  position: relative;
 }
 
 .slick-prev {
@@ -133,7 +121,7 @@
 }
 
 .house-website {
-  color: black; 
+  color: black;
 }
 
 .d-block {
@@ -149,7 +137,7 @@
   font-size: 39px;
   font-weight: bold;
   margin-bottom: 5px;
-  margin-top: 0px; 
+  margin-top: 0px;
 }
 
 .amenity-list li {
@@ -164,8 +152,8 @@
 }
 
 .house-details {
-  margin-left: 50px; 
-  margin-top: 0px; 
+  margin-left: 50px;
+  margin-top: 0px;
 }
 
 @media (max-width: 50em) {
@@ -175,11 +163,11 @@ display: none;
 }
 
 .contact-card {
-  margin-left: 90px; 
+  margin-left: 90px;
 }
 
 .card-title.call{
-  padding-top: 20px; 
+  padding-top: 20px;
 }
 
 
@@ -195,8 +183,8 @@ display: none;
   .container-fluid-image {margin-bottom: 40px; margin-top:40px; border-top: 1px solid GREY; border-bottom:1px solid GREY;padding:30px}
 
   .checkbox-filters {
-    text-align: left; 
-    margin-top: 30px; 
+    text-align: left;
+    margin-top: 30px;
   }
 
 .field-house{border-radius: 0 0 0 0;}
