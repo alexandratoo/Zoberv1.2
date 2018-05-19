@@ -15,38 +15,9 @@ yearly = Product.create(title: "yearly plan",
     });
 Topic.create!(name: "spirituality");
 Topic.create!(name: "fitness");
-<<<<<<< HEAD
-
-image_array = ["https://images.craigslist.org/00n0n_cqc2jLGe1w0_600x450.jpg", "https://images.craigslist.org/00f0f_4lZ6YdfQnnu_600x450.jpg", "https://images.craigslist.org/00s0s_ceOPeAs9f25_600x450.jpg"]
-
-
-index = 1
-43.times do
-  image_array.each do |link|
-    Image.create!({
-    house_id: index,
-    image: link
-  })
-  end
-index += 1
-end
-
-filter_id_array = [1, 4, 5, 8, 9, 10, 11, 12, 13, 15, 17, 18, 19, 20, 25, 29, 32, 38, 39, 41, 42, 47, 50, 55, 62, 65, 67, 68]
-
-index = 1
-43.times do
-  filter_id_array.each do |filter|
-    HouseFilter.create!({
-    house_id: index,
-    filter_id: filter
-  })
-  end
-index += 1
-end
-=======
-Admin.create(email:"tyler@zober.co", password:"Zober2018")
+Admin.create!(email:"tyler@zober.co", password:"Zober2018");
 # image_array = ["https://images.craigslist.org/00n0n_cqc2jLGe1w0_600x450.jpg", "https://images.craigslist.org/00f0f_4lZ6YdfQnnu_600x450.jpg", "https://images.craigslist.org/00s0s_ceOPeAs9f25_600x450.jpg"]
-#
+
 #
 # index = 1
 # 43.times do
@@ -71,4 +42,3 @@ Admin.create(email:"tyler@zober.co", password:"Zober2018")
 #   end
 # index += 1
 # end
->>>>>>> 102
