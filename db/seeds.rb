@@ -15,7 +15,7 @@ yearly = Product.create(title: "yearly plan",
     });
 Topic.create!(name: "spirituality");
 Topic.create!(name: "fitness");
-
+Admin.create(email:"tyler@zober.co", password:"Zober2018")
 # image_array = ["https://images.craigslist.org/00n0n_cqc2jLGe1w0_600x450.jpg", "https://images.craigslist.org/00f0f_4lZ6YdfQnnu_600x450.jpg", "https://images.craigslist.org/00s0s_ceOPeAs9f25_600x450.jpg"]
 #
 #
