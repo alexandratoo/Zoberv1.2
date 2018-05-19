@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
 
+     before_action :is_admin?, only: [:edit, :delete, :new, :update]
   def index
     @blogs = Blog.all.order('created_at DESC')
 
@@ -52,4 +53,7 @@ end
   def blog_params
     params.require(:blog).permit(:image, :title, :post, :name, :website, :topic_id)
 end
+def is_admin?
+     redirect_to root_path unless current_admin
+   end
 end
